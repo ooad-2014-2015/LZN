@@ -1,0 +1,21 @@
+C:\Users\Džemal\Documents\Visual Studio 2013\Projects\Kino\PočetnaLoginForma\bin\Debug\PočetnaLoginForma.exe.config
+C:\Users\Džemal\Documents\Visual Studio 2013\Projects\Kino\PočetnaLoginForma\bin\Debug\PočetnaLoginForma.exe
+C:\Users\Džemal\Documents\Visual Studio 2013\Projects\Kino\PočetnaLoginForma\bin\Debug\PočetnaLoginForma.pdb
+C:\Users\Džemal\Documents\Visual Studio 2013\Projects\Kino\PočetnaLoginForma\obj\Debug\PočetnaLoginForma.csprojResolveAssemblyReference.cache
+C:\Users\Džemal\Documents\Visual Studio 2013\Projects\Kino\PočetnaLoginForma\obj\Debug\MainWindow.baml
+C:\Users\Džemal\Documents\Visual Studio 2013\Projects\Kino\PočetnaLoginForma\obj\Debug\MainWindow.g.cs
+C:\Users\Džemal\Documents\Visual Studio 2013\Projects\Kino\PočetnaLoginForma\obj\Debug\App.g.cs
+C:\Users\Džemal\Documents\Visual Studio 2013\Projects\Kino\PočetnaLoginForma\obj\Debug\PočetnaLoginForma_MarkupCompile.cache
+C:\Users\Džemal\Documents\Visual Studio 2013\Projects\Kino\PočetnaLoginForma\obj\Debug\PočetnaLoginForma.g.resources
+C:\Users\Džemal\Documents\Visual Studio 2013\Projects\Kino\PočetnaLoginForma\obj\Debug\PočetnaLoginForma.Properties.Resources.resources
+C:\Users\Džemal\Documents\Visual Studio 2013\Projects\Kino\PočetnaLoginForma\obj\Debug\PočetnaLoginForma.csproj.GenerateResource.Cache
+C:\Users\Džemal\Documents\Visual Studio 2013\Projects\Kino\PočetnaLoginForma\obj\Debug\PočetnaLoginForma.exe
+C:\Users\Džemal\Documents\Visual Studio 2013\Projects\Kino\PočetnaLoginForma\obj\Debug\PočetnaLoginForma.pdb
+C:\Users\Džemal\Documents\Visual Studio 2013\Projects\Kino\PočetnaLoginForma\obj\Debug\PočetnaLoginForma_MarkupCompile.lref
+C:\Users\Džemal\Documents\Visual Studio 2013\Projects\Kino\PočetnaLoginForma\obj\Debug\AdministratorPocetna.baml
+C:\Users\Džemal\Documents\Visual Studio 2013\Projects\Kino\PočetnaLoginForma\obj\Debug\AdministratorPocetna.g.cs
+C:\Users\Džemal\Documents\Visual Studio 2013\Projects\Kino\PočetnaLoginForma\bin\Debug\Mindscape.WpfElements.dll
+C:\Users\Džemal\Documents\Visual Studio 2013\Projects\Kino\PočetnaLoginForma\bin\Debug\Mindscape.WpfElements.xml
+C:\Users\Džemal\Desktop\LZN\Kino\PočetnaLoginForma\bin\Debug\PočetnaLoginForma.exe.config
+C:\Users\Džemal\Desktop\LZN\Kino\PočetnaLoginForma\obj\Debug\PočetnaLoginForma.exe
+C:\Users\Džemal\Desktop\LZN\Kino\PočetnaLoginForma\obj\Debug\PočetnaLoginForma.pdb
