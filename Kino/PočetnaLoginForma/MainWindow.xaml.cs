@@ -42,7 +42,7 @@ namespace PočetnaLoginForma
                 var prozor = new FinansijskiMenadžerPočetna(); //Proslijedit logovanog korisnika
                 this.Close();
                 prozor.ShowDialog();
-                //exit(); 
+
             }
             else
             {
