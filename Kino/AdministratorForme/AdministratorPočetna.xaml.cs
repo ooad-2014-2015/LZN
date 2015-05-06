@@ -23,5 +23,11 @@ namespace AdministratorForme
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var prozor = new KreiranjeSedmicnogRasporeda();
+            prozor.ShowDialog();
+        }
     }
 }
