@@ -1,0 +1,13 @@
+E:\OOAD\LZN\Kino\FinansijskiMenadžerForme\bin\Debug\FinansijskiMenadžerForme.exe.config
+E:\OOAD\LZN\Kino\FinansijskiMenadžerForme\bin\Debug\FinansijskiMenadžerForme.exe
+E:\OOAD\LZN\Kino\FinansijskiMenadžerForme\bin\Debug\FinansijskiMenadžerForme.pdb
+E:\OOAD\LZN\Kino\FinansijskiMenadžerForme\obj\Debug\FinansijskiMenadžerForme.csprojResolveAssemblyReference.cache
+E:\OOAD\LZN\Kino\FinansijskiMenadžerForme\obj\Debug\FinansijskiMenadžerPočetna.baml
+E:\OOAD\LZN\Kino\FinansijskiMenadžerForme\obj\Debug\FinansijskiMenadžerPočetna.g.cs
+E:\OOAD\LZN\Kino\FinansijskiMenadžerForme\obj\Debug\App.g.cs
+E:\OOAD\LZN\Kino\FinansijskiMenadžerForme\obj\Debug\FinansijskiMenadžerForme_MarkupCompile.cache
+E:\OOAD\LZN\Kino\FinansijskiMenadžerForme\obj\Debug\FinansijskiMenadžerForme.g.resources
+E:\OOAD\LZN\Kino\FinansijskiMenadžerForme\obj\Debug\FinansijskiMenadžerForme.Properties.Resources.resources
+E:\OOAD\LZN\Kino\FinansijskiMenadžerForme\obj\Debug\FinansijskiMenadžerForme.csproj.GenerateResource.Cache
+E:\OOAD\LZN\Kino\FinansijskiMenadžerForme\obj\Debug\FinansijskiMenadžerForme.exe
+E:\OOAD\LZN\Kino\FinansijskiMenadžerForme\obj\Debug\FinansijskiMenadžerForme.pdb
