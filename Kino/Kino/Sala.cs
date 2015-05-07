@@ -8,19 +8,19 @@ namespace Kino
 {
     public class Sala
     {
-        public string _nazivSale { get; set; }
-        public int _brojObicnihSjedista { get; set; }
-        public int _brojLjubavnihSjedista { get; set; }
-        public int _brojVipSjedista { get; set; }
-        public int _ID { get; set; }
+        public string NazivSale { get; set; }
+        public int BrojObicnihSjedista { get; set; }
+        public int BrojLjubavnihSjedista { get; set; }
+        public int BrojVipSjedista { get; set; }
+        public int ID { get; set; }
 
-        public Sala(string nazivSale, int brojObicnihSjedista, int brojLjubavnihSjedista, int brojVipSjedista, int ID)
+        public Sala(string nazivSale, int brojObicnihSjedista, int brojLjubavnihSjedista, int brojVipSjedista, int id)
         {
-            _nazivSale = nazivSale;
-            _brojObicnihSjedista = brojObicnihSjedista;
-            _brojLjubavnihSjedista = brojLjubavnihSjedista;
-            _brojVipSjedista = brojVipSjedista;
-            _ID = ID;
+            NazivSale = nazivSale;
+            BrojObicnihSjedista = brojObicnihSjedista;
+            BrojLjubavnihSjedista = brojLjubavnihSjedista;
+            BrojVipSjedista = brojVipSjedista;
+            ID = id;
         }
 
     }

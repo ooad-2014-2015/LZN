@@ -8,9 +8,9 @@ namespace Kino
 {
     public class Racun
     {
-        public int _serijskiBroj { get; set; }
-        public string _vrijemeNarudzbe { get; set; }
-        public string _imeRadnika { get; set; }
+        public int SerijskiBroj { get; set; }
+        public string VrijemeNarudzbe { get; set; }
+        public string ImeRadnika { get; set; }
         public List<StavkeNarudzbe> _stavkeNarudzbe;
 
         public Racun()
@@ -20,9 +20,9 @@ namespace Kino
 
         public Racun(int serijskiBroj, string vrijemeNarudzbe, string imeRadnika, List<StavkeNarudzbe> stavkeNarudzbe)
         {
-            _serijskiBroj = serijskiBroj;
-            _vrijemeNarudzbe = vrijemeNarudzbe;
-            _imeRadnika = imeRadnika;
+            SerijskiBroj = serijskiBroj;
+            VrijemeNarudzbe = vrijemeNarudzbe;
+            ImeRadnika = imeRadnika;
             _stavkeNarudzbe = stavkeNarudzbe;
         }
 

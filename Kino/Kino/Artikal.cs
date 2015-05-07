@@ -8,21 +8,21 @@ namespace Kino
 {
     public class Artikal
     {
-        public int _ID { get; set; }
-        public double _cijena { get; set; }
-        public string _naziv { get; set; }
-        public string _slika { get; set; }
-        public double _kolicina { get; set; }
-        public int _naStanju { get; set; }
+        public int ID { get; set; }
+        public double Cijena { get; set; }
+        public string Naziv { get; set; }
+        public string Slika { get; set; }
+        public double Kolicina { get; set; }
+        public int NaStanju { get; set; }
 
-        public Artikal(int ID, double cijena, string naziv, string slika, double kolicina, int naStanju)
+        public Artikal(int id, double cijena, string naziv, string slika, double kolicina, int naStanju)
         {
-            _ID = ID;
-            _cijena = cijena;
-            _naziv = naziv;
-            _slika = slika;
-            _kolicina = kolicina;
-            _naStanju = naStanju;
+            ID = id;
+            Cijena = cijena;
+            Naziv = naziv;
+            Slika = slika;
+            Kolicina = kolicina;
+            NaStanju = naStanju;
         }
     }
 }

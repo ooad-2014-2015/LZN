@@ -8,39 +8,39 @@ namespace Kino
 {
     public class Film
     {
-        public string _naziv { get; set; }
-        public string _zanr { get; set; }
-        public string _reziser { get; set; }
-        public List<string> _glumci;
-        public string _sinospis { get; set; }
-        public DateTime _godinaIzdavanja { get; set; }
-        public string _vrijemeIzdavanja { get; set; }
-        public string _slika { get; set; }
-        public DateTime _datumUnosa { get; set; }
-        public DateTime _datumPosljednjeIzmjene { get; set; }
-        public string _username { get; set; }
-        public int _ID { get; set; }
+        public int ID { get; set; }
+        public string Naziv { get; set; }
+        public string Zanr { get; set; }
+        public string Reziser { get; set; }
+        public List<string> Glumci;
+        public string Sinospis { get; set; }
+        public int GodinaIzdavanja { get; set; }
+        public int VrijemeTrajanja { get; set; } 
+        public string Slika { get; set; }
+        public DateTime DatumUnosa { get; set; }
+        public DateTime DatumPosljednjeIzmjene { get; set; }
+        public string Username { get; set; }
 
         public Film()
         {
-            _glumci = new List<string>();
+            Glumci = new List<string>();
         }
 
-        public Film(string naziv, string zanr, string reziser, List<string> glumci, string sinospis, DateTime godinaIzdavanja, string vrijemeIzdavanja
-            , string slika, DateTime datumUnosa, DateTime datumPosljednjeIzmjene, string username, int ID)
+        public Film(string naziv, string zanr, string reziser, List<string> glumci, string sinospis, int godinaIzdavanja, int vrijeme_Trajanja
+            , string slika, DateTime datumUnosa, DateTime datumPosljednjeIzmjene, string username, int id)
         {
-            _naziv = naziv;
-            _zanr = zanr;
-            _reziser = reziser;
-            _glumci = glumci;
-            _sinospis = sinospis;
-            _godinaIzdavanja = godinaIzdavanja;
-            _vrijemeIzdavanja = vrijemeIzdavanja;
-            _slika = slika;
-            _datumUnosa = datumUnosa;
-            _datumPosljednjeIzmjene = datumPosljednjeIzmjene;
-            _username = username;
-            _ID = ID;
+            Naziv = naziv;
+            Zanr = zanr;
+            Reziser = reziser;
+            Glumci = glumci;
+            Sinospis = sinospis;
+            GodinaIzdavanja = godinaIzdavanja;
+            VrijemeTrajanja = vrijeme_Trajanja;
+            Slika = slika;
+            DatumUnosa = datumUnosa;
+            DatumPosljednjeIzmjene = datumPosljednjeIzmjene;
+            Username = username;
+            ID = id;
 
         }
 

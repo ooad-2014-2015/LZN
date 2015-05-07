@@ -8,19 +8,19 @@ namespace Kino
 {
     public class Karta
     {
-        public int _serijskiBroj { get; set; }
-        public string _nazivFilma { get; set; }
-        public DateTime _datumProjekcije { get; set; }
-        public string _nazivSale { get; set; }
-        public int _redniBrojSjedista { get; set; }
+        public int SerijskiBroj { get; set; }
+        public string NazivFilma { get; set; }
+        public DateTime DatumProjekcije { get; set; }
+        public string NazivSale { get; set; }
+        public int RedniBrojSjedista { get; set; }
 
         public Karta(int serijskiBroj, string nazivFilma, DateTime datumProjekcije, string nazivSale, int redniBrojSjedista)
         {
-            _serijskiBroj = serijskiBroj;
-            _nazivFilma = nazivFilma;
-            _datumProjekcije = datumProjekcije;
-            _nazivFilma = nazivFilma;
-            _redniBrojSjedista = redniBrojSjedista;
+            SerijskiBroj = serijskiBroj;
+            NazivFilma = nazivFilma;
+            DatumProjekcije = datumProjekcije;
+            NazivFilma = nazivFilma;
+            RedniBrojSjedista = redniBrojSjedista;
         }
 
     }

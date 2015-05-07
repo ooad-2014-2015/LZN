@@ -8,19 +8,19 @@ namespace Kino
 {
     public class StavkeNarudzbe
     {
-        public string _nazivArtikla { get; set; }
-        public int _IDArtikla { get; set; }
-        public int _kolicina { get; set; }
-        public double _iznos { get; set; }
-        public int _ID { get; set; }
+        public string NazivArtikla { get; set; }
+        public int IDArtikla { get; set; }
+        public int Kolicina { get; set; }
+        public double Iznos { get; set; }
+        public int ID { get; set; }
 
-        public StavkeNarudzbe(string nazivArtikla, int IDArtikla, int kolicina, double iznos, int ID)
+        public StavkeNarudzbe(string nazivArtikla, int IdArtikla, int kolicina, double iznos, int id)
         {
-            _nazivArtikla = nazivArtikla;
-            _IDArtikla = IDArtikla;
-            _kolicina = kolicina;
-            _iznos = iznos;
-            _ID = ID;
+            NazivArtikla = nazivArtikla;
+            IDArtikla = IdArtikla;
+            Kolicina = kolicina;
+            Iznos = iznos;
+            ID = id;
         }
 
     }

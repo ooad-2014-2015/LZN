@@ -8,16 +8,16 @@ namespace Kino
 {
     public class Korisnik: Osoba
     {
-        public string _username { get; set; }
-        public string  _TipKorisnika { get; set; }
-        public string _hashPassword { get; set; }
+        public string  Username { get; set; }
+        public string  TipKorisnika { get; set; }
+        public string  Password { get; set; }
 
-        public Korisnik(string ime, string prezime, int id, string username, string TipKorisnika, string hashPassword)
+        public Korisnik(string ime, string prezime, int id, string username, string tipKorisnika, string hashPassword)
             : base(ime, prezime, id)
         {
-            _username = username;
-            _TipKorisnika = TipKorisnika;
-            _hashPassword = hashPassword;
+            Username = username;
+            TipKorisnika = tipKorisnika;
+            Password = hashPassword;
         }
 
         public void RegistrujNovogKorisnika()

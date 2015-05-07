@@ -8,33 +8,33 @@ namespace Kino
 {
     public class Projekcija
     {
-        public int _salaFK { get; set; }
-        public List<bool> _zauzeto;
-        public string _vrijemeProjekcije { get; set; }
-        public string _dimenzionalnost { get; set; }
-        public int _filmFK { get; set; }
-        public string _tipProjekcije { get; set; }
-        public int _brojSlobodnihMjesta { get; set; }
-        public int _ID { get; set; }
-        public int _cjenovnikFK { get; set; }
+        public int SalaFK { get; set; }
+        public List<bool> Zauzeto;
+        public string VrijemeProjekcije { get; set; }
+        public string Dimenzionalnost { get; set; }
+        public int FilmFK { get; set; }
+        public string TipProjekcije { get; set; }
+        public int BrojSlobodnihMjesta { get; set; }
+        public int ID { get; set; }
+        public int CjenovnikFK { get; set; }
 
         public Projekcija()
         {
-            _zauzeto= new List<bool>();
+            Zauzeto= new List<bool>();
         }
 
         public Projekcija(int salaFK, List<bool> zauzeto, string vrijemeProjekcije, string dimenzionalnost, int filmFK, 
-            string tipProjekcije, int brojSlobodnihMjesta, int ID, int cjenovnikFK)
+            string tipProjekcije, int brojSlobodnihMjesta, int id, int cjenovnikFK)
         {
-            _salaFK = salaFK;
-            _zauzeto = zauzeto;
-            _vrijemeProjekcije = vrijemeProjekcije;
-            _dimenzionalnost = dimenzionalnost;
-            _filmFK = filmFK;
-            _tipProjekcije = tipProjekcije;
-            _brojSlobodnihMjesta = brojSlobodnihMjesta;
-            _ID = ID;
-            _cjenovnikFK = cjenovnikFK;
+            SalaFK = salaFK;
+            Zauzeto = zauzeto;
+            VrijemeProjekcije = vrijemeProjekcije;
+            Dimenzionalnost = dimenzionalnost;
+            FilmFK = filmFK;
+            TipProjekcije = tipProjekcije;
+            BrojSlobodnihMjesta = brojSlobodnihMjesta;
+            ID = id;
+            CjenovnikFK = cjenovnikFK;
         }
 
         public void PrikaziNaEkran()

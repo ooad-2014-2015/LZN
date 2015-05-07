@@ -8,30 +8,30 @@ namespace Kino
 {
     public class Rezervacija
     {
-        public int _ID { get; set; }
-        public DateTime _datumRezervacije { get; set; }
-        public List<StavkeNarudzbe> _hrana;
+        public int ID { get; set; }
+        public DateTime DatumRezervacije { get; set; }
+        public List<StavkeNarudzbe> Hrana;
 
         public Rezervacija()
         {
-            _hrana = new List<StavkeNarudzbe>();
+            Hrana = new List<StavkeNarudzbe>();
         }
 
-        public Rezervacija(int ID, DateTime datumRezervacije, List<StavkeNarudzbe> hrana)
+        public Rezervacija(int id, DateTime datumRezervacije, List<StavkeNarudzbe> hrana)
         {
-            _ID = ID;
-            _datumRezervacije = datumRezervacije;
-            _hrana = hrana;
+            ID = id;
+            DatumRezervacije = datumRezervacije;
+            Hrana = hrana;
         }
 
         public bool IzbrisiPostojecuStavku(int id)
         {
             int brojac = 0;
-            foreach(StavkeNarudzbe s in _hrana)
+            foreach(StavkeNarudzbe s in Hrana)
             {
-                if (s._ID == id)
+                if (s.ID == id)
                 {
-                    _hrana.RemoveAt(brojac);
+                    Hrana.RemoveAt(brojac);
                     return true;
                 }
                 brojac++;
@@ -42,7 +42,7 @@ namespace Kino
 
         public void DodajNovuStavku(StavkeNarudzbe s)
         {
-            _hrana.Add(s);
+            Hrana.Add(s);
         }
 
 

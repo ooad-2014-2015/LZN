@@ -8,34 +8,34 @@ namespace Kino
 {
     public class Cjenovnik
     {
-        public double _osnova { get; set; }
-        public int _dodatakZaNocneProjekcije { get; set; }
-        public int _dodatakZaLjubavnaMjesta { get; set; }
-        public int _dodatakZaVip { get; set; }
-        public int _dodatakZaPremijere { get; set; }
-        public int _dodatakZa3D { get; set; }
-        public int _popustZaVipKorisnike { get; set; }
-        public int _popustZaRodjendaskePakete { get; set; }
-        public DateTime _zadnjaIzmjena { get; set; }
-        public string _username { get; set; } //ovo da se zna ko je pravio izmjene??
-        public int _ID { get; set; }
+        public double Osnova { get; set; }
+        public int DodatakZaNocneProjekcije { get; set; }
+        public int DodatakZaLjubavnaMjesta { get; set; }
+        public int DodatakZaVip { get; set; }
+        public int DodatakZaPremijere { get; set; }
+        public int DodatakZa3D { get; set; }
+        public int PopustZaVipKorisnike { get; set; }
+        public int PopustZaRodjendaskePakete { get; set; }
+        public DateTime ZadnjaIzmjena { get; set; }
+        public string Username { get; set; } //ovo da se zna ko je pravio izmjene??
+        public int ID { get; set; }
 
 
         public Cjenovnik(double osnova, int dodatakZaNocneProjekcije, int dodatakZaLjubavnaMjesta, int dodatakZaVip,
             int dodatakZaPremijere, int dodatakZa3D, int popustZaVipKorisnike, int popustZaRodjendanskePakete,
             DateTime zadnjaIzmjena, string username, int id)
         {
-            _osnova = osnova;
-            _dodatakZaNocneProjekcije = dodatakZaNocneProjekcije;
-            _dodatakZaLjubavnaMjesta = dodatakZaLjubavnaMjesta;
-            _dodatakZaVip = _dodatakZaVip;
-            _dodatakZaPremijere = dodatakZaPremijere;
-            _dodatakZa3D = dodatakZa3D;
-            _popustZaVipKorisnike = popustZaVipKorisnike;
-            _popustZaRodjendaskePakete = popustZaRodjendanskePakete;
-            _zadnjaIzmjena = zadnjaIzmjena;
-            _username = username;
-            _ID = id;
+            Osnova = osnova;
+            DodatakZaNocneProjekcije = dodatakZaNocneProjekcije;
+            DodatakZaLjubavnaMjesta = dodatakZaLjubavnaMjesta;
+            DodatakZaVip = DodatakZaVip;
+            DodatakZaPremijere = dodatakZaPremijere;
+            DodatakZa3D = dodatakZa3D;
+            PopustZaVipKorisnike = popustZaVipKorisnike;
+            PopustZaRodjendaskePakete = popustZaRodjendanskePakete;
+            ZadnjaIzmjena = zadnjaIzmjena;
+            Username = username;
+            ID = id;
         }
 
 

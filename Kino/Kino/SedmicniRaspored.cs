@@ -8,22 +8,22 @@ namespace Kino
 {
     public class SedmicniRaspored
     {
-        public int _ID { get; set; }
-        public List<Projekcija> _projekcije;
-        public DateTime _datumPocetka { get; set; }
-        public DateTime _datumZavrsetka { get; set; }
+        public int ID { get; set; }
+        public List<Projekcija> Projekcije;
+        public DateTime DatumPocetka { get; set; }
+        public DateTime DatumZavrsetka { get; set; }
 
         public SedmicniRaspored()
         {
-            _projekcije = new List<Projekcija>();
+            Projekcije = new List<Projekcija>();
         }
 
-        public SedmicniRaspored(int ID, List<Projekcija> projekcije, DateTime datumPocetka, DateTime datumZavrsetka)
+        public SedmicniRaspored(int id, List<Projekcija> projekcije, DateTime datumPocetka, DateTime datumZavrsetka)
         {
-            _ID = ID;
-            _projekcije = projekcije;
-            _datumPocetka = datumPocetka;
-            _datumZavrsetka = datumZavrsetka;
+            ID = id;
+            Projekcije = projekcije;
+            DatumPocetka = datumPocetka;
+            DatumZavrsetka = datumZavrsetka;
         }
 
         public void DodajNovuProjekciju(Projekcija nova)
@@ -35,11 +35,11 @@ namespace Kino
         public bool IzbrisiProjekciju(int id)
         {
             int brojac=0;
-            foreach (Projekcija p in _projekcije)
+            foreach (Projekcija p in Projekcije)
             { 
-                if(p._ID == id)
+                if(p.ID == id)
                 {
-                    _projekcije.RemoveAt(brojac);
+                    Projekcije.RemoveAt(brojac);
                     return true;
                 }
                 brojac++;

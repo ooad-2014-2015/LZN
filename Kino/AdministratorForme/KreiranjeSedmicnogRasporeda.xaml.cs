@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Kino;
 
 namespace AdministratorForme
 {
@@ -23,6 +24,13 @@ namespace AdministratorForme
         {
             InitializeComponent();
             CjenovnikCekiran();
+            List<Film> filmovi = new List<Film> {
+                new Film{ID = 1, Naziv = "Neki film", GodinaIzdavanja = 1995, Zanr = "komedija", DatumPosljednjeIzmjene = DateTime.Now, DatumUnosa = DateTime.Now,
+                Glumci = new List<string>{"ja", "ti"}, Reziser = "On", Sinospis = "gfnerogjer", Slika = "adaw", Username ="dzemal", VrijemeTrajanja = 120},
+                new Film{ID = 2, Naziv = "Život je lijep", GodinaIzdavanja = 2012, Zanr = "komedija", DatumPosljednjeIzmjene = DateTime.Now, DatumUnosa = DateTime.Now,
+                Glumci = new List<string>{"ja", "ti"}, Reziser = "Nihad", Sinospis = "ydthn", Slika = "drtfn", Username ="Čenga", VrijemeTrajanja = 115}
+            };
+            tabela.ItemsSource = filmovi;
         }
         #region metodeZaCjenovnikCheckBox
         private void CjenovnikCekiran() //Mijenja ReadOnly property TextBoxova iz cjenovnika

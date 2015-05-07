@@ -37,7 +37,7 @@ namespace Kino
             int brojac = 0;
             foreach (Film f in _filmovi)
             {
-                if (f._ID == id)
+                if (f.ID == id)
                 {
                     _filmovi.RemoveAt(brojac);
                     return true;
@@ -52,7 +52,7 @@ namespace Kino
             bool postoji=false;
             foreach (Film fl in _filmovi)
             {
-                if (f._naziv == fl._naziv && f._reziser == fl._reziser && f._godinaIzdavanja == fl._godinaIzdavanja) postoji = true;
+                if (f.Naziv == fl.Naziv && f.Reziser == fl.Reziser && f.GodinaIzdavanja == fl.GodinaIzdavanja) postoji = true;
             }
 
             if (!postoji)
@@ -74,12 +74,12 @@ namespace Kino
             bool postoji = false;
             foreach (Sala sl in _sale)
             {
-                if (s._nazivSale == sl._nazivSale) postoji = true;
+                if (s.NazivSale == sl.NazivSale) postoji = true;
             }
 
             if (!postoji)
             {
-                _sale.Add(a);
+              //?  _sale.Add(s1);
             }
         }
         //Ima ih još hejbet
