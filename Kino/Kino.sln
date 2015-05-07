@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PočetnaLoginForma", "PočetnaLoginForma\PočetnaLoginForma.csproj", "{3AE009AA-92AB-464C-80BB-A1B1845D0514}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinansijskiMenadžerForme", "FinansijskiMenadžerForme\FinansijskiMenadžerForme.csproj", "{E1BE1927-2587-4220-8E05-6E1B75910797}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdministratorForme", "AdministratorForme\AdministratorForme.csproj", "{E80E2776-4CA4-4F91-8C5F-B15AF8037853}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kino", "Kino\Kino.csproj", "{DDA27E24-1A54-4794-933A-5C71DC2CE573}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{E80E2776-4CA4-4F91-8C5F-B15AF8037853}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E80E2776-4CA4-4F91-8C5F-B15AF8037853}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E80E2776-4CA4-4F91-8C5F-B15AF8037853}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDA27E24-1A54-4794-933A-5C71DC2CE573}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDA27E24-1A54-4794-933A-5C71DC2CE573}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDA27E24-1A54-4794-933A-5C71DC2CE573}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDA27E24-1A54-4794-933A-5C71DC2CE573}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
