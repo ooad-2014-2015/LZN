@@ -1,0 +1,115 @@
+﻿<Window x:Class="AdministratorForme.KreiranjeSedmicnogRasporeda"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Kreiranje sedmičnog rasporeda" Height="422" Width="778">
+    <TabControl Name="tabProjekcija">
+        <TabItem Name="postavke" Header="Postavke">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="48"/>
+                    <ColumnDefinition Width="152"/>
+                    <ColumnDefinition Width="70"/>
+                    <ColumnDefinition Width="172"/>
+                    <ColumnDefinition Width="47"/>
+                    <ColumnDefinition Width="153"/>
+                    <ColumnDefinition Width="100"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="27"/>
+                    <RowDefinition Height="53"/>
+                    <RowDefinition Height="46"/>
+                    <RowDefinition Height="29"/>
+                    <RowDefinition Height="27"/>
+                    <RowDefinition Height="94"/>
+                </Grid.RowDefinitions>
+                <GroupBox Grid.ColumnSpan="3" Grid.RowSpan="4" Grid.Column="1" Margin="0" Grid.Row="1" Header="Postavke"/>
+                <DatePicker Name="pocetak" Grid.Column="2" Grid.Row="2" Margin="0,0,142,0" Text="Datum" FirstDayOfWeek="Monday" Cursor="Hand" DisplayDateStart="2015-05-06" Grid.ColumnSpan="2"/>
+                <Label Grid.Column="1" Grid.Row="2" HorizontalAlignment="Right" Width="109">Prvi dan rasporeda</Label>
+
+                <GroupBox Grid.Column="5" Grid.Row="1" Grid.ColumnSpan="2" Margin="0,0,10,23" Grid.RowSpan="6" Header="Cjenovnik" Name="cjenovnik">
+                    <Grid Name="cjenovnikGrid">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="132"/>
+                            <ColumnDefinition Width="101"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="25"/>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Column="0" Grid.Row="0" HorizontalAlignment="Right" Width="50">Osnova</Label>
+                        <Label Grid.Column="1" HorizontalAlignment="left" Width="30" Margin="68,0,0,0">KM</Label>
+                        <TextBox IsReadOnly="True" Text="5" Grid.Column="1" Margin="6,0,36,0"/>
+                    </Grid>
+                </GroupBox>
+                <CheckBox Name="postojeciCjenovnik" Grid.Column="6" Grid.Row="6" Margin="2,10,81,5" RenderTransformOrigin="11.412,0.438" IsChecked="True" Unchecked="postojeciCjenovnik_Unchecked" Checked="postojeciCjenovnik_Checked"/>
+                <Label Grid.Column="5" Margin="0,3,3,0" Grid.Row="6" RenderTransformOrigin="1.813,3.042">Koristi postojeći cjenovnik</Label>
+                <Button Grid.Column="3" Grid.Row="5">Kreiraj raspored</Button>
+            </Grid>
+        </TabItem>
+        <TabItem Name="ponedjeljak" Header="Ponedjeljak">
+            <Grid Name="ponedjeljakGrid">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="226"/>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="120"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="81"/>
+                    <RowDefinition Height="19"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+                <GroupBox Header="Termin 14.00h" Grid.ColumnSpan="3" Margin="10,0,10,1" Grid.RowSpan="2" Grid.Row="1" Grid.Column="1">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="100"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="25"/>
+                        </Grid.RowDefinitions>
+                    </Grid>
+                    
+                </GroupBox>
+            </Grid>
+        </TabItem>
+        <TabItem Name="utorak" Header="Utorak">
+
+        </TabItem>
+        <TabItem Name="srijeda" Header="Srijeda">
+
+        </TabItem>
+        <TabItem Name="cetvrtak" Header="Četvrtak">
+
+        </TabItem>
+        <TabItem Name="petak" Header="Petak">
+
+        </TabItem>
+        <TabItem Name="subota" Header="Subota">
+
+        </TabItem>
+        <TabItem Name="nedjelja" Header="Nedjelja">
+
+        </TabItem>
+    </TabControl>
+
+</Window>
