@@ -20,11 +20,12 @@ namespace AdministratorForme
     /// </summary>
     public partial class KreiranjeSedmicnogRasporeda : Window
     {
+        List<Film> filmovi; //izbrisati
         public KreiranjeSedmicnogRasporeda()
         {
             InitializeComponent();
             CjenovnikCekiran();
-            List<Film> filmovi = new List<Film> {
+            filmovi = new List<Film> {
                 new Film{ID = 1, Naziv = "Neki film", GodinaIzdavanja = 1995, Zanr = "komedija", DatumPosljednjeIzmjene = DateTime.Now, DatumUnosa = DateTime.Now,
                 Glumci = new List<string>{"ja", "ti"}, Reziser = "On", Sinospis = "gfnerogjer", Slika = "adaw", Username ="dzemal", VrijemeTrajanja = 120},
                 new Film{ID = 2, Naziv = "Život je lijep", GodinaIzdavanja = 2012, Zanr = "komedija", DatumPosljednjeIzmjene = DateTime.Now, DatumUnosa = DateTime.Now,
@@ -57,5 +58,23 @@ namespace AdministratorForme
         }
         #endregion
 
+        #region metodeZaOdabirFilmaButtonClick
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (tabela.SelectedIndex == -1)
+                return;
+
+            ponedjeljakFilm1.Text = filmovi[tabela.SelectedIndex].Naziv;
+        }
+        #endregion
+
+        #region metodeZaPonistavanjePretrage
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            tabela.ItemsSource = filmovi;
+        }
+        #endregion
     }
 }

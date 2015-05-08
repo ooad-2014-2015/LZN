@@ -70,28 +70,39 @@
                     <RowDefinition Height="50"/>
                     <RowDefinition Height="50"/>
                 </Grid.RowDefinitions>
-                <GroupBox Header="Termin 14.00h" Grid.ColumnSpan="4" Margin="0,10,0,0" Grid.RowSpan="3" Grid.Row="0" Grid.Column="1" >
+                <GroupBox Header="Termin 14.00h" Grid.ColumnSpan="4" Margin="0,10,0,0" Grid.RowSpan="5" Grid.Row="0" Grid.Column="1" Padding="0" >
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="82"/>
                             <ColumnDefinition Width="140"/>
-                            <ColumnDefinition Width="125"/>
-                            <ColumnDefinition Width="173"/>
-                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="94"/>
+                            <ColumnDefinition Width="121"/>
+                            <ColumnDefinition Width="18"/>
+                            <ColumnDefinition Width="130"/>
+                            <ColumnDefinition Width="19"/>
+                            <ColumnDefinition Width="130"/>
+                            <ColumnDefinition Width="16"/>
+                            <ColumnDefinition Width="130"/>
+                            <ColumnDefinition Width="14"/>
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="25"/>
                             <RowDefinition Height="13"/>
                             <RowDefinition Height="26"/>
                             <RowDefinition Height="16"/>
-                            <RowDefinition Height="68"/>
-                            <RowDefinition Height="15"/>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="89"/>
+                            <RowDefinition Height="23*"/>
+                            <RowDefinition Height="32*"/>
                         </Grid.RowDefinitions>
-                        <Label HorizontalAlignment="Right" Width="31">Sala</Label>
-                        <Label Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right" RenderTransformOrigin="0.531,1.885" Width="81">Tip projekcije</Label>
-                        <ComboBox Name="sale1" Grid.Column="1" IsDropDownOpen="True"></ComboBox>
-                        <ComboBox Grid.Column="1" Grid.Row="2" Name="projekcije1" IsDropDownOpen="True"></ComboBox>
-                        <GroupBox Grid.Column="1" Grid.Row="4">
+                        <Label HorizontalAlignment="Right" Width="31" Margin="0,0,0,12" Grid.RowSpan="2">Sala</Label>
+                        <Label Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right" RenderTransformOrigin="0.531,1.885" Width="81" Margin="0,2,0,13" Grid.RowSpan="2">Tip projekcije</Label>
+                        <ComboBox Name="ponedjeljakSale1" Grid.Column="1" IsDropDownOpen="True" Margin="0,0,0,12" Grid.RowSpan="2"></ComboBox>
+                        <ComboBox Grid.Column="1" Grid.Row="2" Name="ponedjeljakProjekcije1" IsDropDownOpen="True" Margin="0,2,0,13" Grid.RowSpan="2"></ComboBox>
+                        <Label Grid.Column="0" Grid.Row="4" HorizontalAlignment="Right" Width="31" RenderTransformOrigin="3.139,-1.577" Margin="0,4,0,84" Grid.RowSpan="2">Film</Label>
+                        <TextBox Name="ponedjeljakFilm1" IsReadOnly="True" Grid.Column="1" Grid.Row="4" Margin="0,4,0,84" Grid.RowSpan="2"></TextBox>
+                        <CheckBox Grid.Row="7" Grid.ColumnSpan="2" Margin="52,0,0,0">Dodaj projekciju u raspored</CheckBox>
+                        <GroupBox Grid.Column="1" Grid.Row="5" Margin="0,8,0,4">
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="18"/>
@@ -101,43 +112,51 @@
                                     <RowDefinition Height="29"></RowDefinition>
                                     <RowDefinition Height="33"></RowDefinition>
                                 </Grid.RowDefinitions>
-                                <RadioButton Name="dvaD1" IsChecked="True" Margin="27,10,32,0" RenderTransformOrigin="3.368,1.571" Grid.Column="1">2D</RadioButton>
-                                <RadioButton Name="triD1" IsChecked="False" Grid.Row="1" Grid.Column="1" Margin="27,10,32,0">3D</RadioButton>
+                                <RadioButton Name="ponedjeljak2D1" IsChecked="True" Margin="27,10,32,0" RenderTransformOrigin="3.368,1.571" Grid.Column="1">2D</RadioButton>
+                                <RadioButton Name="ponedjeljak3D1" IsChecked="False" Grid.Row="1" Grid.Column="1" Margin="27,10,32,0">3D</RadioButton>
                             </Grid>
                         </GroupBox>
-                        <GroupBox Grid.Column="3" Grid.ColumnSpan="2" Margin="0,10,-261,0" Grid.RowSpan="6">
-                            <Grid>
+                        <GroupBox Grid.Column="3" Grid.ColumnSpan="7" Margin="0,0,22,0" Grid.RowSpan="8" Height="249" VerticalAlignment="Top">
+                            <Grid Margin="0,0,0,-15">
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="82"/>
-                                    <ColumnDefinition Width="163"/>
-                                    <ColumnDefinition Width="110"/>
-                                    <ColumnDefinition Width="222"/>
+                                    <ColumnDefinition Width="120"/>
+                                    <ColumnDefinition Width="12"/>
+                                    <ColumnDefinition Width="126"/>
+                                    <ColumnDefinition Width="12"/>
+                                    <ColumnDefinition Width="120"/>
+                                    <ColumnDefinition Width="10"/>
+                                    <ColumnDefinition Width="126"/>
+                                    <ColumnDefinition Width="51"/>
                                 </Grid.ColumnDefinitions>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="25"/>
-                                    <RowDefinition Height="25"/>
+                                    <RowDefinition Height="Auto"/>
                                     <RowDefinition Height="25"/>
                                     <RowDefinition Height="25"/>
                                     <RowDefinition Height="25"/>
                                     <RowDefinition Height="25"/>
                                 </Grid.RowDefinitions>
-                                <Label Grid.Column="0" Grid.Row="0" HorizontalAlignment="Right" Width="53">Id filma</Label>
-                                <Label Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right" Width="68">Naziv filma</Label>
-                                <Label Grid.Column="2" Grid.Row="0" HorizontalAlignment="Right" Width="34">Žanr</Label>
-                                <Label Grid.Column="2" Grid.Row="1" HorizontalAlignment="Right" Width="102">Godina izdavanja</Label>
-                                <TextBox Grid.Column="1" Grid.Row="0"></TextBox>
-                                <TextBox Grid.Column="1" Grid.Row="1"></TextBox>
-                                <TextBox Grid.Column="3" Grid.Row="0" Margin="0,0,53,0"></TextBox>
-                                <TextBox Grid.Column="3" Grid.Row="1" Margin="0,0,53,0"></TextBox>
-                                <DataGrid ItemsSource="{Binding Source=filmovi}" AutoGenerateColumns="False" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="4" Margin="0,0,53,0" Grid.RowSpan="4" Name="tabela" SelectionMode="Single" CanUserReorderColumns="False" BorderBrush="#FF0081FF" Foreground="#FFB00000">
+                                <Label Grid.Column="0" Grid.Row="0" HorizontalAlignment="Right" Width="53" Margin="0,0,42,0">Id filma</Label>
+                                <Label Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right" Width="68" Margin="0,0,47,0">Naziv filma</Label>
+                                <Label Grid.Column="4" Grid.Row="0" HorizontalAlignment="Right" Width="34" Margin="0,0,10,0">Žanr</Label>
+                                <Label Grid.Column="4" Grid.Row="1" HorizontalAlignment="Right" Width="102" Margin="0,0,5,0">Godina izdavanja</Label>
+                                <TextBox Grid.Row="0" Grid.ColumnSpan="3" Margin="78,0,51,0"/>
+                                <TextBox Grid.Row="1" Grid.ColumnSpan="3" Margin="78,0,51,0"/>
+                                <TextBox Grid.Column="5" Grid.Row="0" Margin="0,0,2,0" Grid.ColumnSpan="2"></TextBox>
+                                <TextBox Grid.Column="5" Grid.Row="1" Margin="0,0,2,0" Grid.ColumnSpan="2"></TextBox>
+                                <DataGrid ItemsSource="{Binding Source=filmovi}" AutoGenerateColumns="False" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="7" Margin="0,0,2,-54" Grid.RowSpan="4" Name="tabela" SelectionMode="Single" CanUserReorderColumns="False" BorderBrush="#FF0081FF" Foreground="#FFB00000">
                                     <DataGrid.Columns>
                                         <DataGridTextColumn Header="ID" Width="30" Binding="{Binding ID}"></DataGridTextColumn>
-                                        <DataGridTextColumn Header="Naziv filma" Width="300" Binding="{Binding Naziv}"></DataGridTextColumn>
+                                        <DataGridTextColumn Header="Naziv filma" Width="280" Binding="{Binding Naziv}"></DataGridTextColumn>
+                                        <DataGridTextColumn Header="Vrijeme trajanja" Width="95" Binding="{Binding VrijemeTrajanja}"></DataGridTextColumn>
                                         <DataGridTextColumn Header="Žanr" Width="130" Binding="{Binding Zanr}"></DataGridTextColumn>
                                         <DataGridTextColumn Header="Godina izdavanja" Width="50" Binding="{Binding GodinaIzdavanja}"></DataGridTextColumn>
                                     </DataGrid.Columns>
-                                  
                                 </DataGrid>
+                                <Button Grid.Column="0" Grid.Row="5" Margin="0,86,0,-84" Grid.ColumnSpan="1" Click="Button_Click">Odaber film</Button>
+                                <Button Grid.Column="4" Grid.Row="5" Margin="0,86,0,-84" Click="Button_Click_1">Poništi</Button>
+                                <Button Grid.Column="6" Grid.Row="5" Margin="0,86,0,-84">Traži</Button>
+                                <Button Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="2" Margin="10,86,2,-84">Detalji</Button>
                             </Grid>
                         </GroupBox>
                     </Grid>
