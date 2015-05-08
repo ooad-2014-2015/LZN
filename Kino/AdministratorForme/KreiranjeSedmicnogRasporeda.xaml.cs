@@ -26,12 +26,14 @@ namespace AdministratorForme
             InitializeComponent();
             CjenovnikCekiran();
             filmovi = new List<Film> {
-                new Film{ID = 1, Naziv = "Neki film", GodinaIzdavanja = 1995, Zanr = "komedija", DatumPosljednjeIzmjene = DateTime.Now, DatumUnosa = DateTime.Now,
-                Glumci = new List<string>{"ja", "ti"}, Reziser = "On", Sinospis = "gfnerogjer", Slika = "adaw", Username ="dzemal", VrijemeTrajanja = 120},
-                new Film{ID = 2, Naziv = "Život je lijep", GodinaIzdavanja = 2012, Zanr = "komedija", DatumPosljednjeIzmjene = DateTime.Now, DatumUnosa = DateTime.Now,
-                Glumci = new List<string>{"ja", "ti"}, Reziser = "Nihad", Sinospis = "ydthn", Slika = "drtfn", Username ="Čenga", VrijemeTrajanja = 115}
+                new Film{ID = 1, Naziv = "Titanik", GodinaIzdavanja = 1997, Zanr = "drama", DatumPosljednjeIzmjene = DateTime.Now, DatumUnosa = DateTime.Now,
+                Glumci = new List<string>{"Kate Winslet", "Leonardo Di Caprio"}, Reziser = "James Cameron", Sinospis = "Neki opis", Slika = "Zasad nema", Username ="dzemal", VrijemeTrajanja = 145},
+                new Film{ID = 2, Naziv = "Život je lijep", GodinaIzdavanja = 1995, Zanr = "drama", DatumPosljednjeIzmjene = DateTime.Now, DatumUnosa = DateTime.Now,
+                Glumci = new List<string>{"Roberto Beninni"}, Reziser = "Ne znam", Sinospis = "Neki opis", Slika = "Nema slike", Username ="dzemal", VrijemeTrajanja = 115}
             };
-            tabela.ItemsSource = filmovi;
+            var projekcije = new List<string> { "premijera", "pretpremijera", "obična projekcija"};
+            PopuniTabele();
+            PopuniTipProjekcije(projekcije);
         }
         #region metodeZaCjenovnikCheckBox
         private void CjenovnikCekiran() //Mijenja ReadOnly property TextBoxova iz cjenovnika
@@ -57,15 +59,79 @@ namespace AdministratorForme
             //Vratiti pocetne vrijednosti
         }
         #endregion
+        #region metodeZaPunjenjeKontrolaPodacima
+        
+        private void PopuniTipProjekcije(List<string> projekcije)
+        {
+            ponedjeljakProjekcije1.ItemsSource = projekcije;
+            ponedjeljakProjekcije2.ItemsSource = projekcije;
+            ponedjeljakProjekcije3.ItemsSource = projekcije;
+
+            utorakProjekcije1.ItemsSource = projekcije;
+            utorakProjekcije2.ItemsSource = projekcije;
+            utorakProjekcije3.ItemsSource = projekcije;
+
+            srijedaProjekcije1.ItemsSource = projekcije;
+            srijedaProjekcije2.ItemsSource = projekcije;
+            srijedaProjekcije3.ItemsSource = projekcije;
+
+            cetvrtakProjekcije1.ItemsSource = projekcije;
+            cetvrtakProjekcije2.ItemsSource = projekcije;
+            cetvrtakProjekcije3.ItemsSource = projekcije;
+
+            petakProjekcije1.ItemsSource = projekcije;
+            petakProjekcije2.ItemsSource = projekcije;
+            petakProjekcije3.ItemsSource = projekcije;
+
+            subotaProjekcije1.ItemsSource = projekcije;
+            subotaProjekcije2.ItemsSource = projekcije;
+            subotaProjekcije3.ItemsSource = projekcije;
+
+            nedjeljaProjekcije1.ItemsSource = projekcije;
+            nedjeljaProjekcije2.ItemsSource = projekcije;
+            nedjeljaProjekcije3.ItemsSource = projekcije;
+            
+        }
+        private void PopuniTabele()
+        {
+            ponedjeljakTabela1.ItemsSource = filmovi;
+            ponedjeljakTabela2.ItemsSource = filmovi;
+            ponedjeljakTabela3.ItemsSource = filmovi;
+
+            utorakTabela1.ItemsSource = filmovi;
+            utorakTabela2.ItemsSource = filmovi;
+            utorakTabela3.ItemsSource = filmovi;
+
+            srijedaTabela1.ItemsSource = filmovi;
+            srijedaTabela2.ItemsSource = filmovi;
+            srijedaTabela3.ItemsSource = filmovi;
+
+            cetvrtakTabela1.ItemsSource = filmovi;
+            cetvrtakTabela2.ItemsSource = filmovi;
+            cetvrtakTabela3.ItemsSource = filmovi;
+
+            petakTabela1.ItemsSource = filmovi;
+            petakTabela2.ItemsSource = filmovi;
+            petakTabela3.ItemsSource = filmovi;
+
+            subotaTabela1.ItemsSource = filmovi;
+            subotaTabela2.ItemsSource = filmovi;
+            subotaTabela3.ItemsSource = filmovi;
+
+            nedjeljaTabela1.ItemsSource = filmovi;
+            nedjeljaTabela2.ItemsSource = filmovi;
+            nedjeljaTabela3.ItemsSource = filmovi;
+        }
+        #endregion
 
         #region metodeZaOdabirFilmaButtonClick
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (tabela.SelectedIndex == -1)
+            if (ponedjeljakTabela1.SelectedIndex == -1)
                 return;
 
-            ponedjeljakFilm1.Text = filmovi[tabela.SelectedIndex].Naziv;
+            ponedjeljakFilm1.Text = filmovi[ponedjeljakTabela1.SelectedIndex].Naziv;
         }
         #endregion
 
@@ -73,7 +139,7 @@ namespace AdministratorForme
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            tabela.ItemsSource = filmovi;
+            ponedjeljakTabela1.ItemsSource = filmovi;
         }
         #endregion
     }
