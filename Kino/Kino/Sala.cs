@@ -13,6 +13,7 @@ namespace Kino
         public int BrojLjubavnihSjedista { get; set; }
         public int BrojVipSjedista { get; set; }
         public int ID { get; set; }
+        public int UkupanBrojMijesta { get; set; }
 
         public Sala(string nazivSale, int brojObicnihSjedista, int brojLjubavnihSjedista, int brojVipSjedista, int id)
         {
@@ -21,6 +22,12 @@ namespace Kino
             BrojLjubavnihSjedista = brojLjubavnihSjedista;
             BrojVipSjedista = brojVipSjedista;
             ID = id;
+            UkupanBrojMijesta = brojLjubavnihSjedista + BrojObicnihSjedista + BrojVipSjedista;
+        }
+
+        public Sala()
+        {
+            // TODO: Complete member initialization
         }
 
     }

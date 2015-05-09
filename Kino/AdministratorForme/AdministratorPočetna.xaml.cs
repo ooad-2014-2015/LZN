@@ -27,9 +27,9 @@ namespace AdministratorForme
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             var prozor = new KreiranjeSedmicnogRasporeda();
-            this.Hide();
+            //this.Hide();
             prozor.ShowDialog();
-            this.ShowDialog();
+            //this.ShowDialog();
         }
     }
 }
