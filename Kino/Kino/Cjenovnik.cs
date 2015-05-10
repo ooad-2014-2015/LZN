@@ -17,12 +17,13 @@ namespace Kino
         public int PopustZaVipKorisnike { get; set; }
         public int PopustZaRodjendaskePakete { get; set; }
         public DateTime ZadnjaIzmjena { get; set; }
-        public string Username { get; set; } //ovo da se zna ko je pravio izmjene??
+        public string Username { get; set; } 
         public int ID { get; set; }
-
+        public int DodatakZaFilmoveDuzeOd120Min { get; set; }
+        public int DodatakZaPretpremijere { get; set; }
 
         public Cjenovnik(double osnova, int dodatakZaNocneProjekcije, int dodatakZaLjubavnaMjesta, int dodatakZaVip,
-            int dodatakZaPremijere, int dodatakZa3D, int popustZaVipKorisnike, int popustZaRodjendanskePakete,
+            int dodatakZaPremijere, int dodatakZa3D, int popustZaVipKorisnike, int popustZaRodjendanskePakete, int dodatakaZaDugeFilmove, int dodatakPretpremijere,
             DateTime zadnjaIzmjena, string username, int id)
         {
             Osnova = osnova;
@@ -36,6 +37,13 @@ namespace Kino
             ZadnjaIzmjena = zadnjaIzmjena;
             Username = username;
             ID = id;
+            DodatakZaFilmoveDuzeOd120Min = dodatakaZaDugeFilmove;
+            DodatakZaPretpremijere = dodatakPretpremijere;
+        }
+
+        public Cjenovnik()
+        {
+            // TODO: Complete member initialization
         }
 
 
