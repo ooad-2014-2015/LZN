@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Kino;
+using System.Collections;
+using System.Threading;
 
 namespace AdministratorForme
 {
@@ -70,6 +72,11 @@ namespace AdministratorForme
         }
         #region Medote za kreiranje i validaciju rasporeda
 
+        private DateTime OdrediDatumZavrsetka(DateTime datumPocetka)
+        {
+            int dan = datumPocetka.Day + 6;
+            return new DateTime(datumPocetka.Year, datumPocetka.Month, dan, 0, 0, 0, 0);
+        }
         private int DajId(string film)
         {
             foreach(var item in filmovi)
@@ -98,7 +105,41 @@ namespace AdministratorForme
 
             return new DateTime(pocetak.SelectedDate.Value.Year, pocetak.SelectedDate.Value.Month, dan, sati, 0, 0, 0);
                 
-        } //Ne radi kako treba
+        }
+        private void ObojiKontrole(ArrayList crvene, ArrayList zelene)
+        {
+            foreach(var item in crvene)
+            {
+                if(item is TextBox)
+                {
+                    TextBox t = item as TextBox;
+                    t.BorderThickness = new Thickness(2, 2, 2, 2);
+                    t.BorderBrush = Brushes.Red;
+                }
+                else if(item is ComboBox)
+                {
+                    ComboBox c = item as ComboBox;
+                    c.BorderThickness = new Thickness(2, 2, 2, 2);
+                    c.BorderBrush = Brushes.Red;
+                }
+            }
+
+            foreach(var item in zelene)
+            {
+                if (item is TextBox)
+                {
+                    TextBox t = item as TextBox;
+                    t.BorderThickness = new Thickness(2, 2, 2, 2);
+                    t.BorderBrush = Brushes.ForestGreen;
+                }
+                else if (item is ComboBox)
+                {
+                    ComboBox c = item as ComboBox;
+                    c.BorderThickness = new Thickness(2, 2, 2, 2);
+                    c.BorderBrush = Brushes.ForestGreen;
+                }
+            }
+        }
         private void ValidirajGroupBox(Grid grid)
         {
             DateTime vrijemeProjekcije = DateTime.Now;
@@ -113,6 +154,9 @@ namespace AdministratorForme
             string  projekcija = String.Empty, dimenzionalnost = String.Empty;
             int filmFK = 0, brojGresaka = 0, SalaFk = 0;
 
+            ArrayList crvene = new ArrayList();
+            ArrayList zelene = new ArrayList();
+
             for (int i = 0; i < VisualTreeHelper.GetChildrenCount(grid); i++)
             {
                 Visual kontrola = (Visual)VisualTreeHelper.GetChild(grid, i);
@@ -122,13 +166,11 @@ namespace AdministratorForme
                     if(g.Text.Length > 0)
                     {
                         filmFK = DajId(g.Text);
-                        g.BorderThickness = new Thickness(2, 2, 2, 2);
-                        g.BorderBrush = Brushes.Green;
+                        zelene.Add(g);
                     }
                     else
                     {
-                        g.BorderThickness = new Thickness(2, 2, 2, 2);
-                        g.BorderBrush = Brushes.Red;
+                        crvene.Add(g);
                         brojGresaka++;
                     }
                 }
@@ -139,30 +181,26 @@ namespace AdministratorForme
                     {
                         if(c.SelectedIndex == -1)
                         {
-                            c.BorderThickness = new Thickness(2, 2, 2, 2);
-                            c.BorderBrush = Brushes.Red;
+                            crvene.Add(c);
                             brojGresaka++;
                         }
                         else
                         {
                             SalaFk = sale[c.SelectedIndex].ID;
-                            c.BorderThickness = new Thickness(2, 2, 2, 2);
-                            c.BorderBrush = Brushes.Green;
+                            zelene.Add(c);
                         }
                     }
                     else if (c.Name.Contains("Projekcije")) //Ako je projekcija
                     {
                         if (c.SelectedIndex == -1)
                         {
-                            c.BorderThickness = new Thickness(2, 2, 2, 2);
-                            c.BorderBrush = Brushes.Red;
+                            crvene.Add(c);
                             brojGresaka++;
                         }
                         else
                         {
                             projekcija = c.SelectedItem.ToString();
-                            c.BorderThickness = new Thickness(2, 2, 2, 2);
-                            c.BorderBrush = Brushes.Green; //Ovo raditi naknadno
+                            zelene.Add(c);
                         }
                     }
                 }
@@ -185,6 +223,7 @@ namespace AdministratorForme
                     }
                 }
             }
+            ObojiKontrole(crvene, zelene);
             ukupanBrojGresaka += brojGresaka;
             raspored.Projekcije.Add(new Projekcija(SalaFk, vrijemeProjekcije, dimenzionalnost, filmFK, projekcija, 1, cjenovnik.ID)); //Zadnja 2 parametra obavezno izmjeniti
         }
@@ -195,24 +234,65 @@ namespace AdministratorForme
                 MessageBox.Show("Morate odabrati datum poečtka", "Greška", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
-            ProslijediSveDataGridove();
+
+            ProslijediSveDataGridove(); //Dodati provjeru da li je ponedjeljak izabran
+
+            //Izmjeniti font Status bara
 
             raspored.ID = 1; //Ovo obavezno izmjeniti;
             raspored.DatumPocetka = pocetak.SelectedDate.Value;
-            //dodati datum zavrsetka 
+            raspored.DatumZavrsetka = OdrediDatumZavrsetka(pocetak.SelectedDate.Value);
 
             if(ukupanBrojGresaka == 0)
             {
-                MessageBox.Show("Uspješno ste kreirali sedmični raspored"); //ispraviti u false
+                MessageBox.Show("Uspješno ste kreirali sedmični raspored", "Uspješno kreiranje", MessageBoxButton.OK, MessageBoxImage.Information); //ispraviti u false
                 //spasiti raspored u bazu
                 //this.Close();
             }
             else
             {
-                MessageBox.Show("Imate ukupno " + Convert.ToString(ukupanBrojGresaka) + " grešaka"); //Staviti status bar
+                string poruka = "Imate ukupno " + Convert.ToString(ukupanBrojGresaka) + " grešaka. Morate popuniti sva polja prije kreiranja rasporeda!";            
+                status.ItemsSource = poruka.ToList(); //Staviti status bar
                 ukupanBrojGresaka = 0;
                 projekcijaPoRedu = 0;
+
+                Thread nit = new Thread(m => IzmjeniBojUStatusBar());
+                nit.Start();
             }
+        }
+        private void IzmjeniBojUStatusBar()
+        {
+            Brush boja = Brushes.Red;
+            Dispatcher.BeginInvoke((Action)(() => boja = status.Background));
+
+            Dispatcher.BeginInvoke((Action)(() => status.Background = Brushes.Red));
+            Thread.Sleep(800);
+
+            Dispatcher.BeginInvoke((Action)(() => status.Background = boja));
+            Thread.Sleep(800);
+
+            Dispatcher.BeginInvoke((Action)(() => status.Background = Brushes.Red));
+            Thread.Sleep(800);
+
+            Dispatcher.BeginInvoke((Action)(() => status.Background = boja));
+            Thread.Sleep(800);
+
+            Dispatcher.BeginInvoke((Action)(() => status.Background = Brushes.Red));
+            Thread.Sleep(800);
+
+            Dispatcher.BeginInvoke((Action)(() => status.Background = boja));
+            Thread.Sleep(800);
+
+            Dispatcher.BeginInvoke((Action)(() => status.Background = Brushes.Red));
+            Thread.Sleep(800);
+
+            Dispatcher.BeginInvoke((Action)(() => status.Background = boja));
+            Thread.Sleep(800);
+
+            Dispatcher.BeginInvoke((Action)(() => status.Background = Brushes.Red));
+            Thread.Sleep(800);
+
+            Dispatcher.BeginInvoke((Action)(() => status.Background = boja));
         }
         private void ProslijediSveDataGridove()
         {
@@ -635,5 +715,6 @@ namespace AdministratorForme
             }
         }
         #endregion
+
     }
 }
