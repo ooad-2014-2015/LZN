@@ -25,7 +25,7 @@ namespace AdministratorForme
         List<Sala> sale;
         List<Projekcija> kreiraneProjekcije;
         SedmicniRaspored raspored;
-        int ukupanBrojGresaka = 0;
+        int ukupanBrojGresaka = 0, projekcijaPoRedu = 0;
 
         public KreiranjeSedmicnogRasporeda()
         {
@@ -79,45 +79,8 @@ namespace AdministratorForme
             }
             return -1;
         }
-        private string OdrediDimenzionalnost(GroupBox g)
+        private DateTime OdrediVrijemeProjekcije(Grid grid, int sati)
         {
-            for (int i = 0; i < VisualTreeHelper.GetChildrenCount(g); i++)
-            {
-                Visual kontrola = (Visual)VisualTreeHelper.GetChild(g, i);
-                if (kontrola is Grid)
-                {
-                    Grid grid = kontrola as Grid;
-                    for (int j = 0; j < VisualTreeHelper.GetChildrenCount(grid); j++)
-                    {
-                        Visual control = (Visual)VisualTreeHelper.GetChild(grid, j);
-                        if (control is RadioButton)
-                        {
-                            RadioButton r = control as RadioButton;
-                            if(r.Name.Contains("2D") && r.IsChecked == true)
-                            {
-                                return "2D";
-                            }
-                            else if (r.Name.Contains("3D") && r.IsChecked == true)
-                            {
-                                return "3D";
-                            }
-                        }
-                    }
-                }
-            }
-            return string.Empty;
-        }
-        private DateTime OdrediVrijemeProjekcije(GroupBox g, Grid grid)
-        {
-            int sati = 0;
-
-            if (g.Header.ToString().Contains("14")) 
-                sati = 14;
-            else if (g.Header.ToString().Contains("17"))
-                sati = 17;
-            else
-                sati = 21;
-
             int dan = pocetak.SelectedDate.Value.Day;
 
             if (grid.Name.Contains("utorak"))
@@ -136,10 +99,20 @@ namespace AdministratorForme
             return new DateTime(pocetak.SelectedDate.Value.Year, pocetak.SelectedDate.Value.Month, dan, sati, 0, 0, 0);
                 
         } //Ne radi kako treba
-        private void ValidirajGroupBox(Grid grid, DateTime vrijemeProjekcije)
+        private void ValidirajGroupBox(Grid grid)
         {
+            DateTime vrijemeProjekcije = DateTime.Now;
+            if (projekcijaPoRedu % 3 == 0)
+                vrijemeProjekcije = OdrediVrijemeProjekcije(grid, 14);
+            else if (projekcijaPoRedu % 3 == 1)
+                vrijemeProjekcije = OdrediVrijemeProjekcije(grid, 17);
+            else
+                vrijemeProjekcije = OdrediVrijemeProjekcije(grid, 21);
+
+            projekcijaPoRedu++;
             string  projekcija = String.Empty, dimenzionalnost = String.Empty;
             int filmFK = 0, brojGresaka = 0, SalaFk = 0;
+
             for (int i = 0; i < VisualTreeHelper.GetChildrenCount(grid); i++)
             {
                 Visual kontrola = (Visual)VisualTreeHelper.GetChild(grid, i);
@@ -149,10 +122,12 @@ namespace AdministratorForme
                     if(g.Text.Length > 0)
                     {
                         filmFK = DajId(g.Text);
+                        g.BorderThickness = new Thickness(2, 2, 2, 2);
                         g.BorderBrush = Brushes.Green;
                     }
                     else
                     {
+                        g.BorderThickness = new Thickness(2, 2, 2, 2);
                         g.BorderBrush = Brushes.Red;
                         brojGresaka++;
                     }
@@ -164,12 +139,14 @@ namespace AdministratorForme
                     {
                         if(c.SelectedIndex == -1)
                         {
+                            c.BorderThickness = new Thickness(2, 2, 2, 2);
                             c.BorderBrush = Brushes.Red;
                             brojGresaka++;
                         }
                         else
                         {
                             SalaFk = sale[c.SelectedIndex].ID;
+                            c.BorderThickness = new Thickness(2, 2, 2, 2);
                             c.BorderBrush = Brushes.Green;
                         }
                     }
@@ -177,12 +154,14 @@ namespace AdministratorForme
                     {
                         if (c.SelectedIndex == -1)
                         {
+                            c.BorderThickness = new Thickness(2, 2, 2, 2);
                             c.BorderBrush = Brushes.Red;
                             brojGresaka++;
                         }
                         else
                         {
-                            projekcija = c.SelectedItem.ToString(); //Ovo je mozda greska
+                            projekcija = c.SelectedItem.ToString();
+                            c.BorderThickness = new Thickness(2, 2, 2, 2);
                             c.BorderBrush = Brushes.Green; //Ovo raditi naknadno
                         }
                     }
@@ -193,36 +172,21 @@ namespace AdministratorForme
                     if (box.IsChecked == false)
                         return;
                 }
-                else if(kontrola is GroupBox)
+                else if(kontrola is RadioButton)
                 {
-                    GroupBox g = kontrola as GroupBox;
-                    dimenzionalnost = OdrediDimenzionalnost(g);
+                    RadioButton r = kontrola as RadioButton;
+                    if (r.Name.Contains("2D") && r.IsChecked == true)
+                    {
+                        dimenzionalnost = "2D";
+                    }
+                    else if (r.Name.Contains("3D") && r.IsChecked == true)
+                    {
+                        dimenzionalnost = "3D";
+                    }
                 }
             }
             ukupanBrojGresaka += brojGresaka;
             raspored.Projekcije.Add(new Projekcija(SalaFk, vrijemeProjekcije, dimenzionalnost, filmFK, projekcija, 1, cjenovnik.ID)); //Zadnja 2 parametra obavezno izmjeniti
-        }
-        private void IzdvojiGroupBpx(Grid grid)
-        {
-            for (int i = 0; i < VisualTreeHelper.GetChildrenCount(grid); i++)  
-            {
-                Visual kontrola = (Visual)VisualTreeHelper.GetChild(grid, i);
-                if (kontrola is GroupBox)
-                {
-                    GroupBox g = kontrola as GroupBox; 
-                    DateTime vrijemeProjekcije = OdrediVrijemeProjekcije(g, grid);
-                    for (int j = 0; j < VisualTreeHelper.GetChildrenCount(g); j++)
-                    {
-                        Visual control = (Visual)VisualTreeHelper.GetChild(g, j);
-                        if (control is Grid)
-                        {
-                            Grid box = control as Grid;
-                            ValidirajGroupBox(box, vrijemeProjekcije);
-                            //break;
-                        }
-                    }
-                }
-            }
         }
         private void KreirajRaspored(object sender, RoutedEventArgs e)
         {
@@ -231,15 +195,7 @@ namespace AdministratorForme
                 MessageBox.Show("Morate odabrati datum poečtka", "Greška", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
-            //Izbaciti metodu izdovji groupBox, i prosljeđivati 21 grid direktno umjesto 7 sadasnjih. Trebace i izmjene za određivanje 2D/3D
-
-            IzdvojiGroupBpx(ponedjeljakGrid);
-            IzdvojiGroupBpx(ponedjeljakGrid);
-            IzdvojiGroupBpx(srijedaGrid);
-            IzdvojiGroupBpx(cetvrtakGrid);
-            IzdvojiGroupBpx(petakGrid);
-            IzdvojiGroupBpx(subotaGrid);
-            IzdvojiGroupBpx(nedjeljaGrid);
+            ProslijediSveDataGridove();
 
             raspored.ID = 1; //Ovo obavezno izmjeniti;
             raspored.DatumPocetka = pocetak.SelectedDate.Value;
@@ -249,12 +205,44 @@ namespace AdministratorForme
             {
                 MessageBox.Show("Uspješno ste kreirali sedmični raspored"); //ispraviti u false
                 //spasiti raspored u bazu
+                //this.Close();
             }
             else
             {
                 MessageBox.Show("Imate ukupno " + Convert.ToString(ukupanBrojGresaka) + " grešaka"); //Staviti status bar
                 ukupanBrojGresaka = 0;
+                projekcijaPoRedu = 0;
             }
+        }
+        private void ProslijediSveDataGridove()
+        {
+            ValidirajGroupBox(ponedjeljakGrid1);
+            ValidirajGroupBox(ponedjeljakGrid2);
+            ValidirajGroupBox(ponedjeljakGrid3);
+
+            ValidirajGroupBox(utorakGrid1);
+            ValidirajGroupBox(utorakGrid2);
+            ValidirajGroupBox(utorakGrid3);
+
+            ValidirajGroupBox(srijedaGrid1);
+            ValidirajGroupBox(srijedaGrid2);
+            ValidirajGroupBox(srijedaGrid3);
+
+            ValidirajGroupBox(cetvrtakGrid1);
+            ValidirajGroupBox(cetvrtakGrid2);
+            ValidirajGroupBox(cetvrtakGrid3);
+
+            ValidirajGroupBox(petakGrid1);
+            ValidirajGroupBox(petakGrid2);
+            ValidirajGroupBox(petakGrid3);
+
+            ValidirajGroupBox(subotaGrid1);
+            ValidirajGroupBox(subotaGrid2);
+            ValidirajGroupBox(subotaGrid3);
+
+            ValidirajGroupBox(nedjeljaGrid1);
+            ValidirajGroupBox(nedjeljaGrid2);
+            ValidirajGroupBox(nedjeljaGrid3);
         }
         #endregion
         #region metodeZaCjenovnikCheckBox

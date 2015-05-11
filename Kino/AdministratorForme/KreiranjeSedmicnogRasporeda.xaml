@@ -7,7 +7,8 @@
             <Grid Name="ponedjeljakGrid" >
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="25"/>
-                    <ColumnDefinition Width="303"/>
+                    <ColumnDefinition Width="73"/>
+                    <ColumnDefinition Width="230"/>
                     <ColumnDefinition Width="120"/>
                     <ColumnDefinition Width="410"/>
                     <ColumnDefinition Width="73"/>
@@ -27,8 +28,8 @@
                     <RowDefinition Height="80"/>
                     <RowDefinition Height="80"/>
                 </Grid.RowDefinitions>
-                <GroupBox Header="Termin 14.00h" Grid.ColumnSpan="4" Margin="0,10,0,0" Grid.RowSpan="5" Grid.Row="0" Grid.Column="1" Padding="0" >
-                    <Grid>
+                <GroupBox Header="Termin 14.00h" Grid.ColumnSpan="5" Margin="0,10,0,0" Grid.RowSpan="5" Grid.Row="0" Grid.Column="1" Padding="0" >
+                    <Grid Name="ponedjeljakGrid1">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="82"/>
                             <ColumnDefinition Width="165"/>
@@ -59,20 +60,9 @@
                         <Label Grid.Row="6" HorizontalAlignment="Right" Width="36" RenderTransformOrigin="3.139,-1.577" Margin="0,0,5,4">Film</Label>
                         <TextBox Name="ponedjeljakFilm1" IsReadOnly="True" Grid.Column="1" Grid.Row="6" Margin="0,0,0,10"/>
                         <CheckBox Grid.Row="7" Grid.ColumnSpan="2" Margin="0,0,63,0" Grid.Column="1" IsChecked="True" Name="ponedjeljakDodajProjekciju1">Dodaj projekciju u raspored</CheckBox>
-                        <GroupBox Grid.Column="1" Grid.Row="4">
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="18"/>
-                                    <ColumnDefinition Width="111"/>
-                                </Grid.ColumnDefinitions>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="29"></RowDefinition>
-                                    <RowDefinition Height="33"></RowDefinition>
-                                </Grid.RowDefinitions>
-                                <RadioButton Name="ponedjeljak2D1" IsChecked="True" Margin="27,10,32,0" RenderTransformOrigin="3.368,1.571" Grid.Column="1">2D</RadioButton>
-                                <RadioButton Name="ponedjeljak3D1" IsChecked="False" Grid.Row="1" Grid.Column="1" Margin="27,10,32,0">3D</RadioButton>
-                            </Grid>
-                        </GroupBox>
+                        <RadioButton Name="ponedjeljak2D1" IsChecked="True" Margin="53,10,78,41"  Grid.Column="1" Grid.Row="4">2D</RadioButton>
+                        <RadioButton Name="ponedjeljak3D1" IsChecked="False" Margin="53,41,70,10" Grid.Row="4" Grid.Column="1">3D</RadioButton>
+                        <GroupBox Grid.Column="1" Grid.Row="4"/>
                         <GroupBox Grid.Column="3" Grid.ColumnSpan="7" Margin="0,0,22,0" Grid.RowSpan="8" Height="249" VerticalAlignment="Top">
                             <Grid Margin="0,0,0,-15">
                                 <Grid.ColumnDefinitions>
@@ -118,8 +108,8 @@
                         </GroupBox>
                     </Grid>
                 </GroupBox>
-                <GroupBox Header="Termin 17.00h" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="4" Margin="0,0,0,17" Grid.RowSpan="4" >
-                    <Grid>
+                <GroupBox Header="Termin 17.00h" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="5" Margin="0,0,0,17" Grid.RowSpan="4" >
+                    <Grid Name="ponedjeljakGrid2">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="82"/>
                             <ColumnDefinition Width="163"/>
@@ -150,6 +140,8 @@
                         <Label HorizontalAlignment="Right" Width="31" RenderTransformOrigin="3.139,-1.577" Margin="0,39,10,0" Grid.Row="5" Grid.RowSpan="2">Film</Label>
                         <TextBox Name="ponedjeljakFilm2" IsReadOnly="True" Grid.Column="1" Margin="0,39,2,5" Grid.Row="5" Grid.RowSpan="2"/>
                         <CheckBox Grid.Row="7" Grid.ColumnSpan="3" Margin="81,0,66,0" IsChecked="True" Name="ponedjeljakDodajProjekciju2">Dodaj projekciju u raspored</CheckBox>
+                        <RadioButton Name="ponedjeljak2D2" IsChecked="True" Margin="59,10,0,44" RenderTransformOrigin="3.368,1.571" Grid.Column="1" Grid.Row="4">2D</RadioButton>
+                        <RadioButton Name="ponedjeljak3D2" IsChecked="False" Grid.Row="4" Grid.Column="1" Margin="59,40,0,0">3D</RadioButton>
                         <GroupBox Grid.Column="1" Grid.Row="4" Margin="0,2,0,0">
                             <Grid>
                                 <Grid.ColumnDefinitions>
@@ -160,8 +152,6 @@
                                     <RowDefinition Height="29"></RowDefinition>
                                     <RowDefinition Height="33"></RowDefinition>
                                 </Grid.RowDefinitions>
-                                <RadioButton Name="ponedjeljak2D2" IsChecked="True" Margin="27,10,32,0" RenderTransformOrigin="3.368,1.571" Grid.Column="1">2D</RadioButton>
-                                <RadioButton Name="ponedjeljak3D2" IsChecked="False" Grid.Row="1" Grid.Column="1" Margin="27,10,32,0">3D</RadioButton>
                             </Grid>
                         </GroupBox>
                         <GroupBox Grid.Column="3" Grid.ColumnSpan="7" Margin="0,0,22,0" Grid.RowSpan="8" Height="249" VerticalAlignment="Top">
@@ -209,8 +199,8 @@
                         </GroupBox>
                     </Grid>
                 </GroupBox>
-                <GroupBox Header="Termin 21.00h" Grid.Column="1" Grid.Row="10" Grid.ColumnSpan="4" Margin="0,35,0,-151" Grid.RowSpan="2" >
-                    <Grid>
+                <GroupBox Header="Termin 21.00h" Grid.Column="1" Grid.Row="10" Grid.ColumnSpan="5" Margin="0,35,0,-151" Grid.RowSpan="2" >
+                    <Grid Name="ponedjeljakGrid3">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="82"/>
                             <ColumnDefinition Width="163"/>
@@ -241,6 +231,8 @@
                         <Label Grid.Row="6" HorizontalAlignment="Right" Width="31" RenderTransformOrigin="3.139,-1.577" Margin="0,0,10,10">Film</Label>
                         <TextBox Name="ponedjeljakFilm3" IsReadOnly="True" Grid.Column="1" Grid.Row="6" Margin="0,0,0,10"/>
                         <CheckBox Grid.Row="7" Grid.ColumnSpan="2" Margin="0,0,63,0" Grid.Column="1" IsChecked="True" Name="ponedjeljakDodajProjekciju3">Dodaj projekciju u raspored</CheckBox>
+                        <RadioButton Name="ponedjeljak2D3" IsChecked="True" Margin="49,10,10,48" RenderTransformOrigin="3.368,1.571" Grid.Column="1" Grid.Row="4">2D</RadioButton>
+                        <RadioButton Name="ponedjeljak3D3" IsChecked="False" Grid.Row="4" Grid.Column="1" Margin="49,44,10,10">3D</RadioButton>
                         <GroupBox Grid.Column="1" Grid.Row="4">
                             <Grid>
                                 <Grid.ColumnDefinitions>
@@ -251,8 +243,6 @@
                                     <RowDefinition Height="29"></RowDefinition>
                                     <RowDefinition Height="33"></RowDefinition>
                                 </Grid.RowDefinitions>
-                                <RadioButton Name="ponedjeljak2D3" IsChecked="True" Margin="27,10,32,0" RenderTransformOrigin="3.368,1.571" Grid.Column="1">2D</RadioButton>
-                                <RadioButton Name="ponedjeljak3D3" IsChecked="False" Grid.Row="1" Grid.Column="1" Margin="27,10,32,0">3D</RadioButton>
                             </Grid>
                         </GroupBox>
                         <GroupBox Grid.Column="3" Grid.ColumnSpan="7" Margin="0,0,22,0" Grid.RowSpan="8" Height="249" VerticalAlignment="Top">
@@ -327,7 +317,7 @@
                     <RowDefinition Height="80"/>
                 </Grid.RowDefinitions>
                 <GroupBox Header="Termin 14.00h" Grid.ColumnSpan="4" Margin="0,10,0,0" Grid.RowSpan="5" Grid.Row="0" Grid.Column="1" Padding="0" >
-                    <Grid>
+                    <Grid Name="utorakGrid1">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="82"/>
                             <ColumnDefinition Width="164"/>
@@ -358,6 +348,8 @@
                         <Label Grid.Row="6" HorizontalAlignment="Right" Width="36" RenderTransformOrigin="3.139,-1.577" Margin="0,0,5,4">Film</Label>
                         <TextBox Name="utorakFilm1" IsReadOnly="True" Grid.Column="1" Grid.Row="6" Margin="0,0,0,10"/>
                         <CheckBox Grid.Row="7" Grid.ColumnSpan="2" Margin="0,0,63,0" Grid.Column="1" IsChecked="True" Name="utorakDodajProjekciju1">Dodaj projekciju u raspored</CheckBox>
+                        <RadioButton Name="utorak2D1" IsChecked="True" Margin="59,10,0,48" RenderTransformOrigin="3.368,1.571" Grid.Column="1" Grid.Row="4">2D</RadioButton>
+                        <RadioButton Name="utorak3D1" IsChecked="False" Grid.Row="4" Grid.Column="1" Margin="59,42,0,10">3D</RadioButton>
                         <GroupBox Grid.Column="1" Grid.Row="4">
                             <Grid>
                                 <Grid.ColumnDefinitions>
@@ -368,8 +360,7 @@
                                     <RowDefinition Height="29"></RowDefinition>
                                     <RowDefinition Height="33"></RowDefinition>
                                 </Grid.RowDefinitions>
-                                <RadioButton Name="utorak2D1" IsChecked="True" Margin="27,10,32,0" RenderTransformOrigin="3.368,1.571" Grid.Column="1">2D</RadioButton>
-                                <RadioButton Name="utorak3D1" IsChecked="False" Grid.Row="1" Grid.Column="1" Margin="27,10,32,0">3D</RadioButton>
+
                             </Grid>
                         </GroupBox>
                         <GroupBox Grid.Column="3" Grid.ColumnSpan="7" Margin="0,0,22,0" Grid.RowSpan="8" Height="249" VerticalAlignment="Top">
@@ -418,7 +409,7 @@
                     </Grid>
                 </GroupBox>
                 <GroupBox Header="Termin 17.00h" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="4" Margin="0,0,0,17" Grid.RowSpan="4" >
-                    <Grid>
+                    <Grid Name="utorakGrid2">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="82"/>
                             <ColumnDefinition Width="163"/>
@@ -449,6 +440,8 @@
                         <Label HorizontalAlignment="Right" Width="31" RenderTransformOrigin="3.139,-1.577" Margin="0,39,10,0" Grid.Row="5" Grid.RowSpan="2">Film</Label>
                         <TextBox Name="utorakFilm2" IsReadOnly="True" Grid.Column="1" Margin="0,39,1,5" Grid.Row="5" Grid.RowSpan="2"/>
                         <CheckBox Grid.Row="7" Grid.ColumnSpan="3" Margin="81,0,66,0" IsChecked="True" Name="utorakDodajProjekciju2">Dodaj projekciju u raspored</CheckBox>
+                        <RadioButton Name="utorak2D2" IsChecked="True" Margin="59,10,0,44" RenderTransformOrigin="3.368,1.571" Grid.Column="1" Grid.Row="4">2D</RadioButton>
+                        <RadioButton Name="utorak3D2" IsChecked="False" Grid.Row="4" Grid.Column="1" Margin="58,40,1,10">3D</RadioButton>
                         <GroupBox Grid.Column="1" Grid.Row="4" Margin="0,2,0,0">
                             <Grid>
                                 <Grid.ColumnDefinitions>
@@ -459,8 +452,7 @@
                                     <RowDefinition Height="29"></RowDefinition>
                                     <RowDefinition Height="33"></RowDefinition>
                                 </Grid.RowDefinitions>
-                                <RadioButton Name="utorak2D2" IsChecked="True" Margin="27,10,32,0" RenderTransformOrigin="3.368,1.571" Grid.Column="1">2D</RadioButton>
-                                <RadioButton Name="utorak3D2" IsChecked="False" Grid.Row="1" Grid.Column="1" Margin="27,10,32,0">3D</RadioButton>
+
                             </Grid>
                         </GroupBox>
                         <GroupBox Grid.Column="3" Grid.ColumnSpan="7" Margin="0,0,22,0" Grid.RowSpan="8" Height="249" VerticalAlignment="Top">
@@ -509,7 +501,7 @@
                     </Grid>
                 </GroupBox>
                 <GroupBox Header="Termin 21.00h" Grid.Column="1" Grid.Row="10" Grid.ColumnSpan="4" Margin="0,35,0,-151" Grid.RowSpan="2" >
-                    <Grid>
+                    <Grid Name="utorakGrid3">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="82"/>
                             <ColumnDefinition Width="166"/>
@@ -540,6 +532,8 @@
                         <Label Grid.Row="6" HorizontalAlignment="Right" Width="31" RenderTransformOrigin="3.139,-1.577" Margin="0,0,10,10">Film</Label>
                         <TextBox Name="utorakFilm3" IsReadOnly="True" Grid.Column="1" Grid.Row="6" Margin="0,0,0,10"/>
                         <CheckBox Grid.Row="7" Grid.ColumnSpan="2" Margin="0,0,63,0" Grid.Column="1" IsChecked="True" Name="utorakDodajProjekciju3">Dodaj projekciju u raspored</CheckBox>
+                        <RadioButton Name="utorak2D3" IsChecked="True" Margin="59,10,0,48" RenderTransformOrigin="3.368,1.571" Grid.Column="1" Grid.Row="4">2D</RadioButton>
+                        <RadioButton Name="utorak3D3" IsChecked="False" Grid.Row="4" Grid.Column="1" Margin="59,42,0,10">3D</RadioButton>
                         <GroupBox Grid.Column="1" Grid.Row="4">
                             <Grid>
                                 <Grid.ColumnDefinitions>
@@ -550,8 +544,7 @@
                                     <RowDefinition Height="29"></RowDefinition>
                                     <RowDefinition Height="33"></RowDefinition>
                                 </Grid.RowDefinitions>
-                                <RadioButton Name="utorak2D3" IsChecked="True" Margin="27,10,32,0" RenderTransformOrigin="3.368,1.571" Grid.Column="1">2D</RadioButton>
-                                <RadioButton Name="utorak3D3" IsChecked="False" Grid.Row="1" Grid.Column="1" Margin="27,10,32,0">3D</RadioButton>
+
                             </Grid>
                         </GroupBox>
                         <GroupBox Grid.Column="3" Grid.ColumnSpan="7" Margin="0,0,22,0" Grid.RowSpan="8" Height="249" VerticalAlignment="Top">
@@ -626,7 +619,7 @@
                     <RowDefinition Height="80"/>
                 </Grid.RowDefinitions>
                 <GroupBox Header="Termin 14.00h" Grid.ColumnSpan="4" Margin="0,10,0,0" Grid.RowSpan="5" Grid.Row="0" Grid.Column="1" Padding="0" >
-                    <Grid>
+                    <Grid Name="srijedaGrid1">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="82"/>
                             <ColumnDefinition Width="165"/>
@@ -657,6 +650,8 @@
                         <Label Grid.Row="6" HorizontalAlignment="Right" Width="36" RenderTransformOrigin="3.139,-1.577" Margin="0,0,5,4">Film</Label>
                         <TextBox Name="srijedaFilm1" IsReadOnly="True" Grid.Column="1" Grid.Row="6" Margin="0,0,0,10"/>
                         <CheckBox Grid.Row="7" Grid.ColumnSpan="2" Margin="0,0,63,0" Grid.Column="1" IsChecked="True" Name="srijedaDodajProjekciju1">Dodaj projekciju u raspored</CheckBox>
+                        <RadioButton Name="srijeda2D1" IsChecked="True" Margin="49,10,10,48" RenderTransformOrigin="3.368,1.571" Grid.Column="1" Grid.Row="4">2D</RadioButton>
+                        <RadioButton Name="srijeda3D1" IsChecked="False" Grid.Row="4" Grid.Column="1" Margin="49,46,10,10">3D</RadioButton>
                         <GroupBox Grid.Column="1" Grid.Row="4">
                             <Grid>
                                 <Grid.ColumnDefinitions>
@@ -667,8 +662,7 @@
                                     <RowDefinition Height="29"></RowDefinition>
                                     <RowDefinition Height="33"></RowDefinition>
                                 </Grid.RowDefinitions>
-                                <RadioButton Name="srijeda2D1" IsChecked="True" Margin="27,10,32,0" RenderTransformOrigin="3.368,1.571" Grid.Column="1">2D</RadioButton>
-                                <RadioButton Name="srijeda3D1" IsChecked="False" Grid.Row="1" Grid.Column="1" Margin="27,10,32,0">3D</RadioButton>
+
                             </Grid>
                         </GroupBox>
                         <GroupBox Grid.Column="3" Grid.ColumnSpan="7" Margin="0,0,22,0" Grid.RowSpan="8" Height="249" VerticalAlignment="Top">
@@ -717,7 +711,7 @@
                     </Grid>
                 </GroupBox>
                 <GroupBox Header="Termin 17.00h" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="4" Margin="0,0,0,17" Grid.RowSpan="4" >
-                    <Grid>
+                    <Grid Name="srijedaGrid2">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="82"/>
                             <ColumnDefinition Width="163"/>
@@ -736,18 +730,20 @@
                             <RowDefinition Height="13"/>
                             <RowDefinition Height="26"/>
                             <RowDefinition Height="16"/>
-                            <RowDefinition Height="69"/>
-                            <RowDefinition Height="45"/>
-                            <RowDefinition Height="8*"/>
-                            <RowDefinition Height="11*"/>
+                            <RowDefinition Height="73"/>
+                            <RowDefinition Height="41"/>
+                            <RowDefinition Height="26*"/>
+                            <RowDefinition Height="35*"/>
                         </Grid.RowDefinitions>
                         <Label HorizontalAlignment="Right" Width="31" Margin="0,0,0,12" Grid.RowSpan="2">Sala</Label>
                         <Label Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right" RenderTransformOrigin="0.531,1.885" Width="81" Margin="0,2,0,13" Grid.RowSpan="2">Tip projekcije</Label>
                         <ComboBox Name="srijedaSale2" Grid.Column="1" IsDropDownOpen="True" Margin="0,0,0,12" Grid.RowSpan="2"></ComboBox>
                         <ComboBox Grid.Column="1" Grid.Row="2" Name="srijedaProjekcije2" IsDropDownOpen="True" Margin="0,2,0,13" Grid.RowSpan="2"></ComboBox>
-                        <Label HorizontalAlignment="Right" Width="31" RenderTransformOrigin="3.139,-1.577" Margin="0,39,10,0" Grid.Row="5" Grid.RowSpan="2">Film</Label>
-                        <TextBox Name="srijedaFilm2" IsReadOnly="True" Grid.Column="1" Margin="0,39,0,5" Grid.Row="5" Grid.RowSpan="2"/>
+                        <Label HorizontalAlignment="Right" Width="31" RenderTransformOrigin="3.139,-1.577" Margin="0,0,10,0" Grid.Row="6">Film</Label>
+                        <TextBox Name="srijedaFilm2" IsReadOnly="True" Grid.Column="1" Margin="0,0,0,5" Grid.Row="6"/>
                         <CheckBox Grid.Row="7" Grid.ColumnSpan="3" Margin="81,0,66,0" IsChecked="True" Name="srijedaDodajProjekciju2">Dodaj projekciju u raspored</CheckBox>
+                        <RadioButton Name="srijedaD2" IsChecked="True" Margin="49,10,10,44" RenderTransformOrigin="3.368,1.571" Grid.Column="1" Grid.Row="4">2D</RadioButton>
+                        <RadioButton Name="srijeda3D2" IsChecked="False" Grid.Row="4" Grid.Column="1" Margin="49,43,10,10">3D</RadioButton>
                         <GroupBox Grid.Column="1" Grid.Row="4" Margin="0,2,0,0">
                             <Grid>
                                 <Grid.ColumnDefinitions>
@@ -758,8 +754,7 @@
                                     <RowDefinition Height="29"></RowDefinition>
                                     <RowDefinition Height="33"></RowDefinition>
                                 </Grid.RowDefinitions>
-                                <RadioButton Name="srijedaD2" IsChecked="True" Margin="27,10,32,0" RenderTransformOrigin="3.368,1.571" Grid.Column="1">2D</RadioButton>
-                                <RadioButton Name="srijeda3D2" IsChecked="False" Grid.Row="1" Grid.Column="1" Margin="27,10,32,0">3D</RadioButton>
+
                             </Grid>
                         </GroupBox>
                         <GroupBox Grid.Column="3" Grid.ColumnSpan="7" Margin="0,0,22,0" Grid.RowSpan="8" Height="249" VerticalAlignment="Top">
@@ -808,7 +803,7 @@
                     </Grid>
                 </GroupBox>
                 <GroupBox Header="Termin 21.00h" Grid.Column="1" Grid.Row="10" Grid.ColumnSpan="4" Margin="0,35,0,-151" Grid.RowSpan="2" >
-                    <Grid>
+                    <Grid Name="srijedaGrid3">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="82"/>
                             <ColumnDefinition Width="163"/>
@@ -839,6 +834,8 @@
                         <Label Grid.Row="6" HorizontalAlignment="Right" Width="31" RenderTransformOrigin="3.139,-1.577" Margin="0,0,10,10">Film</Label>
                         <TextBox Name="srijedaFilm3" IsReadOnly="True" Grid.Column="1" Grid.Row="6" Margin="0,0,0,10"/>
                         <CheckBox Grid.Row="7" Grid.ColumnSpan="2" Margin="0,0,63,0" Grid.Column="1" IsChecked="True" Name="srijedaDodajProjekciju3">Dodaj projekciju u raspored</CheckBox>
+                        <RadioButton Name="srijeda2D3" IsChecked="True" Margin="59,10,0,48" RenderTransformOrigin="3.368,1.571" Grid.Column="1" Grid.Row="4">2D</RadioButton>
+                        <RadioButton Name="srijeda3D3" IsChecked="False" Grid.Row="4" Grid.Column="1" Margin="59,47,0,10">3D</RadioButton>
                         <GroupBox Grid.Column="1" Grid.Row="4">
                             <Grid>
                                 <Grid.ColumnDefinitions>
@@ -849,8 +846,7 @@
                                     <RowDefinition Height="29"></RowDefinition>
                                     <RowDefinition Height="33"></RowDefinition>
                                 </Grid.RowDefinitions>
-                                <RadioButton Name="srijeda2D3" IsChecked="True" Margin="27,10,32,0" RenderTransformOrigin="3.368,1.571" Grid.Column="1">2D</RadioButton>
-                                <RadioButton Name="srijeda3D3" IsChecked="False" Grid.Row="1" Grid.Column="1" Margin="27,10,32,0">3D</RadioButton>
+
                             </Grid>
                         </GroupBox>
                         <GroupBox Grid.Column="3" Grid.ColumnSpan="7" Margin="0,0,22,0" Grid.RowSpan="8" Height="249" VerticalAlignment="Top">
@@ -925,7 +921,7 @@
                     <RowDefinition Height="80"/>
                 </Grid.RowDefinitions>
                 <GroupBox Header="Termin 14.00h" Grid.ColumnSpan="4" Margin="0,10,0,0" Grid.RowSpan="5" Grid.Row="0" Grid.Column="1" Padding="0" >
-                    <Grid>
+                    <Grid Name="cetvrtakGrid1">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="82"/>
                             <ColumnDefinition Width="165"/>
@@ -956,6 +952,8 @@
                         <Label Grid.Row="6" HorizontalAlignment="Right" Width="36" RenderTransformOrigin="3.139,-1.577" Margin="0,0,5,4">Film</Label>
                         <TextBox Name="cetvrtakFilm1" IsReadOnly="True" Grid.Column="1" Grid.Row="6" Margin="0,0,2,10"/>
                         <CheckBox Grid.Row="7" Grid.Column="1" IsChecked="True" Name="cetvrtakDodajProjekciju1">Dodaj projekciju u raspored</CheckBox>
+                        <RadioButton Name="cetvrtak2D1" IsChecked="True" Margin="49,10,10,48" RenderTransformOrigin="3.368,1.571" Grid.Column="1" Grid.Row="4">2D</RadioButton>
+                        <RadioButton Name="cetvrtak3D1" IsChecked="False" Grid.Row="4" Grid.Column="1" Margin="49,41,10,10">3D</RadioButton>
                         <GroupBox Grid.Column="1" Grid.Row="4">
                             <Grid>
                                 <Grid.ColumnDefinitions>
@@ -966,8 +964,7 @@
                                     <RowDefinition Height="29"></RowDefinition>
                                     <RowDefinition Height="33"></RowDefinition>
                                 </Grid.RowDefinitions>
-                                <RadioButton Name="cetvrtak2D1" IsChecked="True" Margin="27,10,32,0" RenderTransformOrigin="3.368,1.571" Grid.Column="1">2D</RadioButton>
-                                <RadioButton Name="cetvrtak3D1" IsChecked="False" Grid.Row="1" Grid.Column="1" Margin="27,10,32,0">3D</RadioButton>
+
                             </Grid>
                         </GroupBox>
                         <GroupBox Grid.Column="3" Grid.ColumnSpan="7" Margin="0,0,22,0" Grid.RowSpan="8" Height="249" VerticalAlignment="Top">
@@ -1016,7 +1013,7 @@
                     </Grid>
                 </GroupBox>
                 <GroupBox Header="Termin 17.00h" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="4" Margin="0,0,0,17" Grid.RowSpan="4" >
-                    <Grid>
+                    <Grid Name="cetvrtakGrid2">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="82"/>
                             <ColumnDefinition Width="164"/>
@@ -1047,6 +1044,8 @@
                         <Label HorizontalAlignment="Right" Width="31" RenderTransformOrigin="3.139,-1.577" Margin="0,39,10,0" Grid.Row="5" Grid.RowSpan="2">Film</Label>
                         <TextBox Name="cetvrtakFilm2" IsReadOnly="True" Grid.Column="1" Margin="0,39,1,5" Grid.Row="5" Grid.RowSpan="2"/>
                         <CheckBox Grid.Row="7" Grid.ColumnSpan="3" Margin="81,0,66,0" IsChecked="True" Name="cetvrtakDodajProjekciju2">Dodaj projekciju u raspored</CheckBox>
+                        <RadioButton Name="cetvrtak2D2" IsChecked="True" Margin="58,10,1,44" RenderTransformOrigin="3.368,1.571" Grid.Column="1" Grid.Row="4">2D</RadioButton>
+                        <RadioButton Name="cetvrtak3D2" IsChecked="False" Grid.Row="4" Grid.Column="1" Margin="58,41,1,10">3D</RadioButton>
                         <GroupBox Grid.Column="1" Grid.Row="4" Margin="0,2,0,0">
                             <Grid>
                                 <Grid.ColumnDefinitions>
@@ -1057,8 +1056,7 @@
                                     <RowDefinition Height="29"></RowDefinition>
                                     <RowDefinition Height="33"></RowDefinition>
                                 </Grid.RowDefinitions>
-                                <RadioButton Name="cetvrtak2D2" IsChecked="True" Margin="27,10,32,0" RenderTransformOrigin="3.368,1.571" Grid.Column="1">2D</RadioButton>
-                                <RadioButton Name="cetvrtak3D2" IsChecked="False" Grid.Row="1" Grid.Column="1" Margin="27,10,32,0">3D</RadioButton>
+
                             </Grid>
                         </GroupBox>
                         <GroupBox Grid.Column="3" Grid.ColumnSpan="7" Margin="0,0,22,0" Grid.RowSpan="8" Height="249" VerticalAlignment="Top">
@@ -1107,7 +1105,7 @@
                     </Grid>
                 </GroupBox>
                 <GroupBox Header="Termin 21.00h" Grid.Column="1" Grid.Row="10" Grid.ColumnSpan="4" Margin="0,35,0,-151" Grid.RowSpan="2" >
-                    <Grid>
+                    <Grid Name="cetvrtakGrid3">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="82"/>
                             <ColumnDefinition Width="165"/>
@@ -1138,6 +1136,8 @@
                         <Label Grid.Row="6" HorizontalAlignment="Right" Width="31" RenderTransformOrigin="3.139,-1.577" Margin="0,0,10,10">Film</Label>
                         <TextBox Name="cetvrtakFilm3" IsReadOnly="True" Grid.Column="1" Grid.Row="6" Margin="0,0,0,10"/>
                         <CheckBox Grid.Row="7" Grid.ColumnSpan="2" Margin="0,0,63,0" Grid.Column="1" IsChecked="True" Name="cetvrtakDodajProjekciju3">Dodaj projekciju u raspored</CheckBox>
+                        <RadioButton Name="cetvrtak2D3" IsChecked="True" Margin="59,10,0,48" RenderTransformOrigin="3.368,1.571" Grid.Column="1" Grid.Row="4">2D</RadioButton>
+                        <RadioButton Name="cetvrtak3D3" IsChecked="False" Grid.Row="4" Grid.Column="1" Margin="59,44,0,10">3D</RadioButton>
                         <GroupBox Grid.Column="1" Grid.Row="4">
                             <Grid>
                                 <Grid.ColumnDefinitions>
@@ -1148,8 +1148,7 @@
                                     <RowDefinition Height="29"></RowDefinition>
                                     <RowDefinition Height="33"></RowDefinition>
                                 </Grid.RowDefinitions>
-                                <RadioButton Name="cetvrtak2D3" IsChecked="True" Margin="27,10,32,0" RenderTransformOrigin="3.368,1.571" Grid.Column="1">2D</RadioButton>
-                                <RadioButton Name="cetvrtak3D3" IsChecked="False" Grid.Row="1" Grid.Column="1" Margin="27,10,32,0">3D</RadioButton>
+
                             </Grid>
                         </GroupBox>
                         <GroupBox Grid.Column="3" Grid.ColumnSpan="7" Margin="0,0,22,0" Grid.RowSpan="8" Height="249" VerticalAlignment="Top">
@@ -1224,7 +1223,7 @@
                     <RowDefinition Height="80"/>
                 </Grid.RowDefinitions>
                 <GroupBox Header="Termin 14.00h" Grid.ColumnSpan="4" Margin="0,10,0,0" Grid.RowSpan="5" Grid.Row="0" Grid.Column="1" Padding="0" >
-                    <Grid>
+                    <Grid Name="petakGrid1">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="82"/>
                             <ColumnDefinition Width="164"/>
@@ -1255,6 +1254,8 @@
                         <Label Grid.Row="6" HorizontalAlignment="Right" Width="36" RenderTransformOrigin="3.139,-1.577" Margin="0,0,5,4">Film</Label>
                         <TextBox Name="petakFilm1" IsReadOnly="True" Grid.Column="1" Grid.Row="6" Margin="0,0,0,10"/>
                         <CheckBox Grid.Row="7" Grid.ColumnSpan="2" Margin="0,0,63,0" Grid.Column="1" IsChecked="True" Name="petakDodajProjekciju1">Dodaj projekciju u raspored</CheckBox>
+                        <RadioButton Name="petak2D1" IsChecked="True" Margin="59,10,0,48" RenderTransformOrigin="3.368,1.571" Grid.Column="1" Grid.Row="4">2D</RadioButton>
+                        <RadioButton Name="petak3D1" IsChecked="False" Grid.Row="4" Grid.Column="1" Margin="59,42,0,10">3D</RadioButton>
                         <GroupBox Grid.Column="1" Grid.Row="4">
                             <Grid>
                                 <Grid.ColumnDefinitions>
@@ -1265,8 +1266,7 @@
                                     <RowDefinition Height="29"></RowDefinition>
                                     <RowDefinition Height="33"></RowDefinition>
                                 </Grid.RowDefinitions>
-                                <RadioButton Name="petak2D1" IsChecked="True" Margin="27,10,32,0" RenderTransformOrigin="3.368,1.571" Grid.Column="1">2D</RadioButton>
-                                <RadioButton Name="petak3D1" IsChecked="False" Grid.Row="1" Grid.Column="1" Margin="27,10,32,0">3D</RadioButton>
+
                             </Grid>
                         </GroupBox>
                         <GroupBox Grid.Column="3" Grid.ColumnSpan="7" Margin="0,0,22,0" Grid.RowSpan="8" Height="249" VerticalAlignment="Top">
@@ -1315,7 +1315,7 @@
                     </Grid>
                 </GroupBox>
                 <GroupBox Header="Termin 17.00h" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="4" Margin="0,0,0,17" Grid.RowSpan="4" >
-                    <Grid>
+                    <Grid Name="petakGrid2">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="82"/>
                             <ColumnDefinition Width="163"/>
@@ -1345,6 +1345,8 @@
                         <ComboBox Grid.Column="1" Grid.Row="2" Name="petakProjekcije2" IsDropDownOpen="True" Margin="0,2,0,13" Grid.RowSpan="2"></ComboBox>
                         <Label HorizontalAlignment="Right" Width="31" RenderTransformOrigin="3.139,-1.577" Margin="0,39,10,0" Grid.Row="5" Grid.RowSpan="2">Film</Label>
                         <TextBox Name="petakFilm2" IsReadOnly="True" Grid.Column="1" Margin="0,39,0,5" Grid.Row="5" Grid.RowSpan="2"/>
+                        <RadioButton Name="petak2D2" IsChecked="True" Margin="59,10,0,44" RenderTransformOrigin="3.368,1.571" Grid.Column="1" Grid.Row="4">2D</RadioButton>
+                        <RadioButton Name="petak3D2" IsChecked="False" Grid.Row="4" Grid.Column="1" Margin="59,40,0,10">3D</RadioButton>
                         <CheckBox Grid.Row="7" Grid.ColumnSpan="3" Margin="81,0,66,0" IsChecked="True" Name="petakDodajProjekciju2">Dodaj projekciju u raspored</CheckBox>
                         <GroupBox Grid.Column="1" Grid.Row="4" Margin="0,2,0,0">
                             <Grid>
@@ -1356,8 +1358,7 @@
                                     <RowDefinition Height="29"></RowDefinition>
                                     <RowDefinition Height="33"></RowDefinition>
                                 </Grid.RowDefinitions>
-                                <RadioButton Name="petak2D2" IsChecked="True" Margin="27,10,32,0" RenderTransformOrigin="3.368,1.571" Grid.Column="1">2D</RadioButton>
-                                <RadioButton Name="petak3D2" IsChecked="False" Grid.Row="1" Grid.Column="1" Margin="27,10,32,0">3D</RadioButton>
+
                             </Grid>
                         </GroupBox>
                         <GroupBox Grid.Column="3" Grid.ColumnSpan="7" Margin="0,0,22,0" Grid.RowSpan="8" Height="249" VerticalAlignment="Top">
@@ -1406,7 +1407,7 @@
                     </Grid>
                 </GroupBox>
                 <GroupBox Header="Termin 21.00h" Grid.Column="1" Grid.Row="10" Grid.ColumnSpan="4" Margin="0,35,0,-151" Grid.RowSpan="2" >
-                    <Grid>
+                    <Grid Name="petakGrid3">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="82"/>
                             <ColumnDefinition Width="165"/>
@@ -1437,6 +1438,8 @@
                         <Label Grid.Row="6" HorizontalAlignment="Right" Width="31" RenderTransformOrigin="3.139,-1.577" Margin="0,0,10,10">Film</Label>
                         <TextBox Name="petakFilm3" IsReadOnly="True" Grid.Column="1" Grid.Row="6" Margin="0,0,0,10"/>
                         <CheckBox Grid.Row="7" Grid.ColumnSpan="2" Margin="0,0,63,0" Grid.Column="1" IsChecked="True" Name="petakDodajProjekciju3">Dodaj projekciju u raspored</CheckBox>
+                        <RadioButton Name="petak2D3" IsChecked="True" Margin="59,10,0,48" RenderTransformOrigin="3.368,1.571" Grid.Column="1" Grid.Row="4">2D</RadioButton>
+                        <RadioButton Name="petak3D3" IsChecked="False" Grid.Row="4" Grid.Column="1" Margin="59,41,0,10">3D</RadioButton>
                         <GroupBox Grid.Column="1" Grid.Row="4">
                             <Grid>
                                 <Grid.ColumnDefinitions>
@@ -1447,8 +1450,7 @@
                                     <RowDefinition Height="29"></RowDefinition>
                                     <RowDefinition Height="33"></RowDefinition>
                                 </Grid.RowDefinitions>
-                                <RadioButton Name="petak2D3" IsChecked="True" Margin="27,10,32,0" RenderTransformOrigin="3.368,1.571" Grid.Column="1">2D</RadioButton>
-                                <RadioButton Name="petak3D3" IsChecked="False" Grid.Row="1" Grid.Column="1" Margin="27,10,32,0">3D</RadioButton>
+
                             </Grid>
                         </GroupBox>
                         <GroupBox Grid.Column="3" Grid.ColumnSpan="7" Margin="0,0,22,0" Grid.RowSpan="8" Height="249" VerticalAlignment="Top">
@@ -1523,7 +1525,7 @@
                     <RowDefinition Height="80"/>
                 </Grid.RowDefinitions>
                 <GroupBox Header="Termin 14.00h" Grid.ColumnSpan="4" Margin="0,10,0,0" Grid.RowSpan="5" Grid.Row="0" Grid.Column="1" Padding="0" >
-                    <Grid>
+                    <Grid Name="subotaGrid1">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="82"/>
                             <ColumnDefinition Width="164"/>
@@ -1554,6 +1556,8 @@
                         <Label Grid.Row="6" HorizontalAlignment="Right" Width="36" RenderTransformOrigin="3.139,-1.577" Margin="0,0,5,4">Film</Label>
                         <TextBox Name="subotaFilm1" IsReadOnly="True" Grid.Column="1" Grid.Row="6" Margin="0,0,0,10"/>
                         <CheckBox Grid.Row="7" Grid.ColumnSpan="2" Margin="0,0,63,0" Grid.Column="1" IsChecked="True" Name="subotaDodajProjekciju1">Dodaj projekciju u raspored</CheckBox>
+                        <RadioButton Name="subota2D1" IsChecked="True" Margin="59,10,0,48" RenderTransformOrigin="3.368,1.571" Grid.Column="1" Grid.Row="4">2D</RadioButton>
+                        <RadioButton Name="subota3D1" IsChecked="False" Grid.Row="4" Grid.Column="1" Margin="59,41,0,10">3D</RadioButton>
                         <GroupBox Grid.Column="1" Grid.Row="4">
                             <Grid>
                                 <Grid.ColumnDefinitions>
@@ -1564,8 +1568,7 @@
                                     <RowDefinition Height="29"></RowDefinition>
                                     <RowDefinition Height="33"></RowDefinition>
                                 </Grid.RowDefinitions>
-                                <RadioButton Name="subota2D1" IsChecked="True" Margin="27,10,32,0" RenderTransformOrigin="3.368,1.571" Grid.Column="1">2D</RadioButton>
-                                <RadioButton Name="subota3D1" IsChecked="False" Grid.Row="1" Grid.Column="1" Margin="27,10,32,0">3D</RadioButton>
+
                             </Grid>
                         </GroupBox>
                         <GroupBox Grid.Column="3" Grid.ColumnSpan="7" Margin="0,0,22,0" Grid.RowSpan="8" Height="249" VerticalAlignment="Top">
@@ -1614,7 +1617,7 @@
                     </Grid>
                 </GroupBox>
                 <GroupBox Header="Termin 17.00h" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="4" Margin="0,0,0,17" Grid.RowSpan="4" >
-                    <Grid>
+                    <Grid Name="subotaGrid2">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="82"/>
                             <ColumnDefinition Width="163"/>
@@ -1645,6 +1648,8 @@
                         <Label HorizontalAlignment="Right" Width="31" RenderTransformOrigin="3.139,-1.577" Margin="0,39,10,0" Grid.Row="5" Grid.RowSpan="2">Film</Label>
                         <TextBox Name="subotaFilm2" IsReadOnly="True" Grid.Column="1" Margin="0,39,0,5" Grid.Row="5" Grid.RowSpan="2"/>
                         <CheckBox Grid.Row="7" Grid.ColumnSpan="3" Margin="81,0,66,0" IsChecked="True" Name="subotaDodajProjekciju2">Dodaj projekciju u raspored</CheckBox>
+                        <RadioButton Name="subota2D2" IsChecked="True" Margin="59,10,0,44" RenderTransformOrigin="3.368,1.571" Grid.Column="1" Grid.Row="4">2D</RadioButton>
+                        <RadioButton Name="subota3D2" IsChecked="False" Grid.Row="4" Grid.Column="1" Margin="59,40,0,10">3D</RadioButton>
                         <GroupBox Grid.Column="1" Grid.Row="4" Margin="0,2,0,0">
                             <Grid>
                                 <Grid.ColumnDefinitions>
@@ -1655,8 +1660,7 @@
                                     <RowDefinition Height="29"></RowDefinition>
                                     <RowDefinition Height="33"></RowDefinition>
                                 </Grid.RowDefinitions>
-                                <RadioButton Name="subota2D2" IsChecked="True" Margin="27,10,32,0" RenderTransformOrigin="3.368,1.571" Grid.Column="1">2D</RadioButton>
-                                <RadioButton Name="subota3D2" IsChecked="False" Grid.Row="1" Grid.Column="1" Margin="27,10,32,0">3D</RadioButton>
+
                             </Grid>
                         </GroupBox>
                         <GroupBox Grid.Column="3" Grid.ColumnSpan="7" Margin="0,0,22,0" Grid.RowSpan="8" Height="249" VerticalAlignment="Top">
@@ -1705,7 +1709,7 @@
                     </Grid>
                 </GroupBox>
                 <GroupBox Header="Termin 21.00h" Grid.Column="1" Grid.Row="10" Grid.ColumnSpan="4" Margin="0,35,0,-151" Grid.RowSpan="2" >
-                    <Grid>
+                    <Grid Name="subotaGrid3">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="82"/>
                             <ColumnDefinition Width="165"/>
@@ -1736,6 +1740,8 @@
                         <Label Grid.Row="6" HorizontalAlignment="Right" Width="31" RenderTransformOrigin="3.139,-1.577" Margin="0,0,10,10">Film</Label>
                         <TextBox Name="subotaFilm3" IsReadOnly="True" Grid.Column="1" Grid.Row="6" Margin="0,0,1,10"/>
                         <CheckBox Grid.Row="7" Grid.ColumnSpan="2" Margin="0,0,63,0" Grid.Column="1" IsChecked="True" Name="subotaDodajProjekciju3">Dodaj projekciju u raspored</CheckBox>
+                        <RadioButton Name="subota2D3" IsChecked="True" Margin="58,10,1,48" RenderTransformOrigin="3.368,1.571" Grid.Column="1" Grid.Row="4">2D</RadioButton>
+                        <RadioButton Name="subota3D3" IsChecked="False" Grid.Row="4" Grid.Column="1" Margin="58,41,1,10">3D</RadioButton>
                         <GroupBox Grid.Column="1" Grid.Row="4">
                             <Grid>
                                 <Grid.ColumnDefinitions>
@@ -1746,8 +1752,7 @@
                                     <RowDefinition Height="29"></RowDefinition>
                                     <RowDefinition Height="33"></RowDefinition>
                                 </Grid.RowDefinitions>
-                                <RadioButton Name="subota2D3" IsChecked="True" Margin="27,10,32,0" RenderTransformOrigin="3.368,1.571" Grid.Column="1">2D</RadioButton>
-                                <RadioButton Name="subota3D3" IsChecked="False" Grid.Row="1" Grid.Column="1" Margin="27,10,32,0">3D</RadioButton>
+
                             </Grid>
                         </GroupBox>
                         <GroupBox Grid.Column="3" Grid.ColumnSpan="7" Margin="0,0,22,0" Grid.RowSpan="8" Height="249" VerticalAlignment="Top">
@@ -1822,7 +1827,7 @@
                     <RowDefinition Height="80"/>
                 </Grid.RowDefinitions>
                 <GroupBox Header="Termin 14.00h" Grid.ColumnSpan="4" Margin="0,10,0,0" Grid.RowSpan="5" Grid.Row="0" Grid.Column="1" Padding="0" >
-                    <Grid>
+                    <Grid Name="nedjeljaGrid1">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="82"/>
                             <ColumnDefinition Width="164"/>
@@ -1853,6 +1858,8 @@
                         <Label Grid.Row="6" HorizontalAlignment="Right" Width="36" RenderTransformOrigin="3.139,-1.577" Margin="0,0,5,4">Film</Label>
                         <TextBox Name="nedjeljaFilm1" IsReadOnly="True" Grid.Column="1" Grid.Row="6" Margin="0,0,0,10"/>
                         <CheckBox Grid.Row="7" Grid.ColumnSpan="2" Margin="0,0,63,0" Grid.Column="1" IsChecked="True" Name="nedjeljakDodajProjekciju1">Dodaj projekciju u raspored</CheckBox>
+                        <RadioButton Name="nedjelja2D1" IsChecked="True" Margin="59,10,0,48" RenderTransformOrigin="3.368,1.571" Grid.Column="1" Grid.Row="4">2D</RadioButton>
+                        <RadioButton Name="nedjelja3D1" IsChecked="False" Grid.Row="4" Grid.Column="1" Margin="59,42,0,10">3D</RadioButton>
                         <GroupBox Grid.Column="1" Grid.Row="4">
                             <Grid>
                                 <Grid.ColumnDefinitions>
@@ -1863,8 +1870,7 @@
                                     <RowDefinition Height="29"></RowDefinition>
                                     <RowDefinition Height="33"></RowDefinition>
                                 </Grid.RowDefinitions>
-                                <RadioButton Name="nedjelja2D1" IsChecked="True" Margin="27,10,32,0" RenderTransformOrigin="3.368,1.571" Grid.Column="1">2D</RadioButton>
-                                <RadioButton Name="nedjelja3D1" IsChecked="False" Grid.Row="1" Grid.Column="1" Margin="27,10,32,0">3D</RadioButton>
+
                             </Grid>
                         </GroupBox>
                         <GroupBox Grid.Column="3" Grid.ColumnSpan="7" Margin="0,0,22,0" Grid.RowSpan="8" Height="249" VerticalAlignment="Top">
@@ -1913,7 +1919,7 @@
                     </Grid>
                 </GroupBox>
                 <GroupBox Header="Termin 17.00h" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="4" Margin="0,0,0,17" Grid.RowSpan="4" >
-                    <Grid>
+                    <Grid Name="nedjeljaGrid2">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="82"/>
                             <ColumnDefinition Width="163"/>
@@ -1944,6 +1950,8 @@
                         <Label HorizontalAlignment="Right" Width="31" RenderTransformOrigin="3.139,-1.577" Margin="0,39,10,0" Grid.Row="5" Grid.RowSpan="2">Film</Label>
                         <TextBox Name="nedjeljaFilm2" IsReadOnly="True" Grid.Column="1" Margin="0,39,0,5" Grid.Row="5" Grid.RowSpan="2"/>
                         <CheckBox Grid.Row="7" Grid.ColumnSpan="3" Margin="81,0,66,0" IsChecked="True" Name="nedjeljaDodajProjekciju2">Dodaj projekciju u raspored</CheckBox>
+                        <RadioButton Name="nedjelja2D2" IsChecked="True" Margin="59,10,0,44" RenderTransformOrigin="3.368,1.571" Grid.Column="1" Grid.Row="4">2D</RadioButton>
+                        <RadioButton Name="nedjelja3D2" IsChecked="False" Grid.Row="4" Grid.Column="1" Margin="59,40,0,10">3D</RadioButton>
                         <GroupBox Grid.Column="1" Grid.Row="4" Margin="0,2,0,0">
                             <Grid>
                                 <Grid.ColumnDefinitions>
@@ -1954,8 +1962,7 @@
                                     <RowDefinition Height="29"></RowDefinition>
                                     <RowDefinition Height="33"></RowDefinition>
                                 </Grid.RowDefinitions>
-                                <RadioButton Name="nedjelja2D2" IsChecked="True" Margin="27,10,32,0" RenderTransformOrigin="3.368,1.571" Grid.Column="1">2D</RadioButton>
-                                <RadioButton Name="nedjelja3D2" IsChecked="False" Grid.Row="1" Grid.Column="1" Margin="27,10,32,0">3D</RadioButton>
+
                             </Grid>
                         </GroupBox>
                         <GroupBox Grid.Column="3" Grid.ColumnSpan="7" Margin="0,0,22,0" Grid.RowSpan="8" Height="249" VerticalAlignment="Top">
@@ -2004,7 +2011,7 @@
                     </Grid>
                 </GroupBox>
                 <GroupBox Header="Termin 21.00h" Grid.Column="1" Grid.Row="10" Grid.ColumnSpan="4" Margin="0,35,0,-151" Grid.RowSpan="2" >
-                    <Grid>
+                    <Grid Name="nedjeljaGrid3">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="82"/>
                             <ColumnDefinition Width="165"/>
@@ -2035,6 +2042,8 @@
                         <Label Grid.Row="6" HorizontalAlignment="Right" Width="31" RenderTransformOrigin="3.139,-1.577" Margin="0,0,10,10">Film</Label>
                         <TextBox Name="nedjeljaFilm3" IsReadOnly="True" Grid.Column="1" Grid.Row="6" Margin="0,0,1,10"/>
                         <CheckBox Grid.Row="7" Grid.ColumnSpan="2" Margin="0,0,63,0" Grid.Column="1" IsChecked="True" Name="nedjeljaDodajProjekciju3">Dodaj projekciju u raspored</CheckBox>
+                        <RadioButton Name="nedjelja2D3" IsChecked="True" Margin="58,10,1,48" RenderTransformOrigin="3.368,1.571" Grid.Column="1" Grid.Row="4">2D</RadioButton>
+                        <RadioButton Name="nedjelja3D3" IsChecked="False" Grid.Row="4" Grid.Column="1" Margin="58,42,1,10">3D</RadioButton>
                         <GroupBox Grid.Column="1" Grid.Row="4">
                             <Grid>
                                 <Grid.ColumnDefinitions>
@@ -2045,8 +2054,7 @@
                                     <RowDefinition Height="29"></RowDefinition>
                                     <RowDefinition Height="33"></RowDefinition>
                                 </Grid.RowDefinitions>
-                                <RadioButton Name="nedjelja2D3" IsChecked="True" Margin="27,10,32,0" RenderTransformOrigin="3.368,1.571" Grid.Column="1">2D</RadioButton>
-                                <RadioButton Name="nedjelja3D3" IsChecked="False" Grid.Row="1" Grid.Column="1" Margin="27,10,32,0">3D</RadioButton>
+
                             </Grid>
                         </GroupBox>
                         <GroupBox Grid.Column="3" Grid.ColumnSpan="7" Margin="0,0,22,0" Grid.RowSpan="8" Height="249" VerticalAlignment="Top">
