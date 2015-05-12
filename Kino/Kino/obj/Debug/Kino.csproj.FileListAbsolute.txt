@@ -1,0 +1,5 @@
+C:\Users\Džemal\Desktop\LZN\Kino\Kino\obj\Debug\Kino.csprojResolveAssemblyReference.cache
+C:\Users\Džemal\Desktop\LZN\Kino\Kino\bin\Debug\Kino.dll
+C:\Users\Džemal\Desktop\LZN\Kino\Kino\bin\Debug\Kino.pdb
+C:\Users\Džemal\Desktop\LZN\Kino\Kino\obj\Debug\Kino.dll
+C:\Users\Džemal\Desktop\LZN\Kino\Kino\obj\Debug\Kino.pdb
