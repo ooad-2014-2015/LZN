@@ -47,11 +47,13 @@ namespace AdministratorForme
                 ZadnjaIzmjena = DateTime.Now,
                 DodatakZaFilmoveDuzeOd120Min = 1
             };
+
             kreiraneProjekcije = new List<Projekcija>();
             raspored = new SedmicniRaspored();
             InitializeComponent();
             CjenovnikCekiran();
-            filmovi = new List<Film> {
+
+            filmovi = new List<Film> { //Filmove i sale obrisati
                 new Film{ID = 1, Naziv = "Titanik", GodinaIzdavanja = 1997, Zanr = "drama", DatumPosljednjeIzmjene = DateTime.Now, DatumUnosa = DateTime.Now,
                 Glumci = new List<string>{"Kate Winslet", "Leonardo Di Caprio"}, Reziser = "James Cameron", Sinospis = "Neki opis", Slika = "Zasad nema", Username ="dzemal", VrijemeTrajanja = 145},
                 new Film{ID = 2, Naziv = "Život je lijep", GodinaIzdavanja = 1995, Zanr = "drama", DatumPosljednjeIzmjene = DateTime.Now, DatumUnosa = DateTime.Now,
@@ -65,6 +67,7 @@ namespace AdministratorForme
                 new Sala{ID = 2, NazivSale = "D", BrojLjubavnihSjedista = 14, BrojObicnihSjedista = 55, BrojVipSjedista = 0, UkupanBrojMijesta = 69}
             };
 
+            pocetak.DisplayDateStart = DateTime.Today;
             PopuniCjenovnik(cjenovnik);
             PopuniTabele();
             PopuniTipProjekcije(projekcije);
@@ -227,72 +230,58 @@ namespace AdministratorForme
             ukupanBrojGresaka += brojGresaka;
             raspored.Projekcije.Add(new Projekcija(SalaFk, vrijemeProjekcije, dimenzionalnost, filmFK, projekcija, 1, cjenovnik.ID)); //Zadnja 2 parametra obavezno izmjeniti
         }
-        private void KreirajRaspored(object sender, RoutedEventArgs e)
+        private void KreirajRaspored(object sender, RoutedEventArgs e) //Dodati provjeru da li se raspored kosi s drugim rasproedom, spasiti raspored u bazu
         {
             if (!pocetak.SelectedDate.HasValue)
             {
                 MessageBox.Show("Morate odabrati datum poečtka", "Greška", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
+            else if(pocetak.SelectedDate.Value.Date.DayOfWeek != DayOfWeek.Monday)
+            {
+                MessageBox.Show("Prvi dan rasporeda mora biti ponedjeljak!", "Greška", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
 
-            ProslijediSveDataGridove(); //Dodati provjeru da li je ponedjeljak izabran
-
-            //Izmjeniti font Status bara
-
+            ProslijediSveDataGridove();
             raspored.ID = 1; //Ovo obavezno izmjeniti;
             raspored.DatumPocetka = pocetak.SelectedDate.Value;
             raspored.DatumZavrsetka = OdrediDatumZavrsetka(pocetak.SelectedDate.Value);
 
             if(ukupanBrojGresaka == 0)
             {
-                MessageBox.Show("Uspješno ste kreirali sedmični raspored", "Uspješno kreiranje", MessageBoxButton.OK, MessageBoxImage.Information); //ispraviti u false
-                //spasiti raspored u bazu
-                //this.Close();
+                if(MessageBox.Show("Izabrali ste " + Convert.ToString(raspored.Projekcije.Count) + "/21 mogućih projekcija\nDa li želite potvrditi odabrane projekcije?",
+                    "Potvrda", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.No)
+                    return;
+
+                MessageBox.Show("Uspješno ste kreirali sedmični raspored", "Uspješno kreiranje", MessageBoxButton.OK, MessageBoxImage.Information); 
+                
+                this.Close();
             }
             else
             {
                 string poruka = "Imate ukupno " + Convert.ToString(ukupanBrojGresaka) + " grešaka. Morate popuniti sva polja prije kreiranja rasporeda!";            
-                status.ItemsSource = poruka.ToList(); //Staviti status bar
+                status.ItemsSource = poruka.ToList(); 
                 ukupanBrojGresaka = 0;
                 projekcijaPoRedu = 0;
 
-                Thread nit = new Thread(m => IzmjeniBojUStatusBar());
+                Thread nit = new Thread(m => IzmjeniBojuStatusBar());
                 nit.Start();
             }
         }
-        private void IzmjeniBojUStatusBar()
+        private void IzmjeniBojuStatusBar()
         {
             Brush boja = Brushes.Red;
             Dispatcher.BeginInvoke((Action)(() => boja = status.Background));
 
-            Dispatcher.BeginInvoke((Action)(() => status.Background = Brushes.Red));
-            Thread.Sleep(800);
+            for (int i = 1; i <= 5; i++)
+            {
+                Dispatcher.BeginInvoke((Action)(() => status.Background = Brushes.Red));
+                Thread.Sleep(800);
 
-            Dispatcher.BeginInvoke((Action)(() => status.Background = boja));
-            Thread.Sleep(800);
-
-            Dispatcher.BeginInvoke((Action)(() => status.Background = Brushes.Red));
-            Thread.Sleep(800);
-
-            Dispatcher.BeginInvoke((Action)(() => status.Background = boja));
-            Thread.Sleep(800);
-
-            Dispatcher.BeginInvoke((Action)(() => status.Background = Brushes.Red));
-            Thread.Sleep(800);
-
-            Dispatcher.BeginInvoke((Action)(() => status.Background = boja));
-            Thread.Sleep(800);
-
-            Dispatcher.BeginInvoke((Action)(() => status.Background = Brushes.Red));
-            Thread.Sleep(800);
-
-            Dispatcher.BeginInvoke((Action)(() => status.Background = boja));
-            Thread.Sleep(800);
-
-            Dispatcher.BeginInvoke((Action)(() => status.Background = Brushes.Red));
-            Thread.Sleep(800);
-
-            Dispatcher.BeginInvoke((Action)(() => status.Background = boja));
+                Dispatcher.BeginInvoke((Action)(() => status.Background = boja));
+                Thread.Sleep(800);
+            }
         }
         private void ProslijediSveDataGridove()
         {
@@ -350,7 +339,7 @@ namespace AdministratorForme
         #endregion
         #region metodeZaPunjenjeKontrolaPodacima
 
-        private void PopuniCjenovnik(Cjenovnik cjenovnik)
+        private void PopuniCjenovnik(Cjenovnik cjenovnik) //ovdje dodati pravi scjenovnik iz baze
         {
             cjenovnikOsnova.Text = Convert.ToString(cjenovnik.Osnova);
             cjenovnik3D.Text = Convert.ToString(cjenovnik.DodatakZa3D);
@@ -627,7 +616,7 @@ namespace AdministratorForme
 
             return lista;
         }
-        private void PretraziClick(object sender, RoutedEventArgs e)//Nije zavrseno
+        private void PretraziClick(object sender, RoutedEventArgs e)
         {
             FrameworkElement roditelj = (FrameworkElement)((Button)sender).Parent;
             DataGrid tabela = new DataGrid();
@@ -650,7 +639,8 @@ namespace AdministratorForme
 
                         if (a.Text.Length > 0 && id == 0)
                         {
-                            //Prijavi gresku i zavrsi
+                            MessageBox.Show("Neispravan unos ID-a filma. ID mora biti unesen kao cijeli broj!", "Greška", MessageBoxButton.OK, MessageBoxImage.Error);
+                            return;
                         }
                         
                     }
@@ -668,7 +658,8 @@ namespace AdministratorForme
 
                         if(a.Text.Length > 0 && godinaIzdavanja == 0)
                         {
-                            //Prijavi gresku i zavrsi
+                            MessageBox.Show("Neispravan unos godine izdavanja filma. Godina mora biti unesena kao cijeli broj!", "Greška", MessageBoxButton.OK, MessageBoxImage.Error);
+                            return;
                         }
                     }
                 }
@@ -695,7 +686,7 @@ namespace AdministratorForme
                 }
             }
         }
-        private void PrikazDetaljaFilma(object sender, RoutedEventArgs e) //Nije zavrsena
+        private void PrikazDetaljaFilma(object sender, RoutedEventArgs e)
         {
             FrameworkElement roditelj = (FrameworkElement)((Button)sender).Parent;
 
@@ -708,8 +699,8 @@ namespace AdministratorForme
                     if (tabela.SelectedIndex == -1 || tabela.SelectedIndex >= filmovi.Count)
                         return;
 
-                    //Poziv forme za prikaz detalja filma
-                    MessageBox.Show(tabela.Name);
+                    var prozor = new PrikazEditovanjeFilma(filmovi[tabela.SelectedIndex]);
+                    prozor.ShowDialog();
                     return;
                 }
             }

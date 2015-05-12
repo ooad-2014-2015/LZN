@@ -65,6 +65,9 @@
     <Compile Include="KreiranjeSedmicnogRasporeda.xaml.cs">
       <DependentUpon>KreiranjeSedmicnogRasporeda.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PrikazEditovanjeFilma.xaml.cs">
+      <DependentUpon>PrikazEditovanjeFilma.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -97,6 +100,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="KreiranjeSedmicnogRasporeda.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PrikazEditovanjeFilma.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
