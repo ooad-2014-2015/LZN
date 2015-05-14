@@ -1,8 +1,70 @@
 ﻿<Window x:Class="AdministratorForme.PrikazEditovanjeFilma"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="PrikazEditovanjeFilma" Height="300" Width="300">
+        Title="PrikazEditovanjeFilma" Height="642" Width="860" Background="#FF91C552" Name="window" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="144*"/>
+            <ColumnDefinition Width="195*"/>
+            <ColumnDefinition Width="15*"/>
+            <ColumnDefinition Width="154*"/>
+            <ColumnDefinition Width="178*"/>
+            <ColumnDefinition Width="166*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="39*"/>
+            <RowDefinition Height="28*"/>
+            <RowDefinition Height="34*"/>
+            <RowDefinition Height="8*"/>
+            <RowDefinition Height="29*"/>
+            <RowDefinition Height="9*"/>
+            <RowDefinition Height="28*"/>
+            <RowDefinition Height="19*"/>
+            <RowDefinition Height="88*"/>
+            <RowDefinition Height="13*"/>
+            <RowDefinition Height="70*"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="27*"/>
+            <RowDefinition Height="32*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="61*"/>
+            <RowDefinition Height="26*"/>
+            <RowDefinition Height="14*"/>
+            <RowDefinition Height="22*"/>
+        </Grid.RowDefinitions>
+        <StatusBar HorizontalAlignment="Left" Height="23" Grid.Row="19" VerticalAlignment="Top" Width="852" Name="status" Grid.ColumnSpan="6" Margin="0,0,0,-1"/>
+        <Label Content="ID filma" HorizontalAlignment="Right" Grid.Row="1" VerticalAlignment="Top" Height="29" Width="55" Grid.RowSpan="2"  />
+        <TextBox Grid.Column="1" Grid.Row="1" Name="id" IsReadOnly="True" />
+        <Label Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right" Width="72" Margin="0,7,0,3" Content="Naziv filma"/>
+        <TextBox Grid.Column="1" Grid.Row="2" x:Name="naziv" Margin="0,7,0,0" />
+        <Label Grid.Column="3" Grid.Row="1" HorizontalAlignment="Right" Width="34" Content="Žanr"/>
+        <Label Grid.Column="3" Grid.Row="2" HorizontalAlignment="Right" Width="101" Margin="0,7,0,3" Content="Godina izdavanja"/>
+        <TextBox Grid.Column="4" Grid.Row="2" x:Name="godina" Margin="0,7,0,0" />
+        <TextBox Grid.Column="4" Grid.Row="1" x:Name="zanr"/>
+        <TextBox Grid.Column="1" Grid.Row="8" x:Name="sinopsis" Grid.ColumnSpan="3" Margin="0,0,0,12" Grid.RowSpan="2"/>
+        <Canvas Grid.Column="4" Grid.Row="8" Grid.ColumnSpan="2" Margin="39,0,47,0" Grid.RowSpan="3">
+            <Image Name="slika" Source="/Slike/nemaSlike.jpg" Height="171" Width="258"/>
+        </Canvas>
+        <Button Name="odabirSlike" Grid.Column="4" Grid.Row="11" Grid.ColumnSpan="2" Margin="85,0,81,0" Content="Odaberi sliku" Click="Button_Click"/>
+        <Label Grid.Column="0" Grid.Row="4" HorizontalAlignment="Right" Width="47" Content="Režiser"/>
+        <Label Grid.Column="3" Grid.Row="4" HorizontalAlignment="Right" Width="118" Content="Dužina trajanja filma"/>
+        <TextBox Name="reziser" Grid.Column="1" Grid.Row="4"/>
+        <TextBox Name="trajanjeFilma" Grid.Column="4" Grid.Row="4" />
+        <Label Grid.Column="0" Grid.Row="14" HorizontalAlignment="Right" Width="110" Content="Datum unosa filma" Margin="0,5,5,5" Grid.RowSpan="2"/>
+        <Label Grid.Column="3" Grid.Row="14" HorizontalAlignment="Right" Width="147" Content="Datum posljednje izmjene" Margin="0,5,98,7" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+        <TextBox Name="datumUnosa" Grid.Column="1" Grid.Row="14" IsReadOnly="True"/>
+        <TextBox Name="DatumIzmjene" Grid.Column="4" Grid.Row="14" IsReadOnly="True" Margin="85,0,81,0" Grid.ColumnSpan="2" Height="30" VerticalAlignment="Top"/>
+        <ListBox Name="glumci" Grid.Column="1" Grid.Row="10" Grid.RowSpan="2" Margin="0,0,0,1" />
+        <Button Name="brisanje" Grid.Column="1" Grid.Row="12" Click="Button_Click_2">Izbriši</Button>
+        <Button Grid.Column="3" Grid.Row="12" Click="Button_Click_1">Dodaj glumce</Button>
+        <TextBox Grid.Column="3" Grid.Row="11" Name="dodajGlumca" Margin="0,1,0,2"/>
+        <Label Content="Sinopsis" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="6" VerticalAlignment="Top" Height="26" Width="53" Grid.RowSpan="2" RenderTransformOrigin="0.491,-0.077" Margin="0,21,0,0"/>
+        <Label Content="Korisnik koji je unio film" HorizontalAlignment="Left" Grid.Row="16" VerticalAlignment="Top" Width="139" Height="26" Margin="5,2,0,0"/>
+        <Label Content="Korisnk koji je napravio posljednju izmjenu" Grid.Column="3" HorizontalAlignment="Left" Grid.Row="16" VerticalAlignment="Top" Width="245" Height="26" Grid.ColumnSpan="2"/>
+        <TextBox Name="korisnikUnio" Grid.Column="1" HorizontalAlignment="Left" Height="26" Margin="0,2,0,0" Grid.Row="16" TextWrapping="Wrap" IsReadOnly="True" VerticalAlignment="Top" Width="195"/>
+        <TextBox Name="korisnikIzmjenio" Grid.ColumnSpan="2" Grid.Column="4" HorizontalAlignment="Left" Height="27" Margin="85,2,0,0" Grid.Row="16" TextWrapping="Wrap" IsReadOnly="True" VerticalAlignment="Top" Width="178"/>
+        <Button Content="Potvrdi" Grid.Column="4" HorizontalAlignment="Left" Grid.Row="17" VerticalAlignment="Top" Width="178" Height="26" Grid.ColumnSpan="2" Margin="85,0,0,0" Click="Button_Click_3"/>
+        <Button Name="potvrdiBrisanje" Content="Obriši film iz baze" Grid.Column="3" HorizontalAlignment="Left" Grid.Row="17" VerticalAlignment="Top" Width="168" Height="26" Grid.ColumnSpan="2" Margin="66,0,0,0" Click="potvrdiBrisanje_Click"/>
     </Grid>
 </Window>

@@ -55,9 +55,9 @@ namespace AdministratorForme
 
             filmovi = new List<Film> { //Filmove i sale obrisati
                 new Film{ID = 1, Naziv = "Titanik", GodinaIzdavanja = 1997, Zanr = "drama", DatumPosljednjeIzmjene = DateTime.Now, DatumUnosa = DateTime.Now,
-                Glumci = new List<string>{"Kate Winslet", "Leonardo Di Caprio"}, Reziser = "James Cameron", Sinospis = "Neki opis", Slika = "Zasad nema", Username ="dzemal", VrijemeTrajanja = 145},
+                Glumci = new List<string>{"Kate Winslet", "Leonardo Di Caprio"}, Reziser = "James Cameron", Sinopsis = "Neki opis", Slika = null, KorisnikKojiJeKreiraoFIlm ="dzemal", VrijemeTrajanja = 145, KorisnikKojiJeNapravioPosljednjeIzmjene = "dzemal"},
                 new Film{ID = 2, Naziv = "Život je lijep", GodinaIzdavanja = 1995, Zanr = "drama", DatumPosljednjeIzmjene = DateTime.Now, DatumUnosa = DateTime.Now,
-                Glumci = new List<string>{"Roberto Beninni"}, Reziser = "Ne znam", Sinospis = "Neki opis", Slika = "Nema slike", Username ="dzemal", VrijemeTrajanja = 115}
+                Glumci = new List<string>{"Roberto Beninni"}, Reziser = "Ne znam", Sinopsis = "Neki opis", Slika = null, KorisnikKojiJeKreiraoFIlm ="dzemal", VrijemeTrajanja = 115, KorisnikKojiJeNapravioPosljednjeIzmjene = "dzemal"}
             };
             var projekcije = new List<string> { "Premijera", "Pretpremijera", "Obična projekcija"};
             sale = new List<Sala>{
@@ -699,7 +699,7 @@ namespace AdministratorForme
                     if (tabela.SelectedIndex == -1 || tabela.SelectedIndex >= filmovi.Count)
                         return;
 
-                    var prozor = new PrikazEditovanjeFilma(filmovi[tabela.SelectedIndex]);
+                    var prozor = new PrikazEditovanjeFilma(filmovi[tabela.SelectedIndex], true);
                     prozor.ShowDialog();
                     return;
                 }
