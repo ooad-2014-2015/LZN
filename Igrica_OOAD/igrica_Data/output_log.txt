@@ -1,0 +1,21 @@
+Initialize engine version: 5.0.1f1 (5a2e8fe35a68)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 10.0]
+    Renderer: NVIDIA Quadro NVS 160M (ID=0x6eb)
+    Vendor:   NVIDIA
+    VRAM:     235 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: E:\Unity\Igrica_OOAD\igrica_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading E:\Unity\Igrica_OOAD\igrica_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: E:\Unity\Igrica_OOAD\igrica_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading E:\Unity\Igrica_OOAD\igrica_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: E:\Unity\Igrica_OOAD\igrica_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading E:\Unity\Igrica_OOAD\igrica_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+- Completed reload, in  0.081 seconds
+desktop: 1440x900 60Hz; virtual: 1440x900 at 0,0
+<RI> Initializing input.
+XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
+<RI> Input initialized.
+<RI> Initialized touch support.
+Platform assembly: E:\Unity\Igrica_OOAD\igrica_Data\Managed\System.Core.dll (this message is harmless)

@@ -46,7 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\KokicaSkripta.cs" />
+     <Compile Include="Assets\Skripte\Kokica.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>E:/Program Files/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
