@@ -11,13 +11,15 @@ namespace Kino
         public string  Username { get; set; }
         public string  TipKorisnika { get; set; }
         public string  Password { get; set; }
+        public string  Spol { get; set; }
 
-        public Korisnik(string ime, string prezime, int id, string username, string tipKorisnika, string hashPassword)
+        public Korisnik(string ime, string prezime, int id, string username, string tipKorisnika, string hashPassword, string pol)
             : base(ime, prezime, id)
         {
             Username = username;
             TipKorisnika = tipKorisnika;
             Password = hashPassword;
+            Spol = pol;
         }
 
         public void RegistrujNovogKorisnika()

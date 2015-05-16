@@ -29,7 +29,7 @@ namespace Kino
             Osnova = osnova;
             DodatakZaNocneProjekcije = dodatakZaNocneProjekcije;
             DodatakZaLjubavnaMjesta = dodatakZaLjubavnaMjesta;
-            DodatakZaVip = DodatakZaVip;
+            DodatakZaVip = dodatakZaVip;
             DodatakZaPremijere = dodatakZaPremijere;
             DodatakZa3D = dodatakZa3D;
             PopustZaVipKorisnike = popustZaVipKorisnike;

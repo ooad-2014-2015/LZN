@@ -20,7 +20,7 @@ namespace AdministratorForme
     /// <summary>
     /// Interaction logic for KreiranjeSedmicnogRasporeda.xaml
     /// </summary>
-    public partial class KreiranjeSedmicnogRasporeda : Window
+    public partial class KreiranjeSedmicnogRasporeda : Window 
     {
         List<Film> filmovi; //izbrisati
         Cjenovnik cjenovnik;
@@ -75,6 +75,61 @@ namespace AdministratorForme
         }
         #region Medote za kreiranje i validaciju rasporeda
 
+        private bool UzmiVrijednostCjenovnik()
+        {
+            double osnova = 0;
+            int dimenzionalnost = 0, duzinaVecaOd120 = 0, ljubavna = 0, premijera = 0, pretpremijera = 0, VIP = 0, popustVIP = 0, popustRodjendan = 0, nocnaProjekcija = 0;
+
+            try
+            {
+                osnova = Double.Parse(cjenovnikOsnova.Text);
+                duzinaVecaOd120 = Int32.Parse(cjenovnikFilmDuziOd120Min.Text);
+                ljubavna = Int32.Parse(cjenovnikLjubavna.Text);
+                premijera = Int32.Parse(cjenovnikPremijera.Text);
+                pretpremijera = Int32.Parse(cjenovnikPretpremijera.Text);
+                VIP = Int32.Parse(cjenovnikVIP.Text);
+                popustVIP = Int32.Parse(cjenovnikPopustVIP.Text);
+                dimenzionalnost = Int32.Parse(cjenovnik3D.Text);
+                popustRodjendan = Int32.Parse(cjenovnikPopustRodjendan.Text);
+                nocnaProjekcija = Int32.Parse(cjenovnikNocnaProjekcija.Text);
+            }
+            catch (Exception)
+            {
+                status.ItemsSource = ("Neispravan unos polja cjenovnika");
+                Thread nit = new Thread(m => IzmjeniBojuStatusBar());
+                nit.Start();
+                return false;
+            }
+            Cjenovnik novi = new Cjenovnik(osnova, nocnaProjekcija, ljubavna, VIP, premijera, dimenzionalnost, popustVIP, popustRodjendan, duzinaVecaOd120, pretpremijera, DateTime.Now, "username logovanog korisnika", 1);//Zadnja 2 parametra izmjenit
+            cjenovnik = novi; //ovdje ustvari dodati novi u bazu!
+            return true;
+        }
+        private bool ValidirajCjenovnik()
+        {
+            if (postojeciCjenovnik.IsChecked == true)
+                return true;;
+
+
+            if ( 
+            cjenovnikOsnova.Text.Length == 0 ||
+            cjenovnik3D.Text.Length == 0 ||
+            cjenovnikFilmDuziOd120Min.Text.Length == 0 ||
+            cjenovnikLjubavna.Text.Length == 0 ||
+            cjenovnikNocnaProjekcija.Text.Length == 0 ||
+            cjenovnikPopustRodjendan.Text.Length == 0 ||
+            cjenovnikPopustVIP.Text.Length == 0 ||
+            cjenovnikPremijera.Text.Length == 0 ||
+            cjenovnikPretpremijera.Text.Length == 0 ||
+            cjenovnikVIP.Text.Length == 0)
+            {
+                status.ItemsSource = ("Morate popuniti sva polja cjenovnika!").ToList();
+                Thread nit = new Thread(m => IzmjeniBojuStatusBar());
+                nit.Start();
+                return false;
+            }
+
+            return UzmiVrijednostCjenovnik();
+        }
         private DateTime OdrediDatumZavrsetka(DateTime datumPocetka)
         {
             int dan = datumPocetka.Day + 6;
@@ -242,6 +297,10 @@ namespace AdministratorForme
                 MessageBox.Show("Prvi dan rasporeda mora biti ponedjeljak!", "Greška", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
+            if(ValidirajCjenovnik() == false)
+            {
+                return;
+            }
 
             ProslijediSveDataGridove();
             raspored.ID = 1; //Ovo obavezno izmjeniti;
@@ -254,6 +313,7 @@ namespace AdministratorForme
                     "Potvrda", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.No)
                     return;
 
+                //listu projekcija iz ove forme dodati u listu projekcija rasporeda;
                 MessageBox.Show("Uspješno ste kreirali sedmični raspored", "Uspješno kreiranje", MessageBoxButton.OK, MessageBoxImage.Information); 
                 
                 this.Close();
@@ -264,6 +324,7 @@ namespace AdministratorForme
                 status.ItemsSource = poruka.ToList(); 
                 ukupanBrojGresaka = 0;
                 projekcijaPoRedu = 0;
+                raspored.Projekcije.Clear(); //???????
 
                 Thread nit = new Thread(m => IzmjeniBojuStatusBar());
                 nit.Start();

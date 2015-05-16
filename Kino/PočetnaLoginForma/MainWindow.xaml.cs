@@ -30,28 +30,28 @@ namespace PočetnaLoginForma
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            this.Hide();
             if(username.Text == "blagajnik")
             {
                 var prozor = new BlagajnikPočetna();
-                this.Close();
                 prozor.ShowDialog();
                 //exit();
             }
             else if (username.Text == "finansije")
             {
                 var prozor = new FinansijskiMenadžerPočetna(); //Proslijedit logovanog korisnika
-                this.Close();
                 prozor.ShowDialog();
 
             }
             else
             {
                 var prozor = new AdministratorPočetna();
-                this.Close();
-                prozor.ShowDialog();
-                //exit();
+                prozor.ShowDialog();                
             }
-           
+
+            this.ShowDialog();
+            password.Clear();
+            username.Clear();
         }
     }
 }

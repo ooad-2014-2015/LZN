@@ -17,3 +17,5 @@ C:\Users\Džemal\Desktop\LZN\Kino\AdministratorForme\bin\Debug\Kino.dll
 C:\Users\Džemal\Desktop\LZN\Kino\AdministratorForme\bin\Debug\Kino.pdb
 C:\Users\Džemal\Desktop\LZN\Kino\AdministratorForme\obj\Debug\PrikazEditovanjeFilma.baml
 C:\Users\Džemal\Desktop\LZN\Kino\AdministratorForme\obj\Debug\PrikazEditovanjeFilma.g.cs
+C:\Users\Džemal\Desktop\LZN\Kino\AdministratorForme\obj\Debug\FormaZaUnosFilma.baml
+C:\Users\Džemal\Desktop\LZN\Kino\AdministratorForme\obj\Debug\FormaZaUnosFilma.g.cs

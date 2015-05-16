@@ -62,6 +62,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormaZaUnosFilma.xaml.cs">
+      <DependentUpon>FormaZaUnosFilma.xaml</DependentUpon>
+    </Compile>
     <Compile Include="KreiranjeSedmicnogRasporeda.xaml.cs">
       <DependentUpon>KreiranjeSedmicnogRasporeda.xaml</DependentUpon>
     </Compile>
@@ -96,6 +99,10 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="AdministratorPočetna.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FormaZaUnosFilma.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
