@@ -11,11 +11,11 @@ namespace Kino
         public int ID { get; set; }
         public double Cijena { get; set; }
         public string Naziv { get; set; }
-        public string Slika { get; set; }
-        public double Kolicina { get; set; }
         public int NaStanju { get; set; }
+        public double Kolicina { get; set; }
+        public byte[] Slika { get; set; }
 
-        public Artikal(int id, double cijena, string naziv, string slika, double kolicina, int naStanju)
+        public Artikal(int id, double cijena, string naziv, byte[] slika, double kolicina, int naStanju)
         {
             ID = id;
             Cijena = cijena;
@@ -23,6 +23,11 @@ namespace Kino
             Slika = slika;
             Kolicina = kolicina;
             NaStanju = naStanju;
+        }
+
+        public Artikal()
+        {
+            // TODO: Complete member initialization
         }
     }
 }

@@ -16,7 +16,7 @@
         </Menu>
         <Button Content="Odjavi se" HorizontalAlignment="Left" Margin="43,0,0,0" VerticalAlignment="Top" Width="139" Background="#FF9EFFF2" Click="OdjavaButtonClick" Grid.Column="1"/>
         <TabControl Background="#FF628B73" Margin="0,21,0,0" Grid.ColumnSpan="2">
-            <TabItem Header="Prvi tab"  Foreground="Black">
+            <TabItem Header="Početna"  Foreground="Black">
                 <Grid Background="#FFFFFEFE">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="53"></ColumnDefinition>
@@ -261,6 +261,104 @@
                     <Button Grid.ColumnSpan="2" Content="Izmjeni cjenovnik" Grid.Column="4" HorizontalAlignment="Left" Margin="0,64,0,0" Grid.Row="3" VerticalAlignment="Top" Width="120" Height="24" Click="IzmjeniCjenovnikButtonClick"/>
                     <StatusBar Name="statusCjenovnik" HorizontalAlignment="Left" Height="23" Grid.Row="5" VerticalAlignment="Top" Width="776" Grid.ColumnSpan="6"/>
 
+                </Grid>
+            </TabItem>
+            <TabItem Header="Prodajni artikli">
+                <Grid Background="White">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="15*"/>
+                        <RowDefinition Height="116*"/>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="186*"/>
+                        <RowDefinition Height="9*"/>
+                        <RowDefinition Height="15*"/>
+                        <RowDefinition Height="24*"/>
+                    </Grid.RowDefinitions>
+                    <GroupBox Margin="10,0" Grid.RowSpan="2" Header="Pretraga" Background="#FFF0F0F0">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="170*"/>
+                                <ColumnDefinition Width="195*"/>
+                                <ColumnDefinition Width="219*"/>
+                                <ColumnDefinition Width="180*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="6*"/>
+                                <RowDefinition Height="26*"/>
+                                <RowDefinition Height="12*"/>
+                                <RowDefinition Height="29*"/>
+                                <RowDefinition Height="8*"/>
+                                <RowDefinition Height="28*"/>
+                                <RowDefinition Height="6*"/>
+                            </Grid.RowDefinitions>
+                            <Label Grid.Column="0" Grid.Row="1" HorizontalContentAlignment="Right">ID artikla</Label>
+                            <Label Grid.Column="0" Grid.Row="3" HorizontalContentAlignment="Right">Naziv artikla</Label>
+                            <Label Grid.Column="0" Grid.Row="5" HorizontalContentAlignment="Right">Veličina pakovanja</Label>
+                            <Label Grid.Column="2" HorizontalContentAlignment="Right" Margin="0,5,0,1" Grid.RowSpan="2">Cijena između</Label>
+                            <Label Grid.Column="3" HorizontalContentAlignment="Right" Margin="42,0,101,0" RenderTransformOrigin="2.469,0.478" Grid.Row="1">i</Label>
+                            <Label Grid.Column="3" HorizontalContentAlignment="Right" Margin="139,5,0,1" Grid.RowSpan="2" RenderTransformOrigin="6.808,0.538">KM</Label>
+                            <Label Grid.Column="2" HorizontalContentAlignment="Right" Margin="0,3,0,0" Grid.Row="3">Na stanju između</Label>
+                            <Label Grid.Column="3" HorizontalContentAlignment="Right" Margin="42,3,101,0" RenderTransformOrigin="2.469,0.478" Grid.Row="3">i</Label>
+                            <Label Grid.Column="3" HorizontalContentAlignment="Right" Margin="139,3,0,0" RenderTransformOrigin="6.808,0.538" Grid.Row="3">kom</Label>
+
+                            <TextBox Grid.Column="1" Grid.Row="1" Name="idArtikla"/>
+                            <TextBox Grid.Column="1" Grid.Row="3" Name="nazivArtikla"/>
+                            <TextBox Grid.Column="1" Grid.Row="5" Name="kolicinaArtikla"/>
+                            <TextBox Grid.Column="3" Grid.Row="1" Name="cijenaDonjaArtikla" Margin="0,0,133,0"/>
+                            <TextBox Grid.Column="3" Grid.Row="1" Name="cijenaGornjaArtikla" Margin="92,0,41,0"/>
+                            <TextBox Grid.Column="3" Grid.Row="3" Name="naStanjuDonja" Margin="0,0,133,0"/>
+                            <TextBox Grid.Column="3" Grid.Row="3" Name="naStanjuGornja" Margin="92,0,41,0"/>
+
+                            <Button Grid.Column="3" Margin="42,0,0,0" Grid.Row="5" Height="25" VerticalAlignment="Bottom" Click="PretragaArtikli">Pretraži</Button>
+                            <Button Grid.Column="2" Margin="119,2,138,0" Grid.Row="5" Grid.ColumnSpan="2" Click="PonistiPretragUArtikalaButtonClick">Poništi pretragu</Button>
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Margin="10,0,454,0" Grid.Row="3" VerticalAlignment="Top" Height="186">
+                        <Grid>
+                            <DataGrid IsReadOnly="True" Name="tabelaArtikli"  CanUserAddRows="False" CanUserDeleteRows="False" Foreground="#FF2A72F0" SelectionMode="Single">
+                                <DataGrid.Columns>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Header="Novi artikal" Margin="327,0,10,0" Grid.Row="3" GotFocus="GroupBox_GotFocus">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="94*"/>
+                                <ColumnDefinition Width="105*"/>
+                                <ColumnDefinition Width="108*"/>
+                                <ColumnDefinition Width="120*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="2*"/>
+                                <RowDefinition Height="27*"/>
+                                <RowDefinition Height="27*"/>
+                                <RowDefinition Height="27*"/>
+                                <RowDefinition Height="26*"/>
+                                <RowDefinition Height="28*"/>
+                                <RowDefinition Height="27*"/>
+                            </Grid.RowDefinitions>
+                            <Label Grid.Column="2" Grid.Row="1" HorizontalContentAlignment="Right">ID</Label>
+                            <Canvas Grid.Column="0" Grid.RowSpan="5" Margin="0,3,53,0" Grid.Row="1" Grid.ColumnSpan="2">
+                                <Image Name="slika" Stretch="Fill" Source="/Slike/nemaSlike.jpg" Height="132" Width="142"></Image>
+                            </Canvas>
+                            <TextBox Name="noviArtikalId" Grid.Column="3" Grid.Row="1" IsReadOnly="True"/>
+                            <Label Grid.Row="2" HorizontalContentAlignment="Right" Margin="0,2,0,0" Grid.Column="2">Naziv</Label>
+                            <Label Grid.Column="1" Grid.Row="5" HorizontalContentAlignment="Right" Grid.ColumnSpan="2" Margin="100,1,5,0">Cijena</Label>
+                            <Label Grid.Column="2" Grid.Row="3" HorizontalContentAlignment="Right">Veličina pakovanja</Label>
+                            <Label Grid.Column="2" Grid.Row="4" HorizontalContentAlignment="Right">Na stanju</Label>
+
+                            <TextBox Name="noviArtikalNaziv" Grid.Column="3" Grid.Row="2" Margin="0,0,0,2"/>
+                            <TextBox Name="noviArtikalCijena" Grid.Column="3" Grid.Row="5" Margin="0,1,0,0"/>
+                            <TextBox Name="noviArtikalkolicina" Grid.Column="3" Grid.Row="3"/>
+                            <TextBox Name="noviArtikalStanje" Grid.Column="3" Grid.Row="4"/>
+                            <Button Grid.Row="6" Click="OdabirSlikeArtikal" Grid.ColumnSpan="2" Margin="0,0,53,0">Odaberi sliku</Button>
+                            <Button Grid.Row="6" Grid.Column="2" Grid.ColumnSpan="2" Margin="65,0,0,0" Click="PotvrdaUnosaArtikal">Potvrdi unos</Button>
+                        </Grid>
+                    </GroupBox>
+                    <Button Margin="176,0,454,0" Grid.Row="4" Grid.RowSpan="2" Click="EditovanjeArtiklaButtonClick">Edituj artikal</Button>
+                    <Button Margin="10,0,624,0" Grid.Row="4" Click="BrisanjeArtiklaButtonClick" Grid.RowSpan="2">Izbriši artikal</Button>
+                    <StatusBar HorizontalAlignment="Left" Height="24" Grid.Row="6" VerticalAlignment="Top" Width="776" Name="statusArtikal"/>
                 </Grid>
             </TabItem>
         </TabControl>
