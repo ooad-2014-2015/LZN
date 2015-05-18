@@ -258,7 +258,7 @@
                             <TextBox  Grid.Column="1" Margin="5,0,29,10" Grid.Row="9" Grid.ColumnSpan="2" x:Name="cjenovnikPopustRodjendan1" />
                         </Grid>
                     </GroupBox>
-                    <Button Grid.ColumnSpan="2" Content="Izmjeni cjenovnik" Grid.Column="4" HorizontalAlignment="Left" Margin="0,64,0,0" Grid.Row="3" VerticalAlignment="Top" Width="120" Height="24" Click="IzmjeniCjenovnikButtonClick"/>
+                    <Button Grid.ColumnSpan="3" Content="Izmjeni cjenovnik" Grid.Column="3" HorizontalAlignment="Left" Margin="112,75,0,0" Grid.Row="3" VerticalAlignment="Top" Width="131" Height="24" Click="IzmjeniCjenovnikButtonClick" Grid.RowSpan="2"/>
                     <StatusBar Name="statusCjenovnik" HorizontalAlignment="Left" Height="23" Grid.Row="5" VerticalAlignment="Top" Width="776" Grid.ColumnSpan="6"/>
 
                 </Grid>
@@ -361,8 +361,68 @@
                     <StatusBar HorizontalAlignment="Left" Height="24" Grid.Row="6" VerticalAlignment="Top" Width="776" Name="statusArtikal"/>
                 </Grid>
             </TabItem>
+            <TabItem Header="Korisnici sistema" Margin="-2,0,-2,-1">
+                <Grid Background="White" Margin="0,-1,0,1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="106*"/>
+                        <ColumnDefinition Width="25*"/>
+                        <ColumnDefinition Width="371*"/>
+                        <ColumnDefinition Width="230*"/>
+                        <ColumnDefinition Width="44*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="160*"/>
+                        <RowDefinition Height="159*"/>
+                        <RowDefinition Height="34*"/>
+                        <RowDefinition Height="22*"/>
+                    </Grid.RowDefinitions>
+                    <GroupBox Header="Pretraga korisnika u bazi" Margin="10,0,10,23" Grid.ColumnSpan="5">
+                        <Grid Margin="0,0,0,-12">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="166*"/>
+                                <ColumnDefinition Width="207*"/>
+                                <ColumnDefinition Width="150*"/>
+                                <ColumnDefinition Width="241*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="7*"/>
+                                <RowDefinition Height="24*"/>
+                                <RowDefinition Height="5*"/>
+                                <RowDefinition Height="25*"/>
+                                <RowDefinition Height="5*"/>
+                                <RowDefinition Height="23*"/>
+                                <RowDefinition Height="7*"/>
+                                <RowDefinition Height="31*"/>
+                            </Grid.RowDefinitions>
+                            <Label Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right" Width="72">ID korisnika</Label>
+                            <Label Grid.Column="0" Grid.Row="3" HorizontalAlignment="Right" Width="30">Ime</Label>
+                            <Label Grid.Column="0" Grid.Row="5" HorizontalAlignment="Right" Width="52">Prezime</Label>
+                            <Label Grid.Column="2" Grid.Row="3" HorizontalAlignment="Right" Width="33" Margin="0,0,5,0" Grid.RowSpan="2">Spol</Label>
+                            <Label Grid.Column="2" Grid.Row="4" HorizontalAlignment="Right" Width="85" Grid.RowSpan="2" >Prava pristupa</Label>
+                            <Label Grid.Column="2" Grid.Row="1" HorizontalAlignment="Right" Width="63" >Username</Label>
+
+                            <TextBox Grid.Column="1" Grid.Row="1" Name="korisnikIdPretraga"/>
+                            <TextBox Grid.Column="1" Grid.Row="3" Name="korisnikImePretraga"/>
+                            <TextBox Grid.Column="1" Grid.Row="5" Name="korisnikPrezimePretraga"/>
+                            <TextBox Grid.Column="3" Name="korisnikUsernamePretraga" Margin="0,0,25,0" Grid.Row="1"/>
+                            <ComboBox Grid.Column="3" Grid.Row="3" Name="korisnikSpolPretraga" Margin="0,0,25,0" SelectionChanged="korisnikPravaPristupaPretraga_SelectionChanged" />
+                            <ComboBox Grid.Column="3" Grid.Row="5" Name="korisnikPravaPristupaPretraga" Margin="0,0,25,0" SelectionChanged="korisnikPravaPristupaPretraga_SelectionChanged" />
+                            <Button Content="Pretraži" Grid.Column="3" HorizontalAlignment="Left" Margin="74,5,0,0" Grid.Row="6" VerticalAlignment="Top" Width="136" Height="24" Grid.RowSpan="2" Click="PretragaKorisnikButtonClick"/>
+                            <Button Content="Poništi pretragu" Grid.Column="2" HorizontalAlignment="Left" Margin="61,5,0,0" Grid.Row="6" VerticalAlignment="Top" Width="137" Grid.ColumnSpan="2" Height="24" Grid.RowSpan="2" Click="PonistiPretragu"/>
+                        </Grid>
+                    </GroupBox>
+                    <DataGrid IsReadOnly="True" Name="tabelaKorisnici" ItemsSource="{Binding korisnici}" Grid.ColumnSpan="3" Margin="10,0,40,0" Grid.Row="1"/>
+                    <Button Content="Izbriši korisnika" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="2" VerticalAlignment="Top" Width="111" Grid.ColumnSpan="2" Click="BrisanjeKorisnika" Height="22"/>
+                    <Button Content="Izmjeni korisnika" Grid.Column="2" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="2" VerticalAlignment="Top" Width="109" Click="IzmjenaKorisnika" Height="22"/>
+                    <Button Content="Novi korisnik" Grid.Column="2" HorizontalAlignment="Left" Margin="162,5,0,0" Grid.Row="2" VerticalAlignment="Top" Width="169" Height="27" Click="NoviKorisnikUnos"/>
+                    <StatusBar Name="statusKorisnik" HorizontalAlignment="Left" Height="24" Margin="0,32,0,0" Grid.Row="2" VerticalAlignment="Top" Width="776" Grid.RowSpan="2" Grid.ColumnSpan="5"/>
+                    <Canvas Grid.Column="3" Grid.RowSpan="2" Grid.Row="1" Grid.ColumnSpan="2" Margin="0,0,28,0">
+                        <Image Source="/Slike/user.png" Stretch="Fill" Grid.Column="3" Grid.RowSpan="2" Grid.Row="1" Height="193" Width="246"/>
+                    </Canvas>
+                </Grid>
+            </TabItem>
         </TabControl>
-        <Label Content="Prijavljeni ste kao Ime i Prezime" HorizontalContentAlignment="Right" Name="prijavljanKorisnik" HorizontalAlignment="Left" Margin="323,-2,0,0" VerticalAlignment="Top" Width="308" Grid.ColumnSpan="2" Height="33" Foreground="#FF2180DE">
+        <Label Content="Prijavljeni ste kao Ime i Prezime" HorizontalContentAlignment="Right" Name="prijavljanKorisnik" HorizontalAlignment="Left" Margin="323,-2,0,0" VerticalAlignment="Top" Width="308" Grid.ColumnSpan="2" Height="24" Foreground="#FF2180DE">
             <Label.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0"/>

@@ -8,10 +8,10 @@ namespace Kino
 {
     public class Korisnik: Osoba
     {
-        public string  Username { get; set; }
         public string  TipKorisnika { get; set; }
-        public string  Password { get; set; }
         public string  Spol { get; set; }
+        public string  Username { get; set; }
+        public string  Password { get; set; }
 
         public Korisnik(string ime, string prezime, int id, string username, string tipKorisnika, string hashPassword, string pol)
             : base(ime, prezime, id)
@@ -20,6 +20,11 @@ namespace Kino
             TipKorisnika = tipKorisnika;
             Password = hashPassword;
             Spol = pol;
+        }
+
+        public Korisnik()
+        {
+            // TODO: Complete member initialization
         }
 
         public void RegistrujNovogKorisnika()

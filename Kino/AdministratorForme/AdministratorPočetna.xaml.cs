@@ -26,14 +26,21 @@ namespace AdministratorForme
     {
         ObservableCollection<Film> filmovi;
         ObservableCollection<Artikal> artikli;
+        ObservableCollection<Korisnik> korisnici; 
         bool zatvaranjaButton;
-        Cjenovnik cjenovnik;
+        Cjenovnik cjenovnik; 
 
         public AdministratorPočetna()
         {
             InitializeComponent();
             zatvaranjaButton = false;
 
+            #region Za brisanje
+            korisnici = new ObservableCollection<Korisnik>{
+                new Korisnik{ID = 1, Ime = "Džemal", Prezime = "Čengić", Spol = "Muško", TipKorisnika = "Administrator sistema", Username = "cenga", Password = Convert.ToString(("neki password").GetHashCode())},
+                new Korisnik{ID = 2, Ime = "Adna", Prezime = "Tahić", Spol = "Žensko", TipKorisnika = "Blagajnik", Username = "tahicka", Password = Convert.ToString(("1234565789").GetHashCode())},
+                new Korisnik{ID = 3, Ime = "Amina", Prezime = "Krekić", Spol = "Žensko", TipKorisnika = "Finansijski menadžer", Username = "krekicamina", Password = Convert.ToString(("0000").GetHashCode())}
+            };
             cjenovnik = new Cjenovnik
             {
                 Osnova = 4,
@@ -62,12 +69,15 @@ namespace AdministratorForme
                 new Artikal{ID = 3, Cijena = 3, Kolicina = 0.2, NaStanju = 75, Naziv = "Kikiriki"},
                 new Artikal{ID = 4, Cijena = 1, Kolicina = 0.1, NaStanju = 40, Naziv = "Košpice"}
             };
-
+            #endregion
             tabela.ItemsSource = filmovi; 
+            tabelaArtikli.ItemsSource = artikli;
+            tabelaKorisnici.ItemsSource = korisnici;
             pozdrav.Content = "Dobrodošao Džemale"; //izmjeniti
             prijavljanKorisnik.Content = "Prijavljeni ste kao Džemal Čengić"; //izmjeniti 
             PopuniCjenovnik(cjenovnik);
-            tabelaArtikli.ItemsSource = artikli;
+            korisnikSpolPretraga.ItemsSource = new List<string> { "Žensko", "Muško" };
+            korisnikPravaPristupaPretraga.ItemsSource = new List<string> { "Blagajnik", "Finansijski menadžer", "Administrator sistema" };
         }
 
         #region Metode za cjenovnik
@@ -141,8 +151,10 @@ namespace AdministratorForme
         private void PozivFormeZaUnosFilmaButtonClick(object sender, RoutedEventArgs e)
         {
             var f = new FormaZaUnosFilma(filmovi);
+            this.Hide();
             f.ShowDialog();
             tabela.ItemsSource = filmovi;
+            this.ShowDialog();
         }
         private void PonistiPretraguButtonClick(object sender, RoutedEventArgs e)
         {
@@ -160,8 +172,11 @@ namespace AdministratorForme
         {
             if (tabela.SelectedIndex != -1)
             {
-                var f = new PrikazEditovanjeFilma(filmovi[tabela.SelectedIndex], false);
+                Film temp = tabela.SelectedItem as Film;
+                var f = new PrikazEditovanjeFilma(temp, false);
+                this.Hide();
                 f.ShowDialog();
+                this.ShowDialog();
                 PonistiPretraguButtonClick(sender, e);
                 PretragaButtonClick(sender, e);
             }
@@ -192,14 +207,23 @@ namespace AdministratorForme
 
             tabela.ItemsSource = lista;
         }
-        private void BrisanjeFilmaButtonClick(object sender, RoutedEventArgs e)
+        private void BrisanjeFilmaButtonClick(object sender, RoutedEventArgs e)//Dodati provjeru da li je film u nekoj projekciji, ako jeste zabraniti brisanje
         {
             if (tabela.SelectedIndex != -1 && MessageBox.Show("Da li ste sigurni da želite izbrisati film iz baze podataka", "Brisanje filma", MessageBoxButton.YesNo,
                 MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
-                filmovi.RemoveAt(tabela.SelectedIndex); //Dodati provjeru da li je film u nekoj projekciji, ako jeste zabraniti brisanje
+                Film temp = tabela.SelectedItem as Film;
+                for (int i = 0; i < filmovi.Count; i++) 
+                {
+                    if (filmovi[i].ID == temp.ID)
+                    {
+                        filmovi.RemoveAt(i);
+                        break;
+                    }
+                }
                 tabela.ItemsSource = filmovi;
                 MessageBox.Show("Film uspješno obrisan", "", MessageBoxButton.OK, MessageBoxImage.Information);
+                PonistiPretraguButtonClick(sender, e);
                 return;
             }
         }
@@ -223,9 +247,19 @@ namespace AdministratorForme
             if (tabelaArtikli.SelectedIndex != -1 && MessageBox.Show("Da li ste sigurni da želite izbrisati artikal iz baze podataka", "Brisanje artikla", MessageBoxButton.YesNo,
              MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
-                artikli.RemoveAt(tabelaArtikli.SelectedIndex); 
+                Artikal temp = tabelaArtikli.SelectedItem as Artikal;
+                for (int i = 0; i < artikli.Count; i++)
+                {
+                    if (artikli[i].ID == temp.ID)
+                    {
+                        artikli.RemoveAt(i);
+                        break;
+                    }
+                }
                 tabelaArtikli.ItemsSource = artikli;
                 MessageBox.Show("Artikal uspješno obrisan", "", MessageBoxButton.OK, MessageBoxImage.Information);
+                OcistiPolja();
+                PonistiPretragUArtikalaButtonClick(sender, e);
                 return;
             }
         }
@@ -352,7 +386,7 @@ namespace AdministratorForme
             if(tabelaArtikli.SelectedIndex == -1)
                 return;
 
-            Artikal a = artikli[tabelaArtikli.SelectedIndex];
+            Artikal a = tabelaArtikli.SelectedItem as Artikal;
             noviArtikalCijena.Text = Convert.ToString(a.Cijena);
             noviArtikalId.Text = Convert.ToString(a.ID);
             noviArtikalkolicina.Text = Convert.ToString(a.Kolicina);
@@ -365,14 +399,95 @@ namespace AdministratorForme
             catch (Exception) { }
         }
         #endregion
+        #region Metode za obradu korisnika
 
+        private void PonistiPretragu(object sender, RoutedEventArgs e)
+        {
+            korisnikIdPretraga.Clear();
+            korisnikImePretraga.Clear();
+            korisnikPravaPristupaPretraga.SelectedIndex = -1;
+            korisnikPrezimePretraga.Clear();
+            korisnikSpolPretraga.SelectedIndex = -1;
+            korisnikUsernamePretraga.Clear();
 
+            tabelaKorisnici.ItemsSource = korisnici;
+        }
+        private void PretragaKorisnikButtonClick(object sender, RoutedEventArgs e)
+        {
+            int id = 0;
+            string ime = korisnikImePretraga.Text, prezime = korisnikPrezimePretraga.Text, spol = String.Empty, prava = String.Empty, username = korisnikUsernamePretraga.Text;
+            Int32.TryParse(korisnikIdPretraga.Text, out id);
+
+            if (korisnikSpolPretraga.SelectedIndex != -1)
+                spol = korisnikSpolPretraga.SelectedItem.ToString();
+            if (korisnikPravaPristupaPretraga.SelectedIndex != -1)
+                prava = korisnikPravaPristupaPretraga.SelectedItem.ToString();
+
+            var lista = (from k in korisnici  
+
+                         where (id == 0 || k.ID == id) &&
+                         (ime == " " || ime == String.Empty || k.Ime.ToLower().Contains(ime.ToLower())) &&
+                         (prezime == " " || prezime == String.Empty || k.Prezime.ToLower().Contains(prezime.ToLower())) &&
+                         (spol == String.Empty || spol == k.Spol) &&
+                         (prava == String.Empty || prava == k.TipKorisnika) &&
+                         (username == " " || username == String.Empty || k.Username.ToLower().Contains(username.ToLower()))
+
+                         select k).ToList();
+
+            tabelaKorisnici.ItemsSource = lista;
+        }
+        private void korisnikPravaPristupaPretraga_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            PretragaKorisnikButtonClick(sender, e);
+        }
+        private void BrisanjeKorisnika(object sender, RoutedEventArgs e)
+        {
+            if(tabelaKorisnici.SelectedIndex != -1 && MessageBox.Show("Da li želite potvrditi?", "Brisanje korisnika", MessageBoxButton.YesNo, MessageBoxImage.Question)
+                == MessageBoxResult.Yes)
+            {
+                Korisnik temp = tabelaKorisnici.SelectedItem as Korisnik;
+                for (int i = 0; i < korisnici.Count; i++)
+                {
+                    if(korisnici[i].ID == temp.ID)
+                    {
+                        korisnici.RemoveAt(i);
+                        break;
+                    }
+                }
+                    MessageBox.Show("Uspješno ste izbrisali korisnika sistema", "Brisanje uspješno", MessageBoxButton.OK, MessageBoxImage.Information);
+                PonistiPretragu(sender, e);
+                PretragaKorisnikButtonClick(sender, e);
+                return;
+            }
+        }
+        private void IzmjenaKorisnika(object sender, RoutedEventArgs e)
+        {
+            if (tabelaKorisnici.SelectedIndex == -1)
+                return;
+
+            Korisnik temp = tabelaKorisnici.SelectedItem as Korisnik;
+            UnosKorisnika f = new UnosKorisnika(korisnici, false, temp);
+            this.Hide();
+            f.ShowDialog();
+            PonistiPretragu(sender, e);
+            this.ShowDialog();
+        }
+        private void NoviKorisnikUnos(object sender, RoutedEventArgs e)
+        {
+            var f = new UnosKorisnika(korisnici, true, new Korisnik());
+            this.Hide();
+            f.ShowDialog();
+            PonistiPretragu(sender, e);
+            this.ShowDialog();
+        }
+        #endregion
+        #region Pomoćne metode
         private void PozivFormeZaKreiranjeRasporeda(object sender, RoutedEventArgs e)
         {
             var prozor = new KreiranjeSedmicnogRasporeda();
-            //this.Hide();
+            this.Hide();
             prozor.ShowDialog();
-            //this.ShowDialog();
+            this.ShowDialog();
         }
         private void OdjavaButtonClick(object sender, RoutedEventArgs e)
         {
@@ -434,5 +549,6 @@ namespace AdministratorForme
             image.Freeze();
             return image;
         }
+        #endregion
     }
 }

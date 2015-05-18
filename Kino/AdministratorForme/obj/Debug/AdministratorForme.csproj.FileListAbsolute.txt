@@ -19,3 +19,9 @@ C:\Users\Džemal\Desktop\LZN\Kino\AdministratorForme\obj\Debug\PrikazEditovanjeF
 C:\Users\Džemal\Desktop\LZN\Kino\AdministratorForme\obj\Debug\PrikazEditovanjeFilma.g.cs
 C:\Users\Džemal\Desktop\LZN\Kino\AdministratorForme\obj\Debug\FormaZaUnosFilma.baml
 C:\Users\Džemal\Desktop\LZN\Kino\AdministratorForme\obj\Debug\FormaZaUnosFilma.g.cs
+C:\Users\Džemal\Desktop\LZN\Kino\AdministratorForme\bin\Debug\EntityFramework.dll
+C:\Users\Džemal\Desktop\LZN\Kino\AdministratorForme\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Džemal\Desktop\LZN\Kino\AdministratorForme\bin\Debug\EntityFramework.xml
+C:\Users\Džemal\Desktop\LZN\Kino\AdministratorForme\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Džemal\Desktop\LZN\Kino\AdministratorForme\obj\Debug\UnosKorisnika.baml
+C:\Users\Džemal\Desktop\LZN\Kino\AdministratorForme\obj\Debug\UnosKorisnika.g.cs

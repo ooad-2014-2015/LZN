@@ -61,8 +61,8 @@
                             </Grid.RowDefinitions>
                             <Label HorizontalAlignment="Right" Width="31" Margin="0,0,0,12" Grid.RowSpan="2">Sala</Label>
                             <Label Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right" RenderTransformOrigin="0.531,1.885" Width="81" Margin="0,2,0,13" Grid.RowSpan="2">Tip projekcije</Label>
-                            <ComboBox Name="ponedjeljakSale1" Grid.Column="1" IsDropDownOpen="True" Margin="0,0,0,12" Grid.RowSpan="2"></ComboBox>
-                            <ComboBox Grid.Column="1" Grid.Row="2" Name="ponedjeljakProjekcije1" IsDropDownOpen="True" Margin="0,2,0,13" Grid.RowSpan="2"></ComboBox>
+                            <ComboBox Name="ponedjeljakSale1" Grid.Column="1" Margin="0,0,0,12" Grid.RowSpan="2"></ComboBox>
+                            <ComboBox Grid.Column="1" Grid.Row="2" Name="ponedjeljakProjekcije1" Margin="0,2,0,13" Grid.RowSpan="2"></ComboBox>
                             <Label Grid.Row="6" HorizontalAlignment="Right" Width="36" RenderTransformOrigin="3.139,-1.577" Margin="0,0,5,4">Film</Label>
                             <TextBox Name="ponedjeljakFilm1" IsReadOnly="True" Grid.Column="1" Grid.Row="6" Margin="0,0,0,10"/>
                             <CheckBox Grid.Row="7" Grid.ColumnSpan="2" Margin="0,0,63,0" Grid.Column="1" IsChecked="True" Name="ponedjeljakDodajProjekciju1">Dodaj projekciju u raspored</CheckBox>
@@ -141,8 +141,8 @@
                             </Grid.RowDefinitions>
                             <Label HorizontalAlignment="Right" Width="31" Margin="0,0,0,12" Grid.RowSpan="2">Sala</Label>
                             <Label Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right" RenderTransformOrigin="0.531,1.885" Width="81" Margin="0,2,0,13" Grid.RowSpan="2">Tip projekcije</Label>
-                            <ComboBox Name="ponedjeljakSale2" Grid.Column="1" IsDropDownOpen="True" Margin="0,0,0,12" Grid.RowSpan="2"></ComboBox>
-                            <ComboBox Grid.Column="1" Grid.Row="2" Name="ponedjeljakProjekcije2" IsDropDownOpen="True" Margin="0,2,0,13" Grid.RowSpan="2"></ComboBox>
+                            <ComboBox Name="ponedjeljakSale2" Grid.Column="1"  Margin="0,0,0,12" Grid.RowSpan="2"></ComboBox>
+                            <ComboBox Grid.Column="1" Grid.Row="2" Name="ponedjeljakProjekcije2" Margin="0,2,0,13" Grid.RowSpan="2"></ComboBox>
                             <Label HorizontalAlignment="Right" Width="31" RenderTransformOrigin="3.139,-1.577" Margin="0,39,10,0" Grid.Row="5" Grid.RowSpan="2">Film</Label>
                             <TextBox Name="ponedjeljakFilm2" IsReadOnly="True" Grid.Column="1" Margin="0,39,2,5" Grid.Row="5" Grid.RowSpan="2"/>
                             <CheckBox Grid.Row="7" Grid.ColumnSpan="3" Margin="81,0,66,0" IsChecked="True" Name="ponedjeljakDodajProjekciju2">Dodaj projekciju u raspored</CheckBox>
@@ -232,8 +232,8 @@
                             </Grid.RowDefinitions>
                             <Label HorizontalAlignment="Right" Width="31" Margin="0,0,0,12" Grid.RowSpan="2">Sala</Label>
                             <Label Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right" RenderTransformOrigin="0.531,1.885" Width="81" Margin="0,2,0,13" Grid.RowSpan="2">Tip projekcije</Label>
-                            <ComboBox Name="ponedjeljakSale3" Grid.Column="1" IsDropDownOpen="True" Margin="0,0,0,12" Grid.RowSpan="2"></ComboBox>
-                            <ComboBox Grid.Column="1" Grid.Row="2" Name="ponedjeljakProjekcije3" IsDropDownOpen="True" Margin="0,2,0,13" Grid.RowSpan="2"></ComboBox>
+                            <ComboBox Name="ponedjeljakSale3" Grid.Column="1"  Margin="0,0,0,12" Grid.RowSpan="2"></ComboBox>
+                            <ComboBox Grid.Column="1" Grid.Row="2" Name="ponedjeljakProjekcije3" Margin="0,2,0,13" Grid.RowSpan="2"></ComboBox>
                             <Label Grid.Row="6" HorizontalAlignment="Right" Width="31" RenderTransformOrigin="3.139,-1.577" Margin="0,0,10,10">Film</Label>
                             <TextBox Name="ponedjeljakFilm3" IsReadOnly="True" Grid.Column="1" Grid.Row="6" Margin="0,0,0,10"/>
                             <CheckBox Grid.Row="7" Grid.ColumnSpan="2" Margin="0,0,63,0" Grid.Column="1" IsChecked="True" Name="ponedjeljakDodajProjekciju3">Dodaj projekciju u raspored</CheckBox>
@@ -349,8 +349,8 @@
                             </Grid.RowDefinitions>
                             <Label HorizontalAlignment="Right" Width="31" Margin="0,0,0,12" Grid.RowSpan="2">Sala</Label>
                             <Label Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right" RenderTransformOrigin="0.531,1.885" Width="81" Margin="0,2,0,13" Grid.RowSpan="2">Tip projekcije</Label>
-                            <ComboBox Name="utorakSale1" Grid.Column="1" IsDropDownOpen="True" Margin="0,0,0,12" Grid.RowSpan="2"></ComboBox>
-                            <ComboBox Grid.Column="1" Grid.Row="2" Name="utorakProjekcije1" IsDropDownOpen="True" Margin="0,2,0,13" Grid.RowSpan="2"></ComboBox>
+                            <ComboBox Name="utorakSale1" Grid.Column="1" Margin="0,0,0,12" Grid.RowSpan="2"></ComboBox>
+                            <ComboBox Grid.Column="1" Grid.Row="2" Name="utorakProjekcije1" Margin="0,2,0,13" Grid.RowSpan="2"></ComboBox>
                             <Label Grid.Row="6" HorizontalAlignment="Right" Width="36" RenderTransformOrigin="3.139,-1.577" Margin="0,0,5,4">Film</Label>
                             <TextBox Name="utorakFilm1" IsReadOnly="True" Grid.Column="1" Grid.Row="6" Margin="0,0,0,10"/>
                             <CheckBox Grid.Row="7" Grid.ColumnSpan="2" Margin="0,0,63,0" Grid.Column="1" IsChecked="True" Name="utorakDodajProjekciju1">Dodaj projekciju u raspored</CheckBox>
@@ -441,8 +441,8 @@
                             </Grid.RowDefinitions>
                             <Label HorizontalAlignment="Right" Width="31" Margin="0,0,0,12" Grid.RowSpan="2">Sala</Label>
                             <Label Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right" RenderTransformOrigin="0.531,1.885" Width="81" Margin="0,2,0,13" Grid.RowSpan="2">Tip projekcije</Label>
-                            <ComboBox Name="utorakSale2" Grid.Column="1" IsDropDownOpen="True" Margin="0,0,0,12" Grid.RowSpan="2"></ComboBox>
-                            <ComboBox Grid.Column="1" Grid.Row="2" Name="utorakProjekcije2" IsDropDownOpen="True" Margin="0,2,0,13" Grid.RowSpan="2"></ComboBox>
+                            <ComboBox Name="utorakSale2" Grid.Column="1" Margin="0,0,0,12" Grid.RowSpan="2"></ComboBox>
+                            <ComboBox Grid.Column="1" Grid.Row="2" Name="utorakProjekcije2" Margin="0,2,0,13" Grid.RowSpan="2"></ComboBox>
                             <Label HorizontalAlignment="Right" Width="31" RenderTransformOrigin="3.139,-1.577" Margin="0,39,10,0" Grid.Row="5" Grid.RowSpan="2">Film</Label>
                             <TextBox Name="utorakFilm2" IsReadOnly="True" Grid.Column="1" Margin="0,39,1,5" Grid.Row="5" Grid.RowSpan="2"/>
                             <CheckBox Grid.Row="7" Grid.ColumnSpan="3" Margin="81,0,66,0" IsChecked="True" Name="utorakDodajProjekciju2">Dodaj projekciju u raspored</CheckBox>
@@ -533,8 +533,8 @@
                             </Grid.RowDefinitions>
                             <Label HorizontalAlignment="Right" Width="31" Margin="0,0,0,12" Grid.RowSpan="2">Sala</Label>
                             <Label Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right" RenderTransformOrigin="0.531,1.885" Width="81" Margin="0,2,0,13" Grid.RowSpan="2">Tip projekcije</Label>
-                            <ComboBox Name="utorakSale3" Grid.Column="1" IsDropDownOpen="True" Margin="0,0,0,12" Grid.RowSpan="2"></ComboBox>
-                            <ComboBox Grid.Column="1" Grid.Row="2" Name="utorakProjekcije3" IsDropDownOpen="True" Margin="0,2,0,13" Grid.RowSpan="2"></ComboBox>
+                            <ComboBox Name="utorakSale3" Grid.Column="1" Grid.RowSpan="2" Height="26" VerticalAlignment="Top"/>
+                            <ComboBox Grid.Column="1" Grid.Row="2" Name="utorakProjekcije3" Margin="0,2,0,13" Grid.RowSpan="2"></ComboBox>
                             <Label Grid.Row="6" HorizontalAlignment="Right" Width="31" RenderTransformOrigin="3.139,-1.577" Margin="0,0,10,10">Film</Label>
                             <TextBox Name="utorakFilm3" IsReadOnly="True" Grid.Column="1" Grid.Row="6" Margin="0,0,0,10"/>
                             <CheckBox Grid.Row="7" Grid.ColumnSpan="2" Margin="0,0,63,0" Grid.Column="1" IsChecked="True" Name="utorakDodajProjekciju3">Dodaj projekciju u raspored</CheckBox>
@@ -651,8 +651,8 @@
                             </Grid.RowDefinitions>
                             <Label HorizontalAlignment="Right" Width="31" Margin="0,0,0,12" Grid.RowSpan="2">Sala</Label>
                             <Label Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right" RenderTransformOrigin="0.531,1.885" Width="81" Margin="0,2,0,13" Grid.RowSpan="2">Tip projekcije</Label>
-                            <ComboBox Name="srijedaSale1" Grid.Column="1" IsDropDownOpen="True" Margin="0,0,0,12" Grid.RowSpan="2"></ComboBox>
-                            <ComboBox Grid.Column="1" Grid.Row="2" Name="srijedaProjekcije1" IsDropDownOpen="True" Margin="0,2,0,13" Grid.RowSpan="2"></ComboBox>
+                            <ComboBox Name="srijedaSale1" Grid.Column="1" Margin="0,0,0,12" Grid.RowSpan="2"></ComboBox>
+                            <ComboBox Grid.Column="1" Grid.Row="2" Name="srijedaProjekcije1" Margin="0,2,0,13" Grid.RowSpan="2"></ComboBox>
                             <Label Grid.Row="6" HorizontalAlignment="Right" Width="36" RenderTransformOrigin="3.139,-1.577" Margin="0,0,5,4">Film</Label>
                             <TextBox Name="srijedaFilm1" IsReadOnly="True" Grid.Column="1" Grid.Row="6" Margin="0,0,0,10"/>
                             <CheckBox Grid.Row="7" Grid.ColumnSpan="2" Margin="0,0,63,0" Grid.Column="1" IsChecked="True" Name="srijedaDodajProjekciju1">Dodaj projekciju u raspored</CheckBox>
@@ -743,8 +743,8 @@
                             </Grid.RowDefinitions>
                             <Label HorizontalAlignment="Right" Width="31" Margin="0,0,0,12" Grid.RowSpan="2">Sala</Label>
                             <Label Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right" RenderTransformOrigin="0.531,1.885" Width="81" Margin="0,2,0,13" Grid.RowSpan="2">Tip projekcije</Label>
-                            <ComboBox Name="srijedaSale2" Grid.Column="1" IsDropDownOpen="True" Margin="0,0,0,12" Grid.RowSpan="2"></ComboBox>
-                            <ComboBox Grid.Column="1" Grid.Row="2" Name="srijedaProjekcije2" IsDropDownOpen="True" Margin="0,2,0,13" Grid.RowSpan="2"></ComboBox>
+                            <ComboBox Name="srijedaSale2" Grid.Column="1" Margin="0,0,0,12" Grid.RowSpan="2"></ComboBox>
+                            <ComboBox Grid.Column="1" Grid.Row="2" Name="srijedaProjekcije2" Margin="0,2,0,13" Grid.RowSpan="2"></ComboBox>
                             <Label HorizontalAlignment="Right" Width="31" RenderTransformOrigin="3.139,-1.577" Margin="0,0,10,0" Grid.Row="6">Film</Label>
                             <TextBox Name="srijedaFilm2" IsReadOnly="True" Grid.Column="1" Margin="0,0,0,5" Grid.Row="6"/>
                             <CheckBox Grid.Row="7" Grid.ColumnSpan="3" Margin="81,0,66,0" IsChecked="True" Name="srijedaDodajProjekciju2">Dodaj projekciju u raspored</CheckBox>
@@ -835,8 +835,8 @@
                             </Grid.RowDefinitions>
                             <Label HorizontalAlignment="Right" Width="31" Margin="0,0,0,12" Grid.RowSpan="2">Sala</Label>
                             <Label Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right" RenderTransformOrigin="0.531,1.885" Width="81" Margin="0,2,0,13" Grid.RowSpan="2">Tip projekcije</Label>
-                            <ComboBox Name="srijedaSale3" Grid.Column="1" IsDropDownOpen="True" Margin="0,0,0,12" Grid.RowSpan="2"></ComboBox>
-                            <ComboBox Grid.Column="1" Grid.Row="2" Name="srijedaProjekcije3" IsDropDownOpen="True" Margin="0,2,0,13" Grid.RowSpan="2"></ComboBox>
+                            <ComboBox Name="srijedaSale3" Grid.Column="1" Margin="0,0,0,12" Grid.RowSpan="2"></ComboBox>
+                            <ComboBox Grid.Column="1" Grid.Row="2" Name="srijedaProjekcije3" Margin="0,2,0,13" Grid.RowSpan="2"></ComboBox>
                             <Label Grid.Row="6" HorizontalAlignment="Right" Width="31" RenderTransformOrigin="3.139,-1.577" Margin="0,0,10,10">Film</Label>
                             <TextBox Name="srijedaFilm3" IsReadOnly="True" Grid.Column="1" Grid.Row="6" Margin="0,0,0,10"/>
                             <CheckBox Grid.Row="7" Grid.ColumnSpan="2" Margin="0,0,63,0" Grid.Column="1" IsChecked="True" Name="srijedaDodajProjekciju3">Dodaj projekciju u raspored</CheckBox>
@@ -953,8 +953,8 @@
                             </Grid.RowDefinitions>
                             <Label HorizontalAlignment="Right" Width="31" Margin="0,0,0,12" Grid.RowSpan="2">Sala</Label>
                             <Label Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right" RenderTransformOrigin="0.531,1.885" Width="81" Margin="0,2,0,13" Grid.RowSpan="2">Tip projekcije</Label>
-                            <ComboBox Name="cetvrtakSale1" Grid.Column="1" IsDropDownOpen="True" Margin="0,0,0,12" Grid.RowSpan="2"></ComboBox>
-                            <ComboBox Grid.Column="1" Grid.Row="2" Name="cetvrtakProjekcije1" IsDropDownOpen="True" Margin="0,2,0,13" Grid.RowSpan="2"></ComboBox>
+                            <ComboBox Name="cetvrtakSale1" Grid.Column="1" Margin="0,0,0,12" Grid.RowSpan="2"></ComboBox>
+                            <ComboBox Grid.Column="1" Grid.Row="2" Name="cetvrtakProjekcije1" Margin="0,2,0,13" Grid.RowSpan="2"></ComboBox>
                             <Label Grid.Row="6" HorizontalAlignment="Right" Width="36" RenderTransformOrigin="3.139,-1.577" Margin="0,0,5,4">Film</Label>
                             <TextBox Name="cetvrtakFilm1" IsReadOnly="True" Grid.Column="1" Grid.Row="6" Margin="0,0,2,10"/>
                             <CheckBox Grid.Row="7" Grid.Column="1" IsChecked="True" Name="cetvrtakDodajProjekciju1">Dodaj projekciju u raspored</CheckBox>
@@ -1045,8 +1045,8 @@
                             </Grid.RowDefinitions>
                             <Label HorizontalAlignment="Right" Width="31" Margin="0,0,0,12" Grid.RowSpan="2">Sala</Label>
                             <Label Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right" RenderTransformOrigin="0.531,1.885" Width="81" Margin="0,2,0,13" Grid.RowSpan="2">Tip projekcije</Label>
-                            <ComboBox Name="cetvrtakSale2" Grid.Column="1" IsDropDownOpen="True" Margin="0,0,0,12" Grid.RowSpan="2"></ComboBox>
-                            <ComboBox Grid.Column="1" Grid.Row="2" Name="cetvrtakProjekcije2" IsDropDownOpen="True" Margin="0,2,0,13" Grid.RowSpan="2"></ComboBox>
+                            <ComboBox Name="cetvrtakSale2" Grid.Column="1" Grid.RowSpan="2" Height="26" VerticalAlignment="Top"/>
+                            <ComboBox Grid.Column="1" Grid.Row="2" Name="cetvrtakProjekcije2" Margin="0,2,0,13" Grid.RowSpan="2"></ComboBox>
                             <Label HorizontalAlignment="Right" Width="31" RenderTransformOrigin="3.139,-1.577" Margin="0,39,10,0" Grid.Row="5" Grid.RowSpan="2">Film</Label>
                             <TextBox Name="cetvrtakFilm2" IsReadOnly="True" Grid.Column="1" Margin="0,39,1,5" Grid.Row="5" Grid.RowSpan="2"/>
                             <CheckBox Grid.Row="7" Grid.ColumnSpan="3" Margin="81,0,66,0" IsChecked="True" Name="cetvrtakDodajProjekciju2">Dodaj projekciju u raspored</CheckBox>
@@ -1137,8 +1137,8 @@
                             </Grid.RowDefinitions>
                             <Label HorizontalAlignment="Right" Width="31" Margin="0,0,0,12" Grid.RowSpan="2">Sala</Label>
                             <Label Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right" RenderTransformOrigin="0.531,1.885" Width="81" Margin="0,2,0,13" Grid.RowSpan="2">Tip projekcije</Label>
-                            <ComboBox Name="cetvrtakSale3" Grid.Column="1" IsDropDownOpen="True" Margin="0,0,0,12" Grid.RowSpan="2"></ComboBox>
-                            <ComboBox Grid.Column="1" Grid.Row="2" Name="cetvrtakProjekcije3" IsDropDownOpen="True" Margin="0,2,0,13" Grid.RowSpan="2"></ComboBox>
+                            <ComboBox Name="cetvrtakSale3" Grid.Column="1"  Margin="0,0,0,12" Grid.RowSpan="2"></ComboBox>
+                            <ComboBox Grid.Column="1" Grid.Row="2" Name="cetvrtakProjekcije3" Margin="0,2,0,13" Grid.RowSpan="2"></ComboBox>
                             <Label Grid.Row="6" HorizontalAlignment="Right" Width="31" RenderTransformOrigin="3.139,-1.577" Margin="0,0,10,10">Film</Label>
                             <TextBox Name="cetvrtakFilm3" IsReadOnly="True" Grid.Column="1" Grid.Row="6" Margin="0,0,0,10"/>
                             <CheckBox Grid.Row="7" Grid.ColumnSpan="2" Margin="0,0,63,0" Grid.Column="1" IsChecked="True" Name="cetvrtakDodajProjekciju3">Dodaj projekciju u raspored</CheckBox>
@@ -1255,8 +1255,8 @@
                             </Grid.RowDefinitions>
                             <Label HorizontalAlignment="Right" Width="31" Margin="0,0,0,12" Grid.RowSpan="2">Sala</Label>
                             <Label Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right" RenderTransformOrigin="0.531,1.885" Width="81" Margin="0,2,0,13" Grid.RowSpan="2">Tip projekcije</Label>
-                            <ComboBox Name="petakSale1" Grid.Column="1" IsDropDownOpen="True" Margin="0,0,0,12" Grid.RowSpan="2"></ComboBox>
-                            <ComboBox Grid.Column="1" Grid.Row="2" Name="petakProjekcije1" IsDropDownOpen="True" Margin="0,2,0,13" Grid.RowSpan="2"></ComboBox>
+                            <ComboBox Name="petakSale1" Grid.Column="1" Margin="0,0,0,12" Grid.RowSpan="2"></ComboBox>
+                            <ComboBox Grid.Column="1" Grid.Row="2" Name="petakProjekcije1" Margin="0,2,0,13" Grid.RowSpan="2"></ComboBox>
                             <Label Grid.Row="6" HorizontalAlignment="Right" Width="36" RenderTransformOrigin="3.139,-1.577" Margin="0,0,5,4">Film</Label>
                             <TextBox Name="petakFilm1" IsReadOnly="True" Grid.Column="1" Grid.Row="6" Margin="0,0,0,10"/>
                             <CheckBox Grid.Row="7" Grid.ColumnSpan="2" Margin="0,0,63,0" Grid.Column="1" IsChecked="True" Name="petakDodajProjekciju1">Dodaj projekciju u raspored</CheckBox>
@@ -1347,8 +1347,8 @@
                             </Grid.RowDefinitions>
                             <Label HorizontalAlignment="Right" Width="31" Margin="0,0,0,12" Grid.RowSpan="2">Sala</Label>
                             <Label Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right" RenderTransformOrigin="0.531,1.885" Width="81" Margin="0,2,0,13" Grid.RowSpan="2">Tip projekcije</Label>
-                            <ComboBox Name="petakSale2" Grid.Column="1" IsDropDownOpen="True" Margin="0,0,0,12" Grid.RowSpan="2"></ComboBox>
-                            <ComboBox Grid.Column="1" Grid.Row="2" Name="petakProjekcije2" IsDropDownOpen="True" Margin="0,2,0,13" Grid.RowSpan="2"></ComboBox>
+                            <ComboBox Name="petakSale2" Grid.Column="1" Margin="0,0,0,12" Grid.RowSpan="2"></ComboBox>
+                            <ComboBox Grid.Column="1" Grid.Row="2" Name="petakProjekcije2" Margin="0,2,0,13" Grid.RowSpan="2"></ComboBox>
                             <Label HorizontalAlignment="Right" Width="31" RenderTransformOrigin="3.139,-1.577" Margin="0,39,10,0" Grid.Row="5" Grid.RowSpan="2">Film</Label>
                             <TextBox Name="petakFilm2" IsReadOnly="True" Grid.Column="1" Margin="0,39,0,5" Grid.Row="5" Grid.RowSpan="2"/>
                             <RadioButton Name="petak2D2" IsChecked="True" Margin="59,10,0,44" RenderTransformOrigin="3.368,1.571" Grid.Column="1" Grid.Row="4">2D</RadioButton>
@@ -1439,8 +1439,8 @@
                             </Grid.RowDefinitions>
                             <Label HorizontalAlignment="Right" Width="31" Margin="0,0,0,12" Grid.RowSpan="2">Sala</Label>
                             <Label Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right" RenderTransformOrigin="0.531,1.885" Width="81" Margin="0,2,0,13" Grid.RowSpan="2">Tip projekcije</Label>
-                            <ComboBox Name="petakSale3" Grid.Column="1" IsDropDownOpen="True" Margin="0,0,0,12" Grid.RowSpan="2"></ComboBox>
-                            <ComboBox Grid.Column="1" Grid.Row="2" Name="petakProjekcije3" IsDropDownOpen="True" Margin="0,2,0,13" Grid.RowSpan="2"></ComboBox>
+                            <ComboBox Name="petakSale3" Grid.Column="1" Margin="0,0,0,12" Grid.RowSpan="2"></ComboBox>
+                            <ComboBox Grid.Column="1" Grid.Row="2" Name="petakProjekcije3" Margin="0,2,0,13" Grid.RowSpan="2"></ComboBox>
                             <Label Grid.Row="6" HorizontalAlignment="Right" Width="31" RenderTransformOrigin="3.139,-1.577" Margin="0,0,10,10">Film</Label>
                             <TextBox Name="petakFilm3" IsReadOnly="True" Grid.Column="1" Grid.Row="6" Margin="0,0,0,10"/>
                             <CheckBox Grid.Row="7" Grid.ColumnSpan="2" Margin="0,0,63,0" Grid.Column="1" IsChecked="True" Name="petakDodajProjekciju3">Dodaj projekciju u raspored</CheckBox>
@@ -1557,8 +1557,8 @@
                             </Grid.RowDefinitions>
                             <Label HorizontalAlignment="Right" Width="31" Margin="0,0,0,12" Grid.RowSpan="2">Sala</Label>
                             <Label Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right" RenderTransformOrigin="0.531,1.885" Width="81" Margin="0,2,0,13" Grid.RowSpan="2">Tip projekcije</Label>
-                            <ComboBox Name="subotaSale1" Grid.Column="1" IsDropDownOpen="True" Margin="0,0,0,12" Grid.RowSpan="2"></ComboBox>
-                            <ComboBox Grid.Column="1" Grid.Row="2" Name="subotaProjekcije1" IsDropDownOpen="True" Margin="0,2,0,13" Grid.RowSpan="2"></ComboBox>
+                            <ComboBox Name="subotaSale1" Grid.Column="1"  Margin="0,0,0,12" Grid.RowSpan="2"></ComboBox>
+                            <ComboBox Grid.Column="1" Grid.Row="2" Name="subotaProjekcije1" Margin="0,2,0,13" Grid.RowSpan="2"></ComboBox>
                             <Label Grid.Row="6" HorizontalAlignment="Right" Width="36" RenderTransformOrigin="3.139,-1.577" Margin="0,0,5,4">Film</Label>
                             <TextBox Name="subotaFilm1" IsReadOnly="True" Grid.Column="1" Grid.Row="6" Margin="0,0,0,10"/>
                             <CheckBox Grid.Row="7" Grid.ColumnSpan="2" Margin="0,0,63,0" Grid.Column="1" IsChecked="True" Name="subotaDodajProjekciju1">Dodaj projekciju u raspored</CheckBox>
@@ -1649,8 +1649,8 @@
                             </Grid.RowDefinitions>
                             <Label HorizontalAlignment="Right" Width="31" Margin="0,0,0,12" Grid.RowSpan="2">Sala</Label>
                             <Label Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right" RenderTransformOrigin="0.531,1.885" Width="81" Margin="0,2,0,13" Grid.RowSpan="2">Tip projekcije</Label>
-                            <ComboBox Name="subotaSale2" Grid.Column="1" IsDropDownOpen="True" Margin="0,0,0,12" Grid.RowSpan="2"></ComboBox>
-                            <ComboBox Grid.Column="1" Grid.Row="2" Name="subotaProjekcije2" IsDropDownOpen="True" Margin="0,2,0,13" Grid.RowSpan="2"></ComboBox>
+                            <ComboBox Name="subotaSale2" Grid.Column="1" Margin="0,0,0,12" Grid.RowSpan="2"></ComboBox>
+                            <ComboBox Grid.Column="1" Grid.Row="2" Name="subotaProjekcije2" Margin="0,2,0,13" Grid.RowSpan="2"></ComboBox>
                             <Label HorizontalAlignment="Right" Width="31" RenderTransformOrigin="3.139,-1.577" Margin="0,39,10,0" Grid.Row="5" Grid.RowSpan="2">Film</Label>
                             <TextBox Name="subotaFilm2" IsReadOnly="True" Grid.Column="1" Margin="0,39,0,5" Grid.Row="5" Grid.RowSpan="2"/>
                             <CheckBox Grid.Row="7" Grid.ColumnSpan="3" Margin="81,0,66,0" IsChecked="True" Name="subotaDodajProjekciju2">Dodaj projekciju u raspored</CheckBox>
@@ -1741,8 +1741,8 @@
                             </Grid.RowDefinitions>
                             <Label HorizontalAlignment="Right" Width="31" Margin="0,0,0,12" Grid.RowSpan="2">Sala</Label>
                             <Label Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right" RenderTransformOrigin="0.531,1.885" Width="81" Margin="0,2,0,13" Grid.RowSpan="2">Tip projekcije</Label>
-                            <ComboBox Name="subotaSale3" Grid.Column="1" IsDropDownOpen="True" Margin="0,0,0,12" Grid.RowSpan="2"></ComboBox>
-                            <ComboBox Grid.Column="1" Grid.Row="2" Name="subotaProjekcije3" IsDropDownOpen="True" Margin="0,2,0,13" Grid.RowSpan="2"></ComboBox>
+                            <ComboBox Name="subotaSale3" Grid.Column="1"  Margin="0,0,0,12" Grid.RowSpan="2"></ComboBox>
+                            <ComboBox Grid.Column="1" Grid.Row="2" Name="subotaProjekcije3" Margin="0,2,0,13" Grid.RowSpan="2"></ComboBox>
                             <Label Grid.Row="6" HorizontalAlignment="Right" Width="31" RenderTransformOrigin="3.139,-1.577" Margin="0,0,10,10">Film</Label>
                             <TextBox Name="subotaFilm3" IsReadOnly="True" Grid.Column="1" Grid.Row="6" Margin="0,0,1,10"/>
                             <CheckBox Grid.Row="7" Grid.ColumnSpan="2" Margin="0,0,63,0" Grid.Column="1" IsChecked="True" Name="subotaDodajProjekciju3">Dodaj projekciju u raspored</CheckBox>
@@ -1859,8 +1859,8 @@
                             </Grid.RowDefinitions>
                             <Label HorizontalAlignment="Right" Width="31" Margin="0,0,0,12" Grid.RowSpan="2">Sala</Label>
                             <Label Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right" RenderTransformOrigin="0.531,1.885" Width="81" Margin="0,2,0,13" Grid.RowSpan="2">Tip projekcije</Label>
-                            <ComboBox Name="nedjeljaSale1" Grid.Column="1" IsDropDownOpen="True" Margin="0,0,0,12" Grid.RowSpan="2"></ComboBox>
-                            <ComboBox Grid.Column="1" Grid.Row="2" Name="nedjeljaProjekcije1" IsDropDownOpen="True" Margin="0,2,0,13" Grid.RowSpan="2"></ComboBox>
+                            <ComboBox Name="nedjeljaSale1" Grid.Column="1" Margin="0,0,0,12" Grid.RowSpan="2"></ComboBox>
+                            <ComboBox Grid.Column="1" Grid.Row="2" Name="nedjeljaProjekcije1" Margin="0,2,0,13" Grid.RowSpan="2"></ComboBox>
                             <Label Grid.Row="6" HorizontalAlignment="Right" Width="36" RenderTransformOrigin="3.139,-1.577" Margin="0,0,5,4">Film</Label>
                             <TextBox Name="nedjeljaFilm1" IsReadOnly="True" Grid.Column="1" Grid.Row="6" Margin="0,0,0,10"/>
                             <CheckBox Grid.Row="7" Grid.ColumnSpan="2" Margin="0,0,63,0" Grid.Column="1" IsChecked="True" Name="nedjeljakDodajProjekciju1">Dodaj projekciju u raspored</CheckBox>
@@ -1951,8 +1951,8 @@
                             </Grid.RowDefinitions>
                             <Label HorizontalAlignment="Right" Width="31" Margin="0,0,0,12" Grid.RowSpan="2">Sala</Label>
                             <Label Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right" RenderTransformOrigin="0.531,1.885" Width="81" Margin="0,2,0,13" Grid.RowSpan="2">Tip projekcije</Label>
-                            <ComboBox Name="nedjeljaSale2" Grid.Column="1" IsDropDownOpen="True" Margin="0,0,0,12" Grid.RowSpan="2"></ComboBox>
-                            <ComboBox Grid.Column="1" Grid.Row="2" Name="nedjeljaProjekcije2" IsDropDownOpen="True" Margin="0,2,0,13" Grid.RowSpan="2"></ComboBox>
+                            <ComboBox Name="nedjeljaSale2" Grid.Column="1" Margin="0,0,0,12" Grid.RowSpan="2"></ComboBox>
+                            <ComboBox Grid.Column="1" Grid.Row="2" Name="nedjeljaProjekcije2" Margin="0,2,0,13" Grid.RowSpan="2"></ComboBox>
                             <Label HorizontalAlignment="Right" Width="31" RenderTransformOrigin="3.139,-1.577" Margin="0,39,10,0" Grid.Row="5" Grid.RowSpan="2">Film</Label>
                             <TextBox Name="nedjeljaFilm2" IsReadOnly="True" Grid.Column="1" Margin="0,39,0,5" Grid.Row="5" Grid.RowSpan="2"/>
                             <CheckBox Grid.Row="7" Grid.ColumnSpan="3" Margin="81,0,66,0" IsChecked="True" Name="nedjeljaDodajProjekciju2">Dodaj projekciju u raspored</CheckBox>
@@ -2043,8 +2043,8 @@
                             </Grid.RowDefinitions>
                             <Label HorizontalAlignment="Right" Width="31" Margin="0,0,0,12" Grid.RowSpan="2">Sala</Label>
                             <Label Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right" RenderTransformOrigin="0.531,1.885" Width="81" Margin="0,2,0,13" Grid.RowSpan="2">Tip projekcije</Label>
-                            <ComboBox Name="nedjeljaSale3" Grid.Column="1" IsDropDownOpen="True" Margin="0,0,0,12" Grid.RowSpan="2"></ComboBox>
-                            <ComboBox Grid.Column="1" Grid.Row="2" Name="nedjeljaProjekcije3" IsDropDownOpen="True" Margin="0,2,0,13" Grid.RowSpan="2"></ComboBox>
+                            <ComboBox Name="nedjeljaSale3" Grid.Column="1" Margin="0,0,0,12" Grid.RowSpan="2"></ComboBox>
+                            <ComboBox Grid.Column="1" Grid.Row="2" Name="nedjeljaProjekcije3" Margin="0,2,0,13" Grid.RowSpan="2"></ComboBox>
                             <Label Grid.Row="6" HorizontalAlignment="Right" Width="31" RenderTransformOrigin="3.139,-1.577" Margin="0,0,10,10">Film</Label>
                             <TextBox Name="nedjeljaFilm3" IsReadOnly="True" Grid.Column="1" Grid.Row="6" Margin="0,0,1,10"/>
                             <CheckBox Grid.Row="7" Grid.ColumnSpan="2" Margin="0,0,63,0" Grid.Column="1" IsChecked="True" Name="nedjeljaDodajProjekciju3">Dodaj projekciju u raspored</CheckBox>

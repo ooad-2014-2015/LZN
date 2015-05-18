@@ -8,15 +8,19 @@ namespace Kino
 {
     public abstract class Osoba
     {
+        public int ID { get; set; }
         public string Ime { get; set; }
         public string Prezime { get; set; }
-        public int ID { get; set; }
 
         public Osoba(string ime, string prezime, int id)
         {
             Ime = ime;
             Prezime = prezime;
             ID = id;
+        }
+        public Osoba()
+        {
+
         }
 
     }
