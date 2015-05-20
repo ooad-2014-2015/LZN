@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 238be39d85caead46b058f97d2daf217
+timeCreated: 1432156702
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - kokica: {fileID: 112896, guid: 7136c90ef09270d409837daa029ce4c1, type: 2}
+  - ispali: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

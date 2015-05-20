@@ -2,19 +2,863 @@ Initialize engine version: 5.0.1f1 (5a2e8fe35a68)
 GfxDevice: creating device client; threaded=1
 Direct3D:
     Version:  Direct3D 11.0 [level 10.0]
-    Renderer: NVIDIA GeForce 9600 GT (ID=0x622)
+    Renderer: NVIDIA Quadro NVS 160M (ID=0x6eb)
     Vendor:   NVIDIA
-    VRAM:     499 MB
+    VRAM:     235 MB
 Begin MonoManager ReloadAssembly
-Platform assembly: C:\Users\Džemal\Desktop\LZN\Igrica_OOAD\igrica_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading C:\Users\Džemal\Desktop\LZN\Igrica_OOAD\igrica_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: C:\Users\Džemal\Desktop\LZN\Igrica_OOAD\igrica_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading C:\Users\Džemal\Desktop\LZN\Igrica_OOAD\igrica_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: C:\Users\Džemal\Desktop\LZN\Igrica_OOAD\igrica_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading C:\Users\Džemal\Desktop\LZN\Igrica_OOAD\igrica_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-- Completed reload, in  0.063 seconds
-desktop: 1680x1050 60Hz; virtual: 1680x1050 at 0,0
+Platform assembly: E:\Unity\Igrica_OOAD\igrica_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading E:\Unity\Igrica_OOAD\igrica_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: E:\Unity\Igrica_OOAD\igrica_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading E:\Unity\Igrica_OOAD\igrica_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: E:\Unity\Igrica_OOAD\igrica_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading E:\Unity\Igrica_OOAD\igrica_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+- Completed reload, in  0.065 seconds
+desktop: 1440x900 60Hz; virtual: 1440x900 at 0,0
 <RI> Initializing input.
+XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
 <RI> Input initialized.
 <RI> Initialized touch support.
-Platform assembly: C:\Users\Džemal\Desktop\LZN\Igrica_OOAD\igrica_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: E:\Unity\Igrica_OOAD\igrica_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: E:\Unity\Igrica_OOAD\igrica_Data\Managed\System.dll (this message is harmless)
+The referenced script on this Behaviour is missing!
+ 
+(Filename:  Line: 1713)
+
+The referenced script on this Behaviour is missing!
+ 
+(Filename:  Line: 1713)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 5.753523 ms
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 162.
+Total: 0.192114 ms (FindLiveObjects: 0.031896 ms CreateObjectMapping: 0.013198 ms MarkObjects: 0.131253 ms  DeleteObjects: 0.009165 ms)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: Index out of bounds.
+  at (wrapper managed-to-native) UnityEngine.Input:GetTouch (int)
+  at Pucanje.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
