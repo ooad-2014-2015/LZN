@@ -1,9 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Skripte\Pucanje.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Skripte\Kokica.cs">
     <Files>
-      <File FileName="Assets\Skripte\Kokica.cs" Line="5" Column="2" />
-      <File FileName="Assets\Skripte\Pucanje.cs" Line="33" Column="10" />
+      <File FileName="Assets\Skripte\Kokica.cs" Line="5" Column="1" />
+      <File FileName="Assets\Skripte\MetaKreiranje.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

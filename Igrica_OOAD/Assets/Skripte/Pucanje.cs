@@ -3,35 +3,41 @@ using System.Collections;
 
 public class Pucanje : MonoBehaviour {
 
-	public float brzina=15f;
-	public GameObject kokica;
-	public GameObject ispali;
-	public float brojac=-2;
-	private static float cooldownAmount = 0.3f;
 	private int boja =0;
-
+//	public Material[] materials;
+	//public AudioClip pucanjeSound;
+	public GameObject kokica;//metak objekat koji ce se instancirati
+	private float cooldown=-2;//neka prvi put bude negativ tj. cooldown spreman
+	private static float snaga = 20;//koliko jako ce se ispaliti metak
+	private static float cooldownAmount = 0.3f;//koliki da bude cooldown inace
 	// Use this for initialization
-	void Start () 
-	{
-	
+	void Start () {
+		boja = 0;
 	}
 	
 	// Update is called once per frame
-	void Update () 
-	{
-	if (Input.GetMouseButton(0) && brojac < 0) 
-		{
+	void Update () {
+		if (Input.GetMouseButton(0) && cooldown<0) {//samo ako je cooldown gotov
 			GameObject mojMetak = (GameObject) Instantiate(kokica, transform.position, transform.rotation);
-			//mojMetak.transform.position=ispali.transform.position;
 			Vector3 meta = Camera.main.ScreenToWorldPoint(Input.mousePosition);//iz koordinata 
 			//ekrana gdje je mis nadji u 3d prostoru koja je to tacka
-			meta=Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position);
 			meta.z = 0;//da ne bi metak otisao u trecu dimenziju
-
+			mojMetak.GetComponent<Rigidbody>().velocity = meta.normalized*snaga - transform.position;//pocetno ubrzanje
 			//AudioSource.PlayClipAtPoint(pucanjeSound,transform.position);
-			mojMetak.GetComponent<Rigidbody>().velocity = meta.normalized*brzina - transform.position;//pocetno ubrzanje
-			brojac=cooldownAmount;
+			
+			cooldown = cooldownAmount;//reset cooldown
+//			mojMetak.GetComponent<Kokica>().boja = boja;
+//			mojMetak.GetComponent<Renderer>().material = materials[boja];
 		}
-		brojac -= Time.deltaTime;
+		/*if(Input.GetMouseButtonUp(1)){
+			if(boja==materials.Length-1){
+				boja = 0;
+			}
+			else{
+				boja++; 
+			}
+			
+		}*/
+		cooldown -= Time.deltaTime;//smanji cooldown za kolicinu vremena koje je proslo
 	}
 }

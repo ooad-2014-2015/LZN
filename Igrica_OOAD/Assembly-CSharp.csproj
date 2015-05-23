@@ -47,6 +47,9 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Skripte\Kokica.cs" />
+     <Compile Include="Assets\Skripte\Meta.cs" />
+     <Compile Include="Assets\Skripte\MetaGlava.cs" />
+     <Compile Include="Assets\Skripte\MetaKreiranje.cs" />
      <Compile Include="Assets\Skripte\NovaIgra.cs" />
      <Compile Include="Assets\Skripte\Pucanje.cs" />
  <Reference Include="UnityEngine.UI">

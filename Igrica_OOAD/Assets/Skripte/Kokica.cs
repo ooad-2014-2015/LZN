@@ -2,23 +2,39 @@
 using System.Collections;
 
 public class Kokica : MonoBehaviour {
-
-	void Start()
-	{
-
+	public int boja;
+	// Use this for initialization
+	public int brojac;
+	public GUIText ovo;
+	void Start () {
+		brojac = 0;
+	//	ovo = GetComponent<GUIText> ();
 	}
+
 	
-	void Update()
-	{
-
-		/*Vector2 position = transform.position;
-		position = new Vector2 (position.x, position.y + speed * Time.deltaTime);
-		transform.position = position;
-		//Vector2 max = Camera.main.ViewportToWorldPoint (new Vector2 (1, 1));*/
-
-		if (transform.position.x<-6 || transform.position.x > 6 || transform.position.y > 6)
-		{
+	// Update is called once per frame
+	void Update () {
+		if(transform.position.y<-6 || transform.position.y>6){		
 			Destroy(gameObject);
 		}
 	}
+	/*void OnTriggerEnter(Collision collision)
+	{
+		if (collision.collider.gameObject.tag == "glava")
+		{
+			Destroy(collision.collider.gameObject);
+			Destroy(gameObject);
+		}
+	}*/
+
+	void OnCollisionEnter(Collision collision)
+	{
+		brojac+=2;
+	//	ovo.text="Score" + brojac;
+
+		Destroy(collision.collider.gameObject);
+		Destroy(gameObject);
+	
+	}
+
 }
