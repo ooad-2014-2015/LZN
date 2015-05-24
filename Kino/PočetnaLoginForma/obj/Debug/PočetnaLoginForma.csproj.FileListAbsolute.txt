@@ -41,3 +41,7 @@ C:\Users\Džemal\Desktop\LZN\Kino\PočetnaLoginForma\bin\Debug\Kino.pdb
 E:\OOAD\LZN\Kino\PočetnaLoginForma\bin\Debug\PočetnaLoginForma.exe.config
 E:\OOAD\LZN\Kino\PočetnaLoginForma\obj\Debug\PočetnaLoginForma.exe
 E:\OOAD\LZN\Kino\PočetnaLoginForma\obj\Debug\PočetnaLoginForma.pdb
+C:\Users\Džemal\Desktop\LZN\Kino\PočetnaLoginForma\bin\Debug\EntityFramework.dll
+C:\Users\Džemal\Desktop\LZN\Kino\PočetnaLoginForma\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Džemal\Desktop\LZN\Kino\PočetnaLoginForma\bin\Debug\EntityFramework.xml
+C:\Users\Džemal\Desktop\LZN\Kino\PočetnaLoginForma\bin\Debug\EntityFramework.SqlServer.xml

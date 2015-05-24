@@ -24,11 +24,13 @@ namespace AdministratorForme
     /// </summary>
     public partial class FormaZaUnosFilma : Window
     {
-        ObservableCollection<Film> filmovi;
-        public FormaZaUnosFilma(ObservableCollection<Film> film)
+        Korisnik k;
+        public FormaZaUnosFilma(Korisnik korisnik)
         {
             InitializeComponent();
-            filmovi = film;
+            k = korisnik;
+            Baza db = new Baza();
+            var filmovi = db.Filmovi.ToList();
             try
             {
                 id.Text = Convert.ToString(filmovi.Last().ID + 1);
@@ -38,7 +40,7 @@ namespace AdministratorForme
                 id.Text = Convert.ToString(1);
             }
             datumUnosa.Text = DatumIzmjene.Text = DateTime.Now.ToShortDateString();
-            korisnikIzmjenio.Text = korisnikUnio.Text = "trenutno logovani korisnik"; //ovo izmjeniti
+            korisnikIzmjenio.Text = korisnikUnio.Text = korisnik.Ime + " " + korisnik.Prezime;
         }
 
         private void IzbaciGlumcaButtonClick(object sender, RoutedEventArgs e)
@@ -134,7 +136,8 @@ namespace AdministratorForme
 
             film.ID = Int32.Parse(id.Text);
             film.DatumUnosa = DateTime.Now;
-            film.KorisnikKojiJeKreiraoFIlm = "trenutno logovani korisik"; //izmjeniti
+            film.KorisnikKojiJeKreiraoFIlm = k;
+            film.KorisnikKojiJeNapravioPosljednjeIzmjene = k;
             film.DatumPosljednjeIzmjene = DateTime.Now;
             film.GodinaIzdavanja = Int32.Parse(godina.Text);
             film.Naziv = naziv.Text;
@@ -145,7 +148,6 @@ namespace AdministratorForme
                 film.Slika = getJPGFromImageControl(slika.Source as BitmapImage);
             }
             catch (Exception) { }
-            film.KorisnikKojiJeNapravioPosljednjeIzmjene = "logovani korisnik"; //izmjeniti
             film.VrijemeTrajanja = Int32.Parse(trajanjeFilma.Text);
             film.Zanr = zanr.Text;
             film.Glumci.Clear();
@@ -153,8 +155,11 @@ namespace AdministratorForme
             {
                 film.Glumci.Add(item);
             }
-            //spasi u bazu
-            filmovi.Add(film);
+            using(Baza db = new Baza())
+            {
+                db.Filmovi.Add(film);
+                db.SaveChanges();
+            }
             MessageBox.Show("Uspješno ste unijeli novi film u bazu podataka", "", MessageBoxButton.OK, MessageBoxImage.Information);
             this.Close();
         }

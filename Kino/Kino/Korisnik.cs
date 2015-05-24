@@ -16,9 +16,9 @@ namespace Kino
         public Korisnik(string ime, string prezime, int id, string username, string tipKorisnika, string hashPassword, string pol)
             : base(ime, prezime, id)
         {
-            Username = username;
+            Username = username; ;
             TipKorisnika = tipKorisnika;
-            Password = hashPassword;
+            Password = Convert.ToString(hashPassword.GetHashCode());
             Spol = pol;
         }
 

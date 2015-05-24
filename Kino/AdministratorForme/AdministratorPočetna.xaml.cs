@@ -24,66 +24,41 @@ namespace AdministratorForme
     /// </summary>
     public partial class AdministratorPočetna : Window
     {
-        ObservableCollection<Film> filmovi;
-        ObservableCollection<Artikal> artikli;
-        ObservableCollection<Korisnik> korisnici; 
+        Korisnik korisnik;
         bool zatvaranjaButton;
-        Cjenovnik cjenovnik; 
+        ImageSource src;
 
-        public AdministratorPočetna()
+        public AdministratorPočetna(Korisnik k) //Nije gotovo
         {
             InitializeComponent();
-            zatvaranjaButton = false;
-
-            #region Za brisanje
-            korisnici = new ObservableCollection<Korisnik>{
-                new Korisnik{ID = 1, Ime = "Džemal", Prezime = "Čengić", Spol = "Muško", TipKorisnika = "Administrator sistema", Username = "cenga", Password = Convert.ToString(("neki password").GetHashCode())},
-                new Korisnik{ID = 2, Ime = "Adna", Prezime = "Tahić", Spol = "Žensko", TipKorisnika = "Blagajnik", Username = "tahicka", Password = Convert.ToString(("1234565789").GetHashCode())},
-                new Korisnik{ID = 3, Ime = "Amina", Prezime = "Krekić", Spol = "Žensko", TipKorisnika = "Finansijski menadžer", Username = "krekicamina", Password = Convert.ToString(("0000").GetHashCode())}
-            };
-            cjenovnik = new Cjenovnik
+            zatvaranjaButton = false; 
+            korisnik = k; 
+            src = slika.Source;
+            using (Baza db = new Baza())
             {
-                Osnova = 4,
-                DodatakZa3D = 1,
-                DodatakZaLjubavnaMjesta = 1,
-                DodatakZaNocneProjekcije = 1,
-                DodatakZaPremijere = 3,
-                DodatakZaVip = 2,
-                ID = 1,
-                DodatakZaPretpremijere = 1,
-                PopustZaRodjendaskePakete = 5,
-                PopustZaVipKorisnike = 5,
-                Username = "dzemal",
-                ZadnjaIzmjena = DateTime.Now,
-                DodatakZaFilmoveDuzeOd120Min = 1
-            };
-            filmovi = new ObservableCollection<Film> { //Filmove i sale obrisati
-                new Film{ID = 1, Naziv = "Titanik", GodinaIzdavanja = 1997, Zanr = "drama", DatumPosljednjeIzmjene = DateTime.Now, DatumUnosa = DateTime.Now,
-                Glumci = new List<string>{"Kate Winslet", "Leonardo Di Caprio"}, Reziser = "James Cameron", Sinopsis = "Neki opis", Slika = null, KorisnikKojiJeKreiraoFIlm ="dzemal", VrijemeTrajanja = 145, KorisnikKojiJeNapravioPosljednjeIzmjene = "dzemal"},
-                new Film{ID = 2, Naziv = "Život je lijep", GodinaIzdavanja = 1995, Zanr = "drama", DatumPosljednjeIzmjene = DateTime.Now, DatumUnosa = DateTime.Now,
-                Glumci = new List<string>{"Roberto Beninni"}, Reziser = "Ne znam", Sinopsis = "Neki opis", Slika = null, KorisnikKojiJeKreiraoFIlm ="dzemal", VrijemeTrajanja = 115, KorisnikKojiJeNapravioPosljednjeIzmjene = "dzemal"}
-            };
-            artikli = new ObservableCollection<Artikal>{
-                new Artikal{ID = 1, Cijena = 2, Kolicina = 0.3, NaStanju = 50, Naziv = "Coca-Cola"},
-                new Artikal{ID = 2, Cijena = 2.5, Kolicina = 0.25, NaStanju = 100, Naziv = "Kokice"},
-                new Artikal{ID = 3, Cijena = 3, Kolicina = 0.2, NaStanju = 75, Naziv = "Kikiriki"},
-                new Artikal{ID = 4, Cijena = 1, Kolicina = 0.1, NaStanju = 40, Naziv = "Košpice"}
-            };
-            #endregion
-            tabela.ItemsSource = filmovi; 
-            tabelaArtikli.ItemsSource = artikli;
-            tabelaKorisnici.ItemsSource = korisnici;
-            pozdrav.Content = "Dobrodošao Džemale"; //izmjeniti
-            prijavljanKorisnik.Content = "Prijavljeni ste kao Džemal Čengić"; //izmjeniti 
-            PopuniCjenovnik(cjenovnik);
-            korisnikSpolPretraga.ItemsSource = new List<string> { "Žensko", "Muško" };
-            korisnikPravaPristupaPretraga.ItemsSource = new List<string> { "Blagajnik", "Finansijski menadžer", "Administrator sistema" };
+                var filmovi = db.Filmovi.ToList();
+                var artikli = db.Artiki.ToList();
+                var korisnici = db.Korisnici.ToList();
+                korisnik = db.Korisnici.ToList()[0]; //izbrisati
+                tabela.ItemsSource = filmovi;
+                tabelaArtikli.ItemsSource = artikli;
+                tabelaKorisnici.ItemsSource = korisnici;
+                pozdrav.Content = "Dobrodošao Džemale"; //izmjeniti
+                prijavljanKorisnik.Content = "Prijavljeni ste kao Džemal Čengić"; //izmjeniti 
+                PopuniCjenovnik();
+                korisnikSpolPretraga.ItemsSource = new List<string> { "Žensko", "Muško" };
+                korisnikPravaPristupaPretraga.ItemsSource = new List<string> { "Blagajnik", "Finansijski menadžer", "Administrator sistema" };
+            }
+                
         }
 
         #region Metode za cjenovnik
 
-        private void PopuniCjenovnik(Cjenovnik cjenovnik) //ovdje dodati pravi cjenovnik iz baze
+        private void PopuniCjenovnik()
         {
+            Baza db = new Baza(); 
+            Cjenovnik cjenovnik = db.Cjenovnici.ToList()[0]; 
+
             cjenovnikOsnova.Text = cjenovnikOsnova1.Text = Convert.ToString(cjenovnik.Osnova);
             cjenovnik3D.Text = cjenovnik3D1.Text = Convert.ToString(cjenovnik.DodatakZa3D);
             cjenovnikFilmDuziOd120Min.Text = cjenovnikFilmDuziOd120Min1.Text = Convert.ToString(cjenovnik.DodatakZaFilmoveDuzeOd120Min);
@@ -101,7 +76,7 @@ namespace AdministratorForme
                 return;
 
             if (
-           cjenovnikOsnova1.Text.Length == 0 ||
+          cjenovnikOsnova1.Text.Length == 0 ||
           cjenovnik3D1.Text.Length == 0 ||
           cjenovnikFilmDuziOd120Min1.Text.Length == 0 ||
           cjenovnikLjubavna1.Text.Length == 0 ||
@@ -141,19 +116,38 @@ namespace AdministratorForme
                 nit.Start();
                 return;
             }
-            Cjenovnik novi = new Cjenovnik(osnova, nocnaProjekcija, ljubavna, VIP, premijera, dimenzionalnost, popustVIP, popustRodjendan, duzinaVecaOd120, pretpremijera, DateTime.Now, "username logovanog korisnika", 1);//Zadnja 2 parametra izmjenit
-            cjenovnik = novi;
-            PopuniCjenovnik(cjenovnik);
+
+            using( Baza db = new Baza())
+            {
+                db.Cjenovnici.ToList()[0].DodatakZa3D = dimenzionalnost;
+                db.Cjenovnici.ToList()[0].Osnova = osnova;
+                db.Cjenovnici.ToList()[0].DodatakZaNocneProjekcije = nocnaProjekcija;
+                db.Cjenovnici.ToList()[0].DodatakZaLjubavnaMjesta = ljubavna;
+                db.Cjenovnici.ToList()[0].DodatakZaVip = VIP;
+                db.Cjenovnici.ToList()[0].DodatakZaPremijere = premijera;
+                db.Cjenovnici.ToList()[0].PopustZaVipKorisnike = popustVIP;
+                db.Cjenovnici.ToList()[0].PopustZaRodjendaskePakete = popustRodjendan;
+                db.Cjenovnici.ToList()[0].DodatakZaFilmoveDuzeOd120Min = duzinaVecaOd120;
+                db.Cjenovnici.ToList()[0].DodatakZaPretpremijere = pretpremijera;
+                db.Cjenovnici.ToList()[0].ZadnjaIzmjena = DateTime.Now;
+                db.Cjenovnici.ToList()[0].KorisnikKreirao = korisnik;
+                db.SaveChanges();
+            }
+            PopuniCjenovnik();
+            MessageBox.Show("Cjenovnik izmjenjen", "Cjenovnik", MessageBoxButton.OK, MessageBoxImage.Information);    
         }
         #endregion
         #region Metode za obradu filmova
 
         private void PozivFormeZaUnosFilmaButtonClick(object sender, RoutedEventArgs e)
         {
-            var f = new FormaZaUnosFilma(filmovi);
+            var f = new FormaZaUnosFilma(korisnik);
             this.Hide();
             f.ShowDialog();
-            tabela.ItemsSource = filmovi;
+            using(Baza db = new Baza())
+            {
+                tabela.ItemsSource = db.Filmovi.ToList();
+            }
             this.ShowDialog();
         }
         private void PonistiPretraguButtonClick(object sender, RoutedEventArgs e)
@@ -166,14 +160,19 @@ namespace AdministratorForme
             donjaGranica.Clear();
             gornjaGranica.Clear();
 
-            tabela.ItemsSource = filmovi;
+            using(Baza db = new Baza())
+            {
+                tabela.ItemsSource = db.Filmovi.ToList();
+            }
         }
         private void EditovanjeFilmaButtonClick(object sender, RoutedEventArgs e)
         {
             if (tabela.SelectedIndex != -1)
             {
                 Film temp = tabela.SelectedItem as Film;
-                var f = new PrikazEditovanjeFilma(temp, false);
+                Baza db = new Baza();
+                Film film = db.Filmovi.Where(m => m.ID == temp.ID).FirstOrDefault();
+                var f = new PrikazEditovanjeFilma(film, korisnik, false);
                 this.Hide();
                 f.ShowDialog();
                 this.ShowDialog();
@@ -194,6 +193,9 @@ namespace AdministratorForme
             reziserFilma = reziser.Text;
             zanrFilma = zanr.Text;
 
+            Baza db = new Baza();
+            var filmovi = db.Filmovi.ToList();
+
             var lista = (from f in filmovi
 
                          where (idFilma == 0 || f.ID == idFilma) &&
@@ -207,24 +209,39 @@ namespace AdministratorForme
 
             tabela.ItemsSource = lista;
         }
-        private void BrisanjeFilmaButtonClick(object sender, RoutedEventArgs e)//Dodati provjeru da li je film u nekoj projekciji, ako jeste zabraniti brisanje
+        private void BrisanjeFilmaButtonClick(object sender, RoutedEventArgs e)
         {
             if (tabela.SelectedIndex != -1 && MessageBox.Show("Da li ste sigurni da želite izbrisati film iz baze podataka", "Brisanje filma", MessageBoxButton.YesNo,
                 MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
-                Film temp = tabela.SelectedItem as Film;
-                for (int i = 0; i < filmovi.Count; i++) 
+                using (Baza db = new Baza())
                 {
-                    if (filmovi[i].ID == temp.ID)
+                    var filmovi = db.Filmovi.ToList();
+
+                    Film temp = tabela.SelectedItem as Film;
+                    foreach (var item in db.SedmicniRasporedi)
                     {
-                        filmovi.RemoveAt(i);
-                        break;
+                        foreach (Projekcija p in item.Projekcije)
+                        {
+                            if (p.FilmFK.ID == temp.ID)
+                            {
+                                MessageBox.Show("Odabrani film se trenutno koristi u aktivnoj projekciji!\nNe možete izbrisati film dok projekcija ne završi", "Brisanje filma",
+                                    MessageBoxButton.OK, MessageBoxImage.Error);
+                                return;
+                            }
+                        }
                     }
+                    Film film = db.Filmovi.ToList().Where(m => m.ID == temp.ID).FirstOrDefault();
+                    db.Filmovi.Remove(film);
+                    db.SaveChanges();
                 }
-                tabela.ItemsSource = filmovi;
+                using (Baza db = new Baza())
+                {
+                    var filmovi = db.Filmovi.ToList();
+                    tabela.ItemsSource = filmovi;
+                }
                 MessageBox.Show("Film uspješno obrisan", "", MessageBoxButton.OK, MessageBoxImage.Information);
                 PonistiPretraguButtonClick(sender, e);
-                return;
             }
         }
         #endregion
@@ -240,23 +257,37 @@ namespace AdministratorForme
             cijenaDonjaArtikla.Clear();
             kolicinaArtikla.Clear();
 
-            tabelaArtikli.ItemsSource = artikli;
+            using (Baza db = new Baza())
+            {
+                var artikli = db.Artiki.ToList();
+                tabelaArtikli.ItemsSource = artikli;
+            }
         }
         private void BrisanjeArtiklaButtonClick(object sender, RoutedEventArgs e)
         {
             if (tabelaArtikli.SelectedIndex != -1 && MessageBox.Show("Da li ste sigurni da želite izbrisati artikal iz baze podataka", "Brisanje artikla", MessageBoxButton.YesNo,
              MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
-                Artikal temp = tabelaArtikli.SelectedItem as Artikal;
-                for (int i = 0; i < artikli.Count; i++)
+                using (Baza db = new Baza())
                 {
-                    if (artikli[i].ID == temp.ID)
+                    var artikli = db.Artiki.ToList();
+                    Artikal temp = tabelaArtikli.SelectedItem as Artikal;
+                    for (int i = 0; i < artikli.Count; i++)
                     {
-                        artikli.RemoveAt(i);
-                        break;
+                        if (artikli[i].ID == temp.ID)
+                        {
+                            db.Artiki.Remove(db.Artiki.ToList()[i]);
+                            db.SaveChanges();
+                            break;
+                        }
                     }
                 }
-                tabelaArtikli.ItemsSource = artikli;
+
+                using (Baza db = new Baza())
+                {
+                    var artikli = db.Artiki.ToList();
+                    tabelaArtikli.ItemsSource = artikli;
+                }
                 MessageBox.Show("Artikal uspješno obrisan", "", MessageBoxButton.OK, MessageBoxImage.Information);
                 OcistiPolja();
                 PonistiPretragUArtikalaButtonClick(sender, e);
@@ -277,6 +308,9 @@ namespace AdministratorForme
             Int32.TryParse(naStanjuGornja.Text, out gornjeStanje);
             Double.TryParse(kolicinaArtikla.Text, out velicina);
 
+            Baza db = new Baza();
+            var artikli = db.Artiki.ToList();
+
             var lista = (from a in artikli
 
                          where (id == 0 || id == a.ID) &&
@@ -289,7 +323,7 @@ namespace AdministratorForme
 
             tabelaArtikli.ItemsSource = lista;
         }
-        private void PotvrdaUnosaArtikal(object sender, RoutedEventArgs e) //Provjeriti za dodavanja slike
+        private void PotvrdaUnosaArtikal(object sender, RoutedEventArgs e) //Provjeriti za dodavanja slike ,provjeriti
         {
             if(noviArtikalkolicina.Text.Length == 0 || noviArtikalNaziv.Text.Length == 0 || noviArtikalStanje.Text.Length == 0 || noviArtikalCijena.Text.Length == 0)
             {
@@ -319,23 +353,30 @@ namespace AdministratorForme
             }
             catch(Exception) {}
 
-            if(Int32.Parse(noviArtikalId.Text) <= artikli.Last().ID)
+            using (Baza db = new Baza())
             {
-                Artikal artikal = artikli.Where(m => m.ID == Int32.Parse(noviArtikalId.Text)).First();
-                artikal.Kolicina = velicina;
-                artikal.Naziv = noviArtikalNaziv.Text;
-                artikal.Slika = niz;
-                artikal.NaStanju = stanje;
-                artikal.Cijena = cijenaArtikal;
-                MessageBox.Show("Izmjene su sačuvane", "", MessageBoxButton.OK, MessageBoxImage.Information);
-                OcistiPolja();
-                PonistiPretragUArtikalaButtonClick(sender, e);
-                PretragaArtikli(sender, e);
-                return;
-            }
-            Artikal a = new Artikal { ID = Int32.Parse(noviArtikalId.Text), NaStanju = stanje, Cijena = cijenaArtikal, Naziv = noviArtikalNaziv.Text, Kolicina = velicina, Slika = niz };
-            artikli.Add(a);
+                var artikli = db.Artiki.ToList();
+                if (Int32.Parse(noviArtikalId.Text) <= artikli.Last().ID)
+                {
+                    Artikal artikal = artikli.Where(m => m.ID == Int32.Parse(noviArtikalId.Text)).First();
+                    artikal.Kolicina = velicina;
+                    artikal.Naziv = noviArtikalNaziv.Text;
+                    artikal.Slika = niz;
+                    artikal.NaStanju = stanje;
+                    artikal.Cijena = cijenaArtikal;
+                    db.SaveChanges();
 
+                    MessageBox.Show("Izmjene su sačuvane", "", MessageBoxButton.OK, MessageBoxImage.Information);
+                    OcistiPolja();
+                    PonistiPretragUArtikalaButtonClick(sender, e);
+                    PretragaArtikli(sender, e);
+                    return;
+                }
+                Artikal a = new Artikal { ID = Int32.Parse(noviArtikalId.Text), NaStanju = stanje, Cijena = cijenaArtikal, Naziv = noviArtikalNaziv.Text, Kolicina = velicina, Slika = niz };
+                db.Artiki.Add(a);
+                db.SaveChanges();
+                tabelaArtikli.ItemsSource = db.Artiki.ToList();
+            }
             MessageBox.Show("Uspješno je unijet novi artikal!", "", MessageBoxButton.OK, MessageBoxImage.Information);
             OcistiPolja();
         }
@@ -345,8 +386,8 @@ namespace AdministratorForme
             noviArtikalId.Clear();
             noviArtikalkolicina.Clear();
             noviArtikalNaziv.Clear();
-            noviArtikalStanje.Clear(); 
-            slika.Source = null;
+            noviArtikalStanje.Clear();
+            slika.Source = src;
         }
         private void OdabirSlikeArtikal(object sender, RoutedEventArgs e)
         {
@@ -369,17 +410,21 @@ namespace AdministratorForme
         }
         private void GroupBox_GotFocus(object sender, RoutedEventArgs e)
         {
-            try
+            using (Baza db = new Baza())
             {
-                if (Int32.Parse(noviArtikalId.Text) <= artikli.Last().ID)
-                    return;
-            }
-            catch (Exception) { }
+                var artikli = db.Artiki.ToList();
+                try
+                {
+                    if (Int32.Parse(noviArtikalId.Text) <= artikli.Last().ID)
+                        return;
+                }
+                catch (Exception) { }
 
-            if (artikli.Count == 0)
-                noviArtikalId.Text = Convert.ToString(1);
-            else
-                noviArtikalId.Text = Convert.ToString(artikli.Last().ID + 1);
+                if (artikli.Count == 0)
+                    noviArtikalId.Text = Convert.ToString(1);
+                else
+                    noviArtikalId.Text = Convert.ToString(artikli.Last().ID + 1);
+            }
         }
         private void EditovanjeArtiklaButtonClick(object sender, RoutedEventArgs e)
         {
@@ -410,7 +455,11 @@ namespace AdministratorForme
             korisnikSpolPretraga.SelectedIndex = -1;
             korisnikUsernamePretraga.Clear();
 
-            tabelaKorisnici.ItemsSource = korisnici;
+            using (Baza db = new Baza())
+            {
+                var korisnici = db.Korisnici.ToList();
+                tabelaKorisnici.ItemsSource = korisnici;
+            }
         }
         private void PretragaKorisnikButtonClick(object sender, RoutedEventArgs e)
         {
@@ -422,6 +471,9 @@ namespace AdministratorForme
                 spol = korisnikSpolPretraga.SelectedItem.ToString();
             if (korisnikPravaPristupaPretraga.SelectedIndex != -1)
                 prava = korisnikPravaPristupaPretraga.SelectedItem.ToString();
+
+            Baza db = new Baza();
+            var korisnici = db.Korisnici.ToList();
 
             var lista = (from k in korisnici  
 
@@ -445,19 +497,23 @@ namespace AdministratorForme
             if(tabelaKorisnici.SelectedIndex != -1 && MessageBox.Show("Da li želite potvrditi?", "Brisanje korisnika", MessageBoxButton.YesNo, MessageBoxImage.Question)
                 == MessageBoxResult.Yes)
             {
-                Korisnik temp = tabelaKorisnici.SelectedItem as Korisnik;
-                for (int i = 0; i < korisnici.Count; i++)
+                using (Baza db = new Baza())
                 {
-                    if(korisnici[i].ID == temp.ID)
+                    var korisnici = db.Korisnici.ToList();
+                    Korisnik temp = tabelaKorisnici.SelectedItem as Korisnik;
+                    for (int i = 0; i < korisnici.Count; i++)
                     {
-                        korisnici.RemoveAt(i);
-                        break;
+                        if (korisnici[i].ID == temp.ID)
+                        {
+                            db.Korisnici.Remove(korisnici[i]);
+                            db.SaveChanges();
+                            break;
+                        }
                     }
                 }
-                    MessageBox.Show("Uspješno ste izbrisali korisnika sistema", "Brisanje uspješno", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Uspješno ste izbrisali korisnika sistema", "Brisanje uspješno", MessageBoxButton.OK, MessageBoxImage.Information);
                 PonistiPretragu(sender, e);
                 PretragaKorisnikButtonClick(sender, e);
-                return;
             }
         }
         private void IzmjenaKorisnika(object sender, RoutedEventArgs e)
@@ -465,18 +521,26 @@ namespace AdministratorForme
             if (tabelaKorisnici.SelectedIndex == -1)
                 return;
 
-            Korisnik temp = tabelaKorisnici.SelectedItem as Korisnik;
-            UnosKorisnika f = new UnosKorisnika(korisnici, false, temp);
-            this.Hide();
-            f.ShowDialog();
+            using (Baza db = new Baza())
+            {
+                var korisnici = db.Korisnici.ToList();
+                Korisnik temp = tabelaKorisnici.SelectedItem as Korisnik;
+                UnosKorisnika f = new UnosKorisnika(korisnici, false, temp);
+                this.Hide();
+                f.ShowDialog();
+            }
             PonistiPretragu(sender, e);
             this.ShowDialog();
         }
         private void NoviKorisnikUnos(object sender, RoutedEventArgs e)
         {
-            var f = new UnosKorisnika(korisnici, true, new Korisnik());
-            this.Hide();
-            f.ShowDialog();
+            using (Baza db = new Baza())
+            {
+                var korisnici = db.Korisnici.ToList();
+                var f = new UnosKorisnika(korisnici, true, new Korisnik());
+                this.Hide();
+                f.ShowDialog();
+            }
             PonistiPretragu(sender, e);
             this.ShowDialog();
         }
@@ -484,7 +548,7 @@ namespace AdministratorForme
         #region Pomoćne metode
         private void PozivFormeZaKreiranjeRasporeda(object sender, RoutedEventArgs e)
         {
-            var prozor = new KreiranjeSedmicnogRasporeda();
+            var prozor = new KreiranjeSedmicnogRasporeda(korisnik);
             this.Hide();
             prozor.ShowDialog();
             this.ShowDialog();

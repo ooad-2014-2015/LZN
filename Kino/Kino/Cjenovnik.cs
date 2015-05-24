@@ -17,14 +17,14 @@ namespace Kino
         public int PopustZaVipKorisnike { get; set; }
         public int PopustZaRodjendaskePakete { get; set; }
         public DateTime ZadnjaIzmjena { get; set; }
-        public string Username { get; set; } 
+        public Korisnik KorisnikKreirao { get; set; } 
         public int ID { get; set; }
         public int DodatakZaFilmoveDuzeOd120Min { get; set; }
         public int DodatakZaPretpremijere { get; set; }
 
         public Cjenovnik(double osnova, int dodatakZaNocneProjekcije, int dodatakZaLjubavnaMjesta, int dodatakZaVip,
             int dodatakZaPremijere, int dodatakZa3D, int popustZaVipKorisnike, int popustZaRodjendanskePakete, int dodatakaZaDugeFilmove, int dodatakPretpremijere,
-            DateTime zadnjaIzmjena, string username, int id)
+            DateTime zadnjaIzmjena, Korisnik username, int id)
         {
             Osnova = osnova;
             DodatakZaNocneProjekcije = dodatakZaNocneProjekcije;
@@ -35,7 +35,7 @@ namespace Kino
             PopustZaVipKorisnike = popustZaVipKorisnike;
             PopustZaRodjendaskePakete = popustZaRodjendanskePakete;
             ZadnjaIzmjena = zadnjaIzmjena;
-            Username = username;
+            KorisnikKreirao = username;
             ID = id;
             DodatakZaFilmoveDuzeOd120Min = dodatakaZaDugeFilmove;
             DodatakZaPretpremijere = dodatakPretpremijere;

@@ -25,9 +25,11 @@ namespace AdministratorForme
     {
         Film film;
         bool pregled;
-        public PrikazEditovanjeFilma(Film parametarFilm, bool pregled)
+        Korisnik korisnik;
+        public PrikazEditovanjeFilma(Film parametarFilm, Korisnik k, bool pregled)
         {
             InitializeComponent();
+            korisnik = k;
             film = parametarFilm;
             this.pregled = pregled;
             if (pregled)
@@ -38,6 +40,7 @@ namespace AdministratorForme
             window.Title = film.Naziv;
          
         }
+
         private void PopuniKontrole()
         {
             naziv.Text = film.Naziv;
@@ -48,8 +51,8 @@ namespace AdministratorForme
             trajanjeFilma.Text = Convert.ToString(film.VrijemeTrajanja);
             datumUnosa.Text = film.DatumUnosa.ToShortDateString();
             DatumIzmjene.Text = DateTime.Now.ToShortDateString();
-            korisnikUnio.Text = film.KorisnikKojiJeKreiraoFIlm;
-            korisnikIzmjenio.Text = "Trenutno logovani korisnik"; //Ovo izmjeniti
+            korisnikUnio.Text = film.KorisnikKojiJeKreiraoFIlm.Ime + " " + film.KorisnikKojiJeKreiraoFIlm.Prezime;
+            korisnikIzmjenio.Text = korisnik.Ime + " " + korisnik.Prezime;
 
             foreach(string item in film.Glumci)
             {
@@ -121,6 +124,7 @@ namespace AdministratorForme
                 Thread.Sleep(800);
             }
         }
+
         #region Eventi za button_click
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -157,7 +161,7 @@ namespace AdministratorForme
                 glumci.Items.RemoveAt(glumci.SelectedIndex);
             }
         }
-        private void Button_Click_3(object sender, RoutedEventArgs e)
+        private void Button_Click_3(object sender, RoutedEventArgs e) //Ovdje mozda db ne radi;
         {
             if (pregled)
                 return;
@@ -179,7 +183,7 @@ namespace AdministratorForme
                 film.Slika = getJPGFromImageControl(slika.Source as BitmapImage); 
             }
             catch (Exception) { }
-            //film.KorisnikKojiJeNapravioPosljednjeIzmjene = logovani korisnik
+            film.KorisnikKojiJeNapravioPosljednjeIzmjene = korisnik;
             film.VrijemeTrajanja = Int32.Parse(trajanjeFilma.Text);
             film.Zanr = zanr.Text;
             film.Glumci.Clear();
@@ -187,20 +191,44 @@ namespace AdministratorForme
             {
                 film.Glumci.Add(item);
             }
-            //spasi u bazu
+           
+            using(Baza db = new Baza())
+            {
+                Film temp = db.Filmovi.Select(m => m.ID == film.ID) as Film;
+                temp = film;
+                db.SaveChanges();
+            }
             MessageBox.Show("Izmjene su spašene", "", MessageBoxButton.OK, MessageBoxImage.Information);
             this.Close();
         }
-        private void potvrdiBrisanje_Click(object sender, RoutedEventArgs e)
+        private void potvrdiBrisanje_Click(object sender, RoutedEventArgs e) //i ovdje mozda
         {
             if (MessageBox.Show("Da li ste sigurni da želite izbrisati film iz baze podataka?", "Brisanje", MessageBoxButton.YesNo, MessageBoxImage.Question)
                 == MessageBoxResult.No)
                 return;
 
-            //provjeriti da li se film koristi u projekcijama i zabraniti brisanje ako da
-            //izbrisati iz baze
+            using(Baza db = new Baza())
+            {
+                foreach(var item in db.SedmicniRasporedi)
+                {
+                    foreach(Projekcija p in item.Projekcije)
+                    {
+                        if (p.FilmFK.ID == Int32.Parse(id.Text)) 
+                        {
+                            MessageBox.Show("Odabrani film se trenutno koristi u aktivnoj projekciji!\nNe možete izbrisati film dok projekcija ne završi", "Brisanje filma",
+                                MessageBoxButton.OK, MessageBoxImage.Error);
+                             return;
+                        }
+                    }
+                }
+                db.Filmovi.Remove(db.Filmovi.Where(m => m.ID == Int32.Parse(id.Text)) as Film);
+                db.SaveChanges();
+            }
+            MessageBox.Show("Film uspjesno izbrisan", "Brisanje filma", MessageBoxButton.OK, MessageBoxImage.Information);
+            this.Close();
         }
         #endregion
+
         private byte[] getJPGFromImageControl(BitmapImage imageC)
         {
                 MemoryStream memStream = new MemoryStream();

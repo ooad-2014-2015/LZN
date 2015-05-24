@@ -19,8 +19,8 @@ namespace Kino
         public byte[] Slika { get; set; } 
         public DateTime DatumUnosa { get; set; }
         public DateTime DatumPosljednjeIzmjene { get; set; }
-        public string KorisnikKojiJeKreiraoFIlm { get; set; }
-        public string KorisnikKojiJeNapravioPosljednjeIzmjene { get; set; }
+        public Korisnik KorisnikKojiJeKreiraoFIlm { get; set; }
+        public Korisnik KorisnikKojiJeNapravioPosljednjeIzmjene { get; set; }
 
         public Film()
         {
@@ -28,7 +28,7 @@ namespace Kino
         }
 
         public Film(string naziv, string zanr, string reziser, List<string> glumci, string sinospis, int godinaIzdavanja, int vrijeme_Trajanja
-            , byte[] slika, DateTime datumUnosa, DateTime datumPosljednjeIzmjene, string username, string zadnjaIzmjena, int id)
+            , byte[] slika, DateTime datumUnosa, DateTime datumPosljednjeIzmjene, Korisnik kor, Korisnik zadnjaIzmjena, int id)
         {
             Naziv = naziv;
             Zanr = zanr;
@@ -40,7 +40,7 @@ namespace Kino
             Slika = slika;
             DatumUnosa = datumUnosa;
             DatumPosljednjeIzmjene = datumPosljednjeIzmjene;
-            KorisnikKojiJeKreiraoFIlm = username;
+            KorisnikKojiJeKreiraoFIlm = kor;
             KorisnikKojiJeNapravioPosljednjeIzmjene = zadnjaIzmjena;
             ID = id;
 

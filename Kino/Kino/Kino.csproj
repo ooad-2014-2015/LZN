@@ -30,7 +30,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -40,12 +47,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Artikal.cs" />
+    <Compile Include="BazaPodataka.cs" />
     <Compile Include="Cjenovnik.cs" />
     <Compile Include="Film.cs" />
     <Compile Include="Karta.cs" />
     <Compile Include="Kino.cs" />
     <Compile Include="Klijent.cs" />
     <Compile Include="Korisnik.cs" />
+    <Compile Include="Migrations\201505221921485_migracija.cs" />
+    <Compile Include="Migrations\201505221921485_migracija.Designer.cs">
+      <DependentUpon>201505221921485_migracija.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Osoba.cs" />
     <Compile Include="Projekcija.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -54,6 +67,15 @@
     <Compile Include="Sala.cs" />
     <Compile Include="SedmicniRaspored.cs" />
     <Compile Include="StavkeNarudzbe.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201505221921485_migracija.resx">
+      <DependentUpon>201505221921485_migracija.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

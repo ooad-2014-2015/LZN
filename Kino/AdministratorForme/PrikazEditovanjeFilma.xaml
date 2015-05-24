@@ -44,7 +44,7 @@
         <TextBox Grid.Column="4" Grid.Row="1" x:Name="zanr"/>
         <TextBox Grid.Column="1" Grid.Row="8" x:Name="sinopsis" Grid.ColumnSpan="3" Margin="0,0,0,12" Grid.RowSpan="2"/>
         <Canvas Grid.Column="4" Grid.Row="8" Grid.ColumnSpan="2" Margin="39,0,47,0" Grid.RowSpan="3">
-            <Image Name="slika" Source="/Slike/nemaSlike.jpg" Height="171" Width="258"/>
+            <Image Name="slika" Source="Slike/nemaSlike.jpg" Height="171" Width="258"/>
         </Canvas>
         <Button Name="odabirSlike" Grid.Column="4" Grid.Row="11" Grid.ColumnSpan="2" Margin="85,0,81,0" Content="Odaberi sliku" Click="Button_Click"/>
         <Label Grid.Column="0" Grid.Row="4" HorizontalAlignment="Right" Width="47" Content="Režiser"/>

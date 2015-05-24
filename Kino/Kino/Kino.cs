@@ -8,38 +8,45 @@ namespace Kino
 {
     public class Kino
     {
-        public List<Film> _filmovi;
-        public List<Artikal> _artikli;
-        public List<SedmicniRaspored> _sedmicniRasporedi;
-        public List<Sala> _sale;
-        public string _usernameTrenutnoLogovan { get; set; }
+        public List<Film> Filmovi;
+        public List<Artikal> Artikli;
+        public List<SedmicniRaspored> SedmicniRasporedi;
+        public List<Sala> Sale;
+        public Korisnik TrenutnoLogovan { get; set; }
 
-        public Kino()
-        { 
-            _filmovi=new List<Film>();
-            _artikli = new List<Artikal>();
-            _sedmicniRasporedi = new List<SedmicniRaspored>();
-            _sale = new List<Sala>();
+        public Kino(Korisnik k)
+        {
+            Baza db = new Baza();
 
+            Filmovi=new List<Film>();
+            Artikli = new List<Artikal>();
+            SedmicniRasporedi = new List<SedmicniRaspored>();
+            Sale = new List<Sala>();
+
+            Filmovi = db.Filmovi.ToList();
+            Artikli = db.Artiki.ToList();
+            SedmicniRasporedi = db.SedmicniRasporedi.ToList();
+            Sale = db.Sale.ToList();
+            TrenutnoLogovan = k;
         }
 
         public Kino(List<Film> filmovi, List<Artikal> artikli, List<SedmicniRaspored> sedmicniRasporedi
-            , List<Sala> _sale, string usernameTrenutnoLogovan)
+            , List<Sala> _sale, Korisnik usernameTrenutnoLogovan)
         {
-            _filmovi = filmovi;
-            _artikli = artikli;
-            _sedmicniRasporedi = sedmicniRasporedi;
-            _usernameTrenutnoLogovan = usernameTrenutnoLogovan;
+            Filmovi = filmovi;
+            Artikli = artikli;
+            SedmicniRasporedi = sedmicniRasporedi;
+            TrenutnoLogovan = usernameTrenutnoLogovan;
         }
 
         public bool IzbrisiFilm(int id)
         {
             int brojac = 0;
-            foreach (Film f in _filmovi)
+            foreach (Film f in Filmovi)
             {
                 if (f.ID == id)
                 {
-                    _filmovi.RemoveAt(brojac);
+                    Filmovi.RemoveAt(brojac);
                     return true;
                 }
                 brojac++;
@@ -50,14 +57,14 @@ namespace Kino
         public void DodajNoviFilm(Film f)
         {
             bool postoji=false;
-            foreach (Film fl in _filmovi)
+            foreach (Film fl in Filmovi)
             {
                 if (f.Naziv == fl.Naziv && f.Reziser == fl.Reziser && f.GodinaIzdavanja == fl.GodinaIzdavanja) postoji = true;
             }
 
             if (!postoji)
             {
-                _filmovi.Add(f);
+                Filmovi.Add(f);
             }
         }
 
@@ -72,7 +79,7 @@ namespace Kino
 
             //Može biti više sala sa istim brojem sjedišta
             bool postoji = false;
-            foreach (Sala sl in _sale)
+            foreach (Sala sl in Sale)
             {
                 if (s.NazivSale == sl.NazivSale) postoji = true;
             }

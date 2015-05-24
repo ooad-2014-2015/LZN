@@ -22,34 +22,35 @@ namespace AdministratorForme
     /// </summary>
     public partial class UnosKorisnika : Window
     {
-        private ObservableCollection<Korisnik> korisnici;
         bool unos;
         private Korisnik k;
 
-        public UnosKorisnika(ObservableCollection<Korisnik> f, bool daLiJeUnos, Korisnik korisnik)
+        public UnosKorisnika(List<Korisnik> f, bool daLiJeUnos, Korisnik korisnik)
         {
             InitializeComponent();
-            korisnici = f;
             unos = daLiJeUnos;
             k = korisnik;
             korisnikSpol.ItemsSource = new List<string> { "Žensko", "Muško" };
             korisnikPravaPristupa.ItemsSource = new List<string> { "Blagajnik", "Finansijski menadžer", "Administrator sistema" };
 
-            if (korisnici.Count == 0)
-                korisnikId.Text = Convert.ToString(1);
-            else if(unos)
-                korisnikId.Text = Convert.ToString(korisnici.Last().ID + 1);
-            else
+            using (Baza db = new Baza())
             {
-                korisnikId.Text = Convert.ToString(k.ID);
-                korisnikIme.Text = k.Ime;
-                korisnikPrezime.Text = k.Prezime;
-                korisnikUsername.Text = k.Username;
-                korisnikSpol.SelectedItem = k.Spol;
-                korisnikPravaPristupa.SelectedItem = k.TipKorisnika;
+                var korisnici = db.Korisnici.ToList();
+                if (korisnici.Count == 0)
+                    korisnikId.Text = Convert.ToString(1);
+                else if (unos)
+                    korisnikId.Text = Convert.ToString(korisnici.Last().ID + 1);
+                else
+                {
+                    korisnikId.Text = Convert.ToString(k.ID);
+                    korisnikIme.Text = k.Ime;
+                    korisnikPrezime.Text = k.Prezime;
+                    korisnikUsername.Text = k.Username;
+                    korisnikSpol.SelectedItem = k.Spol;
+                    korisnikPravaPristupa.SelectedItem = k.TipKorisnika;
+                }
             }
         }
-
         private void PotvrdiUnosButtonClick(object sender, RoutedEventArgs e)
         {
             if(korisnikIme.Text.Length == 0 || korisnikPravaPristupa.SelectedIndex == -1 || korisnikPrezime.Text.Length == 0 || 
@@ -73,7 +74,11 @@ namespace AdministratorForme
                     nit.Start();
                     return;
                 }
-                korisnici.Add(new Korisnik(korisnikIme.Text, korisnikPrezime.Text, Int32.Parse(korisnikId.Text), korisnikUsername.Text, korisnikPravaPristupa.SelectedItem.ToString(), korisnikPw.Password.GetHashCode().ToString(), korisnikSpol.SelectedItem.ToString()));
+                using (Baza db = new Baza())
+                {
+                    db.Korisnici.Add(new Korisnik(korisnikIme.Text, korisnikPrezime.Text, Int32.Parse(korisnikId.Text), korisnikUsername.Text, korisnikPravaPristupa.SelectedItem.ToString(), korisnikPw.Password.GetHashCode().ToString(), korisnikSpol.SelectedItem.ToString()));
+                    db.SaveChanges();
+                }
                 MessageBox.Show("Novi korisnik uspješno registrovan", "Uspješna registracija", MessageBoxButton.OK, MessageBoxImage.Information);
                 this.Close();
                 return;
@@ -86,13 +91,23 @@ namespace AdministratorForme
                 nit.Start();
                 return;
             }
-            k = new Korisnik(korisnikIme.Text, korisnikPrezime.Text, Int32.Parse(korisnikId.Text), korisnikUsername.Text, korisnikPravaPristupa.SelectedItem.ToString(), korisnikPw.Password.GetHashCode().ToString(), korisnikSpol.SelectedItem.ToString());
-            for (int i = 0; i < korisnici.Count; i++)
+            using (Baza db = new Baza())
             {
-                if(korisnici[i].ID == k.ID)
+                var korisnici = db.Korisnici.ToList();
+                for (int i = 0; i < korisnici.Count; i++)
                 {
-                    korisnici[i] = k;
-                    break;
+                    if (korisnici[i].ID == Int32.Parse(korisnikId.Text))
+                    {
+                        Korisnik temp = db.Korisnici.Where(m => m.ID == k.ID).FirstOrDefault();
+                        temp.Ime = korisnikIme.Text;
+                        temp.Prezime = korisnikPrezime.Text;
+                        temp.Username = korisnikUsername.Text;
+                        temp.TipKorisnika = korisnikPravaPristupa.SelectedItem.ToString();
+                        temp.Password = korisnikPw.Password.GetHashCode().ToString();
+                        temp.Spol = korisnikSpol.SelectedItem.ToString();
+                        db.SaveChanges();
+                        break;
+                    }
                 }
             }
                 MessageBox.Show("Izmjene su spašene uspješno", "Izmjene", MessageBoxButton.OK, MessageBoxImage.Information);

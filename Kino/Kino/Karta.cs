@@ -9,17 +9,17 @@ namespace Kino
     public class Karta
     {
         public int SerijskiBroj { get; set; }
-        public string NazivFilma { get; set; }
+        public Film Film { get; set; }
         public DateTime DatumProjekcije { get; set; }
-        public string NazivSale { get; set; }
+        public Sala Sala { get; set; }
         public int RedniBrojSjedista { get; set; }
 
-        public Karta(int serijskiBroj, string nazivFilma, DateTime datumProjekcije, string nazivSale, int redniBrojSjedista)
+        public Karta(int serijskiBroj, Film nazivFilma, DateTime datumProjekcije, Sala nazivSale, int redniBrojSjedista)
         {
             SerijskiBroj = serijskiBroj;
-            NazivFilma = nazivFilma;
+            Film = nazivFilma;
             DatumProjekcije = datumProjekcije;
-            NazivFilma = nazivFilma;
+            Sala = nazivSale;
             RedniBrojSjedista = redniBrojSjedista;
         }
 

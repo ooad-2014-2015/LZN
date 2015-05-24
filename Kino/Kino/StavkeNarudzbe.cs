@@ -8,16 +8,14 @@ namespace Kino
 {
     public class StavkeNarudzbe
     {
-        public string NazivArtikla { get; set; }
-        public int IDArtikla { get; set; }
+        public Artikal Artikal { get; set; }
         public int Kolicina { get; set; }
         public double Iznos { get; set; }
         public int ID { get; set; }
 
-        public StavkeNarudzbe(string nazivArtikla, int IdArtikla, int kolicina, double iznos, int id)
+        public StavkeNarudzbe(Artikal nazivArtikla, int kolicina, double iznos, int id)
         {
-            NazivArtikla = nazivArtikla;
-            IDArtikla = IdArtikla;
+            Artikal = nazivArtikla;
             Kolicina = kolicina;
             Iznos = iznos;
             ID = id;

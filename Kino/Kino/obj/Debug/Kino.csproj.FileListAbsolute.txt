@@ -3,3 +3,10 @@ C:\Users\Džemal\Desktop\LZN\Kino\Kino\bin\Debug\Kino.dll
 C:\Users\Džemal\Desktop\LZN\Kino\Kino\bin\Debug\Kino.pdb
 C:\Users\Džemal\Desktop\LZN\Kino\Kino\obj\Debug\Kino.dll
 C:\Users\Džemal\Desktop\LZN\Kino\Kino\obj\Debug\Kino.pdb
+C:\Users\Džemal\Desktop\LZN\Kino\Kino\bin\Debug\Kino.dll.config
+C:\Users\Džemal\Desktop\LZN\Kino\Kino\bin\Debug\EntityFramework.dll
+C:\Users\Džemal\Desktop\LZN\Kino\Kino\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Džemal\Desktop\LZN\Kino\Kino\bin\Debug\EntityFramework.xml
+C:\Users\Džemal\Desktop\LZN\Kino\Kino\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Džemal\Desktop\LZN\Kino\Kino\obj\Debug\Kino.Migrations.migracija.resources
+C:\Users\Džemal\Desktop\LZN\Kino\Kino\obj\Debug\Kino.csproj.GenerateResource.Cache

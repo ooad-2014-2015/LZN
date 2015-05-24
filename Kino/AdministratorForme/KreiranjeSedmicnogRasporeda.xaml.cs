@@ -22,57 +22,153 @@ namespace AdministratorForme
     /// </summary>
     public partial class KreiranjeSedmicnogRasporeda : Window 
     {
-        List<Film> filmovi; //izbrisati
-        Cjenovnik cjenovnik;
-        List<Sala> sale;
+        Cjenovnik cjen;
+        List<Film> filmoviClick;
         List<Projekcija> kreiraneProjekcije;
         SedmicniRaspored raspored;
+        Korisnik korisnik;
         int ukupanBrojGresaka = 0, projekcijaPoRedu = 0;
 
-        public KreiranjeSedmicnogRasporeda()
+        public KreiranjeSedmicnogRasporeda(Korisnik k)
         {
-            cjenovnik = new Cjenovnik
-            {
-                Osnova = 4,
-                DodatakZa3D = 1,
-                DodatakZaLjubavnaMjesta = 1,
-                DodatakZaNocneProjekcije = 1,
-                DodatakZaPremijere = 3,
-                DodatakZaVip = 2,
-                ID = 1,
-                DodatakZaPretpremijere = 1,
-                PopustZaRodjendaskePakete = 5,
-                PopustZaVipKorisnike = 5,
-                Username = "dzemal",
-                ZadnjaIzmjena = DateTime.Now,
-                DodatakZaFilmoveDuzeOd120Min = 1
-            };
-
+            InitializeComponent();
             kreiraneProjekcije = new List<Projekcija>();
             raspored = new SedmicniRaspored();
-            InitializeComponent();
-            CjenovnikCekiran();
-
-            filmovi = new List<Film> { //Filmove i sale obrisati
-                new Film{ID = 1, Naziv = "Titanik", GodinaIzdavanja = 1997, Zanr = "drama", DatumPosljednjeIzmjene = DateTime.Now, DatumUnosa = DateTime.Now,
-                Glumci = new List<string>{"Kate Winslet", "Leonardo Di Caprio"}, Reziser = "James Cameron", Sinopsis = "Neki opis", Slika = null, KorisnikKojiJeKreiraoFIlm ="dzemal", VrijemeTrajanja = 145, KorisnikKojiJeNapravioPosljednjeIzmjene = "dzemal"},
-                new Film{ID = 2, Naziv = "Život je lijep", GodinaIzdavanja = 1995, Zanr = "drama", DatumPosljednjeIzmjene = DateTime.Now, DatumUnosa = DateTime.Now,
-                Glumci = new List<string>{"Roberto Beninni"}, Reziser = "Ne znam", Sinopsis = "Neki opis", Slika = null, KorisnikKojiJeKreiraoFIlm ="dzemal", VrijemeTrajanja = 115, KorisnikKojiJeNapravioPosljednjeIzmjene = "dzemal"}
-            };
-            var projekcije = new List<string> { "Premijera", "Pretpremijera", "Obična projekcija"};
-            sale = new List<Sala>{
-                new Sala{ID = 1, NazivSale = "Kino sala", BrojLjubavnihSjedista = 8, BrojObicnihSjedista = 80, BrojVipSjedista = 4, UkupanBrojMijesta = 92},
-                new Sala{ID = 2, NazivSale = "B", BrojLjubavnihSjedista = 10, BrojObicnihSjedista = 60, BrojVipSjedista = 0, UkupanBrojMijesta = 70},
-                new Sala{ID = 3, NazivSale = "C", BrojLjubavnihSjedista = 0, BrojObicnihSjedista = 85, BrojVipSjedista = 15, UkupanBrojMijesta = 100},
-                new Sala{ID = 2, NazivSale = "D", BrojLjubavnihSjedista = 14, BrojObicnihSjedista = 55, BrojVipSjedista = 0, UkupanBrojMijesta = 69}
-            };
-
             pocetak.DisplayDateStart = DateTime.Today;
-            PopuniCjenovnik(cjenovnik);
+            Baza db = new Baza();
+            cjen = db.Cjenovnici.ToList()[0];
+            filmoviClick = db.Filmovi.ToList();
+            korisnik = k;
+            PopuniCjenovnik();
             PopuniTabele();
-            PopuniTipProjekcije(projekcije);
-            PopuniSale(sale);
+            PopuniTipProjekcije();
+            PopuniSale();
         }
+        #region metodeZaPunjenjeKontrolaPodacima
+
+        private void PopuniCjenovnik() 
+        {
+            Baza db = new Baza();
+            var cjenovnik = db.Cjenovnici.ToList()[0];
+
+            cjenovnikOsnova.Text = Convert.ToString(cjenovnik.Osnova);
+            cjenovnik3D.Text = Convert.ToString(cjenovnik.DodatakZa3D);
+            cjenovnikFilmDuziOd120Min.Text = Convert.ToString(cjenovnik.DodatakZaFilmoveDuzeOd120Min);
+            cjenovnikLjubavna.Text = Convert.ToString(cjenovnik.DodatakZaLjubavnaMjesta);
+            cjenovnikNocnaProjekcija.Text = Convert.ToString(cjenovnik.DodatakZaNocneProjekcije);
+            cjenovnikPopustRodjendan.Text = Convert.ToString(cjenovnik.PopustZaRodjendaskePakete);
+            cjenovnikPopustVIP.Text = Convert.ToString(cjenovnik.PopustZaVipKorisnike);
+            cjenovnikPremijera.Text = Convert.ToString(cjenovnik.DodatakZaPremijere);
+            cjenovnikPretpremijera.Text = Convert.ToString(cjenovnik.DodatakZaPretpremijere);
+            cjenovnikVIP.Text = Convert.ToString(cjenovnik.DodatakZaVip);
+        }
+        private void PopuniSalePomocna(List<Sala> sale, ComboBox a)
+        {
+            foreach(Sala item in sale)
+            {
+                a.Items.Add(item.NazivSale + " (" + Convert.ToString(item.UkupanBrojMijesta) + " mijesta)");
+            }
+        }        
+        private void PopuniSale()
+        {
+            Baza db = new Baza();
+            var sale = db.Sale.ToList();
+
+            PopuniSalePomocna(sale, ponedjeljakSale1);
+            PopuniSalePomocna(sale, ponedjeljakSale2);
+            PopuniSalePomocna(sale, ponedjeljakSale3);
+
+            PopuniSalePomocna(sale, utorakSale1);
+            PopuniSalePomocna(sale, utorakSale2);
+            PopuniSalePomocna(sale, utorakSale3);
+
+            PopuniSalePomocna(sale, srijedaSale1);
+            PopuniSalePomocna(sale, srijedaSale2);
+            PopuniSalePomocna(sale, srijedaSale3);
+
+            PopuniSalePomocna(sale, cetvrtakSale1);
+            PopuniSalePomocna(sale, cetvrtakSale2);
+            PopuniSalePomocna(sale, cetvrtakSale3);
+
+            PopuniSalePomocna(sale, petakSale1);
+            PopuniSalePomocna(sale, petakSale2);
+            PopuniSalePomocna(sale, petakSale3);
+
+            PopuniSalePomocna(sale, subotaSale1);
+            PopuniSalePomocna(sale, subotaSale2);
+            PopuniSalePomocna(sale, subotaSale3);
+
+            PopuniSalePomocna(sale, nedjeljaSale1);
+            PopuniSalePomocna(sale, nedjeljaSale2);
+            PopuniSalePomocna(sale, nedjeljaSale3);
+        }
+        private void PopuniTipProjekcije()
+        {
+            var projekcije = new List<string> { "Premijera", "Pretpremijera", "Obična projekcija" };
+
+            ponedjeljakProjekcije1.ItemsSource = projekcije;
+            ponedjeljakProjekcije2.ItemsSource = projekcije;
+            ponedjeljakProjekcije3.ItemsSource = projekcije;
+
+            utorakProjekcije1.ItemsSource = projekcije;
+            utorakProjekcije2.ItemsSource = projekcije;
+            utorakProjekcije3.ItemsSource = projekcije;
+
+            srijedaProjekcije1.ItemsSource = projekcije;
+            srijedaProjekcije2.ItemsSource = projekcije;
+            srijedaProjekcije3.ItemsSource = projekcije;
+
+            cetvrtakProjekcije1.ItemsSource = projekcije;
+            cetvrtakProjekcije2.ItemsSource = projekcije;
+            cetvrtakProjekcije3.ItemsSource = projekcije;
+
+            petakProjekcije1.ItemsSource = projekcije;
+            petakProjekcije2.ItemsSource = projekcije;
+            petakProjekcije3.ItemsSource = projekcije;
+
+            subotaProjekcije1.ItemsSource = projekcije;
+            subotaProjekcije2.ItemsSource = projekcije;
+            subotaProjekcije3.ItemsSource = projekcije;
+
+            nedjeljaProjekcije1.ItemsSource = projekcije;
+            nedjeljaProjekcije2.ItemsSource = projekcije;
+            nedjeljaProjekcije3.ItemsSource = projekcije;
+            
+        }
+        private void PopuniTabele()
+        {
+            Baza db = new Baza();
+            var filmoviii = db.Filmovi.ToList();
+
+            ponedjeljakTabela1.ItemsSource = filmoviii;
+            ponedjeljakTabela2.ItemsSource = filmoviii;
+            ponedjeljakTabela3.ItemsSource = filmoviii;
+
+            utorakTabela1.ItemsSource = filmoviii;
+            utorakTabela2.ItemsSource = filmoviii;
+            utorakTabela3.ItemsSource = filmoviii;
+
+            srijedaTabela1.ItemsSource = filmoviii;
+            srijedaTabela2.ItemsSource = filmoviii;
+            srijedaTabela3.ItemsSource = filmoviii;
+
+            cetvrtakTabela1.ItemsSource = filmoviii;
+            cetvrtakTabela2.ItemsSource = filmoviii;
+            cetvrtakTabela3.ItemsSource = filmoviii;
+
+            petakTabela1.ItemsSource = filmoviii;
+            petakTabela2.ItemsSource = filmoviii;
+            petakTabela3.ItemsSource = filmoviii;
+
+            subotaTabela1.ItemsSource = filmoviii;
+            subotaTabela2.ItemsSource = filmoviii;
+            subotaTabela3.ItemsSource = filmoviii;
+
+            nedjeljaTabela1.ItemsSource = filmoviii;
+            nedjeljaTabela2.ItemsSource = filmoviii;
+            nedjeljaTabela3.ItemsSource = filmoviii;
+        }
+        #endregion
         #region Medote za kreiranje i validaciju rasporeda
 
         private bool UzmiVrijednostCjenovnik()
@@ -100,8 +196,9 @@ namespace AdministratorForme
                 nit.Start();
                 return false;
             }
-            Cjenovnik novi = new Cjenovnik(osnova, nocnaProjekcija, ljubavna, VIP, premijera, dimenzionalnost, popustVIP, popustRodjendan, duzinaVecaOd120, pretpremijera, DateTime.Now, "username logovanog korisnika", 1);//Zadnja 2 parametra izmjenit
-            cjenovnik = novi; //ovdje ustvari dodati novi u bazu!
+            Baza db = new Baza();
+            Cjenovnik novi = new Cjenovnik(osnova, nocnaProjekcija, ljubavna, VIP, premijera, dimenzionalnost, popustVIP, popustRodjendan, duzinaVecaOd120, pretpremijera, DateTime.Now, korisnik, db.Cjenovnici.Last().ID + 1);
+            cjen = novi; 
             return true;
         }
         private bool ValidirajCjenovnik()
@@ -134,15 +231,6 @@ namespace AdministratorForme
         {
             int dan = datumPocetka.Day + 6;
             return new DateTime(datumPocetka.Year, datumPocetka.Month, dan, 0, 0, 0, 0);
-        }
-        private int DajId(string film)
-        {
-            foreach(var item in filmovi)
-            {
-                if (item.Naziv == film)
-                    return item.ID;
-            }
-            return -1;
         }
         private DateTime OdrediVrijemeProjekcije(Grid grid, int sati)
         {
@@ -210,82 +298,93 @@ namespace AdministratorForme
 
             projekcijaPoRedu++;
             string  projekcija = String.Empty, dimenzionalnost = String.Empty;
-            int filmFK = 0, brojGresaka = 0, SalaFk = 0;
+            int brojGresaka = 0;
+            Sala SalaFk = new Sala();
+            Film filmFK = new Film();
 
             ArrayList crvene = new ArrayList();
             ArrayList zelene = new ArrayList();
 
-            for (int i = 0; i < VisualTreeHelper.GetChildrenCount(grid); i++)
+            using (Baza db = new Baza())
             {
-                Visual kontrola = (Visual)VisualTreeHelper.GetChild(grid, i);
-                if (kontrola is TextBox)
+                for (int i = 0; i < VisualTreeHelper.GetChildrenCount(grid); i++)
                 {
-                    TextBox g = kontrola as TextBox;
-                    if(g.Text.Length > 0)
+                    Visual kontrola = (Visual)VisualTreeHelper.GetChild(grid, i);
+                    if (kontrola is TextBox)
                     {
-                        filmFK = DajId(g.Text);
-                        zelene.Add(g);
-                    }
-                    else
-                    {
-                        crvene.Add(g);
-                        brojGresaka++;
-                    }
-                }
-                else if(kontrola is ComboBox)
-                {
-                    ComboBox c = kontrola as ComboBox;
-                    if(c.Name.Contains("Sale")) //Ako je Sala
-                    {
-                        if(c.SelectedIndex == -1)
+                        TextBox g = kontrola as TextBox;
+                        if (g.Text.Length > 0)
                         {
-                            crvene.Add(c);
-                            brojGresaka++;
+                            filmFK = db.Filmovi.Where(f => f.Naziv == g.Text) as Film;
+                            zelene.Add(g);
                         }
                         else
                         {
-                            SalaFk = sale[c.SelectedIndex].ID;
-                            zelene.Add(c);
-                        }
-                    }
-                    else if (c.Name.Contains("Projekcije")) //Ako je projekcija
-                    {
-                        if (c.SelectedIndex == -1)
-                        {
-                            crvene.Add(c);
+                            crvene.Add(g);
                             brojGresaka++;
                         }
-                        else
+                    }
+                    else if (kontrola is ComboBox)
+                    {
+                        ComboBox c = kontrola as ComboBox;
+                        if (c.Name.Contains("Sale")) //Ako je Sala
                         {
-                            projekcija = c.SelectedItem.ToString();
-                            zelene.Add(c);
+                            if (c.SelectedIndex == -1)
+                            {
+                                crvene.Add(c);
+                                brojGresaka++;
+                            }
+                            else
+                            {
+                                SalaFk = db.Sale.ToList()[c.SelectedIndex];
+                                zelene.Add(c);
+                            }
+                        }
+                        else if (c.Name.Contains("Projekcije")) //Ako je projekcija
+                        {
+                            if (c.SelectedIndex == -1)
+                            {
+                                crvene.Add(c);
+                                brojGresaka++;
+                            }
+                            else
+                            {
+                                projekcija = c.SelectedItem.ToString();
+                                zelene.Add(c);
+                            }
                         }
                     }
-                }
-                else if(kontrola is CheckBox)
-                {
-                    CheckBox box = kontrola as CheckBox;
-                    if (box.IsChecked == false)
-                        return;
-                }
-                else if(kontrola is RadioButton)
-                {
-                    RadioButton r = kontrola as RadioButton;
-                    if (r.Name.Contains("2D") && r.IsChecked == true)
+                    else if (kontrola is CheckBox)
                     {
-                        dimenzionalnost = "2D";
+                        CheckBox box = kontrola as CheckBox;
+                        if (box.IsChecked == false)
+                            return;
                     }
-                    else if (r.Name.Contains("3D") && r.IsChecked == true)
+                    else if (kontrola is RadioButton)
                     {
-                        dimenzionalnost = "3D";
+                        RadioButton r = kontrola as RadioButton;
+                        if (r.Name.Contains("2D") && r.IsChecked == true)
+                        {
+                            dimenzionalnost = "2D";
+                        }
+                        else if (r.Name.Contains("3D") && r.IsChecked == true)
+                        {
+                            dimenzionalnost = "3D";
+                        }
                     }
                 }
             }
             ObojiKontrole(crvene, zelene);
             ukupanBrojGresaka += brojGresaka;
-            raspored.Projekcije.Add(new Projekcija(SalaFk, vrijemeProjekcije, dimenzionalnost, filmFK, projekcija, 1, cjenovnik.ID)); //Zadnja 2 parametra obavezno izmjeniti
+            Baza baza = new Baza();
+            int id;
+            if (baza.Projekcije.ToList().Count != 0)
+                id = baza.Projekcije.Last().ID + 1;
+            else
+                id = 1;
+            raspored.Projekcije.Add(new Projekcija(SalaFk, vrijemeProjekcije, dimenzionalnost, filmFK, projekcija, id, cjen)); 
         }
-        private void KreirajRaspored(object sender, RoutedEventArgs e) //Dodati provjeru da li se raspored kosi s drugim rasproedom, spasiti raspored u bazu
+        private void KreirajRaspored(object sender, RoutedEventArgs e) //Nije gotovo;
         {
             if (!pocetak.SelectedDate.HasValue)
             {
@@ -297,37 +396,59 @@ namespace AdministratorForme
                 MessageBox.Show("Prvi dan rasporeda mora biti ponedjeljak!", "Greška", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
+            else
+            {
+                DateTime t = pocetak.SelectedDate.Value;
+                Baza db = new Baza();
+                foreach(var item in db.SedmicniRasporedi)
+                {
+                    if(t == item.DatumPocetka)
+                    {
+                        MessageBox.Show("Već postoji raspored za trenutno odabrani datum\nMorate odabrati novi datum početka", "Greška", MessageBoxButton.OK, MessageBoxImage.Error);
+                        return;
+                    }
+                }
+            }
             if(ValidirajCjenovnik() == false)
             {
                 return;
             }
 
             ProslijediSveDataGridove();
-            raspored.ID = 1; //Ovo obavezno izmjeniti;
-            raspored.DatumPocetka = pocetak.SelectedDate.Value;
-            raspored.DatumZavrsetka = OdrediDatumZavrsetka(pocetak.SelectedDate.Value);
-
-            if(ukupanBrojGresaka == 0)
+            using (Baza db = new Baza())
             {
-                if(MessageBox.Show("Izabrali ste " + Convert.ToString(raspored.Projekcije.Count) + "/21 mogućih projekcija\nDa li želite potvrditi odabrane projekcije?",
-                    "Potvrda", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.No)
+                if (db.SedmicniRasporedi.ToList().Count != 0)
+                    raspored.ID = db.SedmicniRasporedi.Last().ID + 1;
+                else
+                    raspored.ID = 1;
+                raspored.DatumPocetka = pocetak.SelectedDate.Value;
+                raspored.DatumZavrsetka = OdrediDatumZavrsetka(pocetak.SelectedDate.Value);
+
+                if (ukupanBrojGresaka == 0)
+                {
+                    if (MessageBox.Show("Izabrali ste " + Convert.ToString(raspored.Projekcije.Count) + "/21 mogućih projekcija\nDa li želite potvrditi odabrane projekcije?",
+                        "Potvrda", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.No)
+                        return;
+
+                    raspored.Projekcije = kreiraneProjekcije;
+                    db.SedmicniRasporedi.Add(raspored);
+                    db.SaveChanges();
+
+                    MessageBox.Show("Uspješno ste kreirali sedmični raspored", "Uspješno kreiranje", MessageBoxButton.OK, MessageBoxImage.Information);
+                    this.Close();
                     return;
+                }
+                else
+                {
+                    string poruka = "Imate ukupno " + Convert.ToString(ukupanBrojGresaka) + " grešaka. Morate popuniti sva polja prije kreiranja rasporeda!";
+                    status.ItemsSource = poruka.ToList();
+                    ukupanBrojGresaka = 0;
+                    projekcijaPoRedu = 0;
+                    raspored.Projekcije.Clear(); //???????
 
-                //listu projekcija iz ove forme dodati u listu projekcija rasporeda;
-                MessageBox.Show("Uspješno ste kreirali sedmični raspored", "Uspješno kreiranje", MessageBoxButton.OK, MessageBoxImage.Information); 
-                
-                this.Close();
-            }
-            else
-            {
-                string poruka = "Imate ukupno " + Convert.ToString(ukupanBrojGresaka) + " grešaka. Morate popuniti sva polja prije kreiranja rasporeda!";            
-                status.ItemsSource = poruka.ToList(); 
-                ukupanBrojGresaka = 0;
-                projekcijaPoRedu = 0;
-                raspored.Projekcije.Clear(); //???????
-
-                Thread nit = new Thread(m => IzmjeniBojuStatusBar());
-                nit.Start();
+                    Thread nit = new Thread(m => IzmjeniBojuStatusBar());
+                    nit.Start();
+                }
             }
         }
         private void IzmjeniBojuStatusBar()
@@ -395,277 +516,165 @@ namespace AdministratorForme
         private void postojeciCjenovnik_Checked(object sender, RoutedEventArgs e)
         {
             CjenovnikCekiran();
-            PopuniCjenovnik(cjenovnik);
+            PopuniCjenovnik();
         }
         #endregion
-        #region metodeZaPunjenjeKontrolaPodacima
+        #region Metode Za Odabir Filma ButtonClick 
 
-        private void PopuniCjenovnik(Cjenovnik cjenovnik) //ovdje dodati pravi scjenovnik iz baze
+        private void NedjeljaOdabirFilmaClick3(object sender, RoutedEventArgs e) //Ovo izbrisati!!!!!!!!!!!!!!!!!
         {
-            cjenovnikOsnova.Text = Convert.ToString(cjenovnik.Osnova);
-            cjenovnik3D.Text = Convert.ToString(cjenovnik.DodatakZa3D);
-            cjenovnikFilmDuziOd120Min.Text = Convert.ToString(cjenovnik.DodatakZaFilmoveDuzeOd120Min);
-            cjenovnikLjubavna.Text = Convert.ToString(cjenovnik.DodatakZaLjubavnaMjesta);
-            cjenovnikNocnaProjekcija.Text = Convert.ToString(cjenovnik.DodatakZaNocneProjekcije);
-            cjenovnikPopustRodjendan.Text = Convert.ToString(cjenovnik.PopustZaRodjendaskePakete);
-            cjenovnikPopustVIP.Text = Convert.ToString(cjenovnik.PopustZaVipKorisnike);
-            cjenovnikPremijera.Text = Convert.ToString(cjenovnik.DodatakZaPremijere);
-            cjenovnikPretpremijera.Text = Convert.ToString(cjenovnik.DodatakZaPretpremijere);
-            cjenovnikVIP.Text = Convert.ToString(cjenovnik.DodatakZaVip);
-        }
-        private void PopuniSalePomocna(List<Sala> sale, ComboBox a)
-        {
-            foreach(Sala item in sale)
-            {
-                a.Items.Add(item.NazivSale + " (" + Convert.ToString(item.UkupanBrojMijesta) + " mijesta)");
-            }
-        }        
-        private void PopuniSale(List<Sala> sale)
-        {
-            PopuniSalePomocna(sale, ponedjeljakSale1);
-            PopuniSalePomocna(sale, ponedjeljakSale2);
-            PopuniSalePomocna(sale, ponedjeljakSale3);
-
-            PopuniSalePomocna(sale, utorakSale1);
-            PopuniSalePomocna(sale, utorakSale2);
-            PopuniSalePomocna(sale, utorakSale3);
-
-            PopuniSalePomocna(sale, srijedaSale1);
-            PopuniSalePomocna(sale, srijedaSale2);
-            PopuniSalePomocna(sale, srijedaSale3);
-
-            PopuniSalePomocna(sale, cetvrtakSale1);
-            PopuniSalePomocna(sale, cetvrtakSale2);
-            PopuniSalePomocna(sale, cetvrtakSale3);
-
-            PopuniSalePomocna(sale, petakSale1);
-            PopuniSalePomocna(sale, petakSale2);
-            PopuniSalePomocna(sale, petakSale3);
-
-            PopuniSalePomocna(sale, subotaSale1);
-            PopuniSalePomocna(sale, subotaSale2);
-            PopuniSalePomocna(sale, subotaSale3);
-
-            PopuniSalePomocna(sale, nedjeljaSale1);
-            PopuniSalePomocna(sale, nedjeljaSale2);
-            PopuniSalePomocna(sale, nedjeljaSale3);
-        }
-        private void PopuniTipProjekcije(List<string> projekcije)
-        {
-            ponedjeljakProjekcije1.ItemsSource = projekcije;
-            ponedjeljakProjekcije2.ItemsSource = projekcije;
-            ponedjeljakProjekcije3.ItemsSource = projekcije;
-
-            utorakProjekcije1.ItemsSource = projekcije;
-            utorakProjekcije2.ItemsSource = projekcije;
-            utorakProjekcije3.ItemsSource = projekcije;
-
-            srijedaProjekcije1.ItemsSource = projekcije;
-            srijedaProjekcije2.ItemsSource = projekcije;
-            srijedaProjekcije3.ItemsSource = projekcije;
-
-            cetvrtakProjekcije1.ItemsSource = projekcije;
-            cetvrtakProjekcije2.ItemsSource = projekcije;
-            cetvrtakProjekcije3.ItemsSource = projekcije;
-
-            petakProjekcije1.ItemsSource = projekcije;
-            petakProjekcije2.ItemsSource = projekcije;
-            petakProjekcije3.ItemsSource = projekcije;
-
-            subotaProjekcije1.ItemsSource = projekcije;
-            subotaProjekcije2.ItemsSource = projekcije;
-            subotaProjekcije3.ItemsSource = projekcije;
-
-            nedjeljaProjekcije1.ItemsSource = projekcije;
-            nedjeljaProjekcije2.ItemsSource = projekcije;
-            nedjeljaProjekcije3.ItemsSource = projekcije;
-            
-        }
-        private void PopuniTabele()
-        {
-            ponedjeljakTabela1.ItemsSource = filmovi;
-            ponedjeljakTabela2.ItemsSource = filmovi;
-            ponedjeljakTabela3.ItemsSource = filmovi;
-
-            utorakTabela1.ItemsSource = filmovi;
-            utorakTabela2.ItemsSource = filmovi;
-            utorakTabela3.ItemsSource = filmovi;
-
-            srijedaTabela1.ItemsSource = filmovi;
-            srijedaTabela2.ItemsSource = filmovi;
-            srijedaTabela3.ItemsSource = filmovi;
-
-            cetvrtakTabela1.ItemsSource = filmovi;
-            cetvrtakTabela2.ItemsSource = filmovi;
-            cetvrtakTabela3.ItemsSource = filmovi;
-
-            petakTabela1.ItemsSource = filmovi;
-            petakTabela2.ItemsSource = filmovi;
-            petakTabela3.ItemsSource = filmovi;
-
-            subotaTabela1.ItemsSource = filmovi;
-            subotaTabela2.ItemsSource = filmovi;
-            subotaTabela3.ItemsSource = filmovi;
-
-            nedjeljaTabela1.ItemsSource = filmovi;
-            nedjeljaTabela2.ItemsSource = filmovi;
-            nedjeljaTabela3.ItemsSource = filmovi;
-        }
-        #endregion
-        #region Metode Za Odabir Filma ButtonClick
-
-        private void NedjeljaOdabirFilmaClick3(object sender, RoutedEventArgs e)
-        {
-            if (nedjeljaTabela3.SelectedIndex == -1 || nedjeljaTabela3.SelectedIndex >= filmovi.Count)
+            if (nedjeljaTabela3.SelectedIndex == -1 || nedjeljaTabela3.SelectedIndex >= filmoviClick.Count)
                 return;
 
-            nedjeljaFilm3.Text = filmovi[nedjeljaTabela3.SelectedIndex].Naziv;
+            nedjeljaFilm3.Text = filmoviClick[nedjeljaTabela3.SelectedIndex].Naziv;
         }
         private void NedjeljaOdabirFilmaClick2(object sender, RoutedEventArgs e)
         {
-            if (nedjeljaTabela2.SelectedIndex == -1 || nedjeljaTabela2.SelectedIndex >= filmovi.Count)
+            if (nedjeljaTabela2.SelectedIndex == -1 || nedjeljaTabela2.SelectedIndex >= filmoviClick.Count)
                 return;
 
-            nedjeljaFilm2.Text = filmovi[nedjeljaTabela2.SelectedIndex].Naziv;
+            nedjeljaFilm2.Text = filmoviClick[nedjeljaTabela2.SelectedIndex].Naziv;
         }
         private void NedjeljaOdabirFilmaClick1(object sender, RoutedEventArgs e)
         {
-            if (nedjeljaTabela1.SelectedIndex == -1 || nedjeljaTabela1.SelectedIndex >= filmovi.Count)
+            if (nedjeljaTabela1.SelectedIndex == -1 || nedjeljaTabela1.SelectedIndex >= filmoviClick.Count)
                 return;
 
-            nedjeljaFilm1.Text = filmovi[nedjeljaTabela1.SelectedIndex].Naziv;
+            nedjeljaFilm1.Text = filmoviClick[nedjeljaTabela1.SelectedIndex].Naziv;
         }
         private void SubotaOdabirFilmaClick3(object sender, RoutedEventArgs e)
         {
-            if (subotaTabela3.SelectedIndex == -1 || subotaTabela3.SelectedIndex >= filmovi.Count)
+            if (subotaTabela3.SelectedIndex == -1 || subotaTabela3.SelectedIndex >= filmoviClick.Count)
                 return;
 
-            subotaFilm3.Text = filmovi[subotaTabela3.SelectedIndex].Naziv;
+            subotaFilm3.Text = filmoviClick[subotaTabela3.SelectedIndex].Naziv;
         }
         private void SubotaOdabirFilmaClick2(object sender, RoutedEventArgs e)
         {
-            if (subotaTabela2.SelectedIndex == -1 || subotaTabela2.SelectedIndex >= filmovi.Count)
+            if (subotaTabela2.SelectedIndex == -1 || subotaTabela2.SelectedIndex >= filmoviClick.Count)
                 return;
 
-            subotaFilm2.Text = filmovi[subotaTabela2.SelectedIndex].Naziv;
+            subotaFilm2.Text = filmoviClick[subotaTabela2.SelectedIndex].Naziv;
         }
         private void SubotaOdabirFilmaClick1(object sender, RoutedEventArgs e)
         {
-            if (subotaTabela1.SelectedIndex == -1 || subotaTabela1.SelectedIndex >= filmovi.Count)
+            if (subotaTabela1.SelectedIndex == -1 || subotaTabela1.SelectedIndex >= filmoviClick.Count)
                 return;
 
-            subotaFilm1.Text = filmovi[subotaTabela1.SelectedIndex].Naziv;
+            subotaFilm1.Text = filmoviClick[subotaTabela1.SelectedIndex].Naziv;
         }
         private void PetakOdabirFilmaClick3(object sender, RoutedEventArgs e)
         {
-            if (petakTabela3.SelectedIndex == -1 || petakTabela3.SelectedIndex >= filmovi.Count)
+            if (petakTabela3.SelectedIndex == -1 || petakTabela3.SelectedIndex >= filmoviClick.Count)
                 return;
 
-            petakFilm3.Text = filmovi[petakTabela3.SelectedIndex].Naziv;
+            petakFilm3.Text = filmoviClick[petakTabela3.SelectedIndex].Naziv;
         }
         private void PetakOdabirFilmaClick2(object sender, RoutedEventArgs e)
         {
-            if (petakTabela2.SelectedIndex == -1 || petakTabela2.SelectedIndex >= filmovi.Count)
+            if (petakTabela2.SelectedIndex == -1 || petakTabela2.SelectedIndex >= filmoviClick.Count)
                 return;
 
-            petakFilm2.Text = filmovi[petakTabela2.SelectedIndex].Naziv;
+            petakFilm2.Text = filmoviClick[petakTabela2.SelectedIndex].Naziv;
         }
         private void PetakOdabirFilmaClick1(object sender, RoutedEventArgs e)
         {
-            if (petakTabela1.SelectedIndex == -1 || petakTabela1.SelectedIndex >= filmovi.Count)
+            if (petakTabela1.SelectedIndex == -1 || petakTabela1.SelectedIndex >= filmoviClick.Count)
                 return;
 
-            petakFilm1.Text = filmovi[petakTabela1.SelectedIndex].Naziv;
+            petakFilm1.Text = filmoviClick[petakTabela1.SelectedIndex].Naziv;
         }
         private void CetvrtakOdabirFilmaClick1(object sender, RoutedEventArgs e)
         {
-            if (cetvrtakTabela1.SelectedIndex == -1 || cetvrtakTabela1.SelectedIndex >= filmovi.Count)
+            if (cetvrtakTabela1.SelectedIndex == -1 || cetvrtakTabela1.SelectedIndex >= filmoviClick.Count)
                 return;
 
-            cetvrtakFilm1.Text = filmovi[cetvrtakTabela1.SelectedIndex].Naziv;
+            cetvrtakFilm1.Text = filmoviClick[cetvrtakTabela1.SelectedIndex].Naziv;
         }
         private void CetvrtakOdabirFilmaClick3(object sender, RoutedEventArgs e)
         {
-            if (cetvrtakTabela3.SelectedIndex == -1 || cetvrtakTabela3.SelectedIndex >= filmovi.Count)
+            if (cetvrtakTabela3.SelectedIndex == -1 || cetvrtakTabela3.SelectedIndex >= filmoviClick.Count)
                 return;
 
-            cetvrtakFilm3.Text = filmovi[cetvrtakTabela3.SelectedIndex].Naziv;
+            cetvrtakFilm3.Text = filmoviClick[cetvrtakTabela3.SelectedIndex].Naziv;
         }
         private void CetvrtakOdabirFilmaClick2(object sender, RoutedEventArgs e)
         {
-            if (cetvrtakTabela2.SelectedIndex == -1 || cetvrtakTabela2.SelectedIndex >= filmovi.Count)
+            if (cetvrtakTabela2.SelectedIndex == -1 || cetvrtakTabela2.SelectedIndex >= filmoviClick.Count)
                 return;
 
-            cetvrtakFilm2.Text = filmovi[cetvrtakTabela2.SelectedIndex].Naziv;
+            cetvrtakFilm2.Text = filmoviClick[cetvrtakTabela2.SelectedIndex].Naziv;
         }
         private void SrijedaOdabirFilmaClick3(object sender, RoutedEventArgs e)
         {
-            if (srijedaTabela3.SelectedIndex == -1 || srijedaTabela3.SelectedIndex >= filmovi.Count)
+            if (srijedaTabela3.SelectedIndex == -1 || srijedaTabela3.SelectedIndex >= filmoviClick.Count)
                 return;
 
-            srijedaFilm3.Text = filmovi[srijedaTabela3.SelectedIndex].Naziv;
+            srijedaFilm3.Text = filmoviClick[srijedaTabela3.SelectedIndex].Naziv;
         }
         private void SrijedaOdabirFilmaClick2(object sender, RoutedEventArgs e)
         {
-            if (srijedaTabela2.SelectedIndex == -1 || srijedaTabela2.SelectedIndex >= filmovi.Count)
+            if (srijedaTabela2.SelectedIndex == -1 || srijedaTabela2.SelectedIndex >= filmoviClick.Count)
                 return;
 
-            srijedaFilm2.Text = filmovi[srijedaTabela2.SelectedIndex].Naziv;
+            srijedaFilm2.Text = filmoviClick[srijedaTabela2.SelectedIndex].Naziv;
         }
         private void SrijedaOdabirFilmaClick1(object sender, RoutedEventArgs e)
         {
-            if (srijedaTabela1.SelectedIndex == -1 || srijedaTabela1.SelectedIndex >= filmovi.Count)
+            if (srijedaTabela1.SelectedIndex == -1 || srijedaTabela1.SelectedIndex >= filmoviClick.Count)
                 return;
 
-            srijedaFilm1.Text = filmovi[srijedaTabela1.SelectedIndex].Naziv;
+            srijedaFilm1.Text = filmoviClick[srijedaTabela1.SelectedIndex].Naziv;
         }
         private void UtorakOdabirFilmaClick3(object sender, RoutedEventArgs e)
         {
-            if (utorakTabela3.SelectedIndex == -1 || utorakTabela3.SelectedIndex >= filmovi.Count)
+            if (utorakTabela3.SelectedIndex == -1 || utorakTabela3.SelectedIndex >= filmoviClick.Count)
                 return;
 
-            utorakFilm3.Text = filmovi[utorakTabela3.SelectedIndex].Naziv;
+            utorakFilm3.Text = filmoviClick[utorakTabela3.SelectedIndex].Naziv;
         }
         private void UtorakOdabirFilmaClick2(object sender, RoutedEventArgs e)
         {
-            if (utorakTabela2.SelectedIndex == -1 || utorakTabela2.SelectedIndex >= filmovi.Count)
+            if (utorakTabela2.SelectedIndex == -1 || utorakTabela2.SelectedIndex >= filmoviClick.Count)
                 return;
 
-            utorakFilm2.Text = filmovi[utorakTabela2.SelectedIndex].Naziv;
+            utorakFilm2.Text = filmoviClick[utorakTabela2.SelectedIndex].Naziv;
         }
         private void UtorakOdabirFilmaClick1(object sender, RoutedEventArgs e)
         {
-            if (utorakTabela1.SelectedIndex == -1 || utorakTabela1.SelectedIndex >= filmovi.Count)
+            if (utorakTabela1.SelectedIndex == -1 || utorakTabela1.SelectedIndex >= filmoviClick.Count)
                 return;
 
-            utorakFilm1.Text = filmovi[utorakTabela1.SelectedIndex].Naziv;
+            utorakFilm1.Text = filmoviClick[utorakTabela1.SelectedIndex].Naziv;
         }
         private void PonedjeljakOdabirFilmaClick1(object sender, RoutedEventArgs e)
         {
-            if (ponedjeljakTabela1.SelectedIndex == -1 || ponedjeljakTabela1.SelectedIndex >= filmovi.Count)
+            if (ponedjeljakTabela1.SelectedIndex == -1 || ponedjeljakTabela1.SelectedIndex >= filmoviClick.Count)
                 return;
 
-            ponedjeljakFilm1.Text = filmovi[ponedjeljakTabela1.SelectedIndex].Naziv;
+            ponedjeljakFilm1.Text = filmoviClick[ponedjeljakTabela1.SelectedIndex].Naziv;
         }
         private void PonedjeljakOdabirFilmaClick2(object sender, RoutedEventArgs e)
         {
-            if (ponedjeljakTabela2.SelectedIndex == -1 || ponedjeljakTabela2.SelectedIndex >= filmovi.Count)
+            if (ponedjeljakTabela2.SelectedIndex == -1 || ponedjeljakTabela2.SelectedIndex >= filmoviClick.Count)
                 return;
 
-            ponedjeljakFilm2.Text = filmovi[ponedjeljakTabela2.SelectedIndex].Naziv;
+            ponedjeljakFilm2.Text = filmoviClick[ponedjeljakTabela2.SelectedIndex].Naziv;
         }
         private void PonedjeljakOdabirFilmaClick3(object sender, RoutedEventArgs e)
         {
-            if (ponedjeljakTabela3.SelectedIndex == -1 || ponedjeljakTabela3.SelectedIndex >= filmovi.Count)
+            if (ponedjeljakTabela3.SelectedIndex == -1 || ponedjeljakTabela3.SelectedIndex >= filmoviClick.Count)
                 return;
 
-            ponedjeljakFilm3.Text = filmovi[ponedjeljakTabela3.SelectedIndex].Naziv;
+            ponedjeljakFilm3.Text = filmoviClick[ponedjeljakTabela3.SelectedIndex].Naziv;
         }
         #endregion
         #region Metode za prikaz detalja filma, poništavanje pretrage i pretragu ButtonClick
 
         private List<Film> Pretraga(int id, string naziv, int godinaIzdavanja, string zanr)
         {
+            Baza db = new Baza();
+            var filmovi = db.Filmovi.ToList();
             List<Film> lista = (from f in filmovi
 
                                 where (id == 0 || f.ID == id) &&
@@ -677,7 +686,7 @@ namespace AdministratorForme
 
             return lista;
         }
-        private void PretraziClick(object sender, RoutedEventArgs e)
+        private void PretraziClick(object sender, RoutedEventArgs e) 
         {
             FrameworkElement roditelj = (FrameworkElement)((Button)sender).Parent;
             DataGrid tabela = new DataGrid();
@@ -731,7 +740,8 @@ namespace AdministratorForme
         private void PonistiPretragu(object sender, RoutedEventArgs e)
         {
             FrameworkElement roditelj = (FrameworkElement)((Button)sender).Parent;
-
+            Baza db = new Baza();
+            var filmovi = db.Filmovi.ToList();
             for (int i = 0; i < VisualTreeHelper.GetChildrenCount(roditelj); i++)
             {
                 Visual kontrola = (Visual)VisualTreeHelper.GetChild(roditelj, i);
@@ -750,17 +760,18 @@ namespace AdministratorForme
         private void PrikazDetaljaFilma(object sender, RoutedEventArgs e)
         {
             FrameworkElement roditelj = (FrameworkElement)((Button)sender).Parent;
-
+            Baza db = new Baza();
+            var filmovi = db.Filmovi.ToList();
             for (int i = 0; i < VisualTreeHelper.GetChildrenCount(roditelj); i++)
             {
                 Visual kontrola = (Visual)VisualTreeHelper.GetChild(roditelj, i);
                 if (kontrola is DataGrid)
                 {
                     DataGrid tabela = kontrola as DataGrid;
-                    if (tabela.SelectedIndex == -1 || tabela.SelectedIndex >= filmovi.Count)
+                    if (tabela.SelectedIndex == -1 || tabela.SelectedIndex >= tabela.Items.Count)
                         return;
 
-                    var prozor = new PrikazEditovanjeFilma(filmovi[tabela.SelectedIndex], true);
+                    var prozor = new PrikazEditovanjeFilma(tabela.SelectedItem as Film, korisnik, true);
                     prozor.ShowDialog();
                     return;
                 }
