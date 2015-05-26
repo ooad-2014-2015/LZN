@@ -67,6 +67,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UnosKorisnika.xaml.cs">
       <DependentUpon>UnosKorisnika.xaml</DependentUpon>
     </Compile>
@@ -121,6 +124,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PrikazEditovanjeFilma.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -144,6 +151,15 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Slike\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Slike\Katanac.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Slike\lock.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Slike\login.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

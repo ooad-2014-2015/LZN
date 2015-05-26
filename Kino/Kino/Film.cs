@@ -19,8 +19,9 @@ namespace Kino
         public byte[] Slika { get; set; } 
         public DateTime DatumUnosa { get; set; }
         public DateTime DatumPosljednjeIzmjene { get; set; }
-        public Korisnik KorisnikKojiJeKreiraoFIlm { get; set; }
-        public Korisnik KorisnikKojiJeNapravioPosljednjeIzmjene { get; set; }
+        public virtual Korisnik KorisnikKojiJeKreiraoFIlm { get; set; }
+        public virtual Korisnik KorisnikKojiJeNapravioPosljednjeIzmjene { get; set; }
+        public int KorisnikId { get; set; }
 
         public Film()
         {
@@ -43,7 +44,7 @@ namespace Kino
             KorisnikKojiJeKreiraoFIlm = kor;
             KorisnikKojiJeNapravioPosljednjeIzmjene = zadnjaIzmjena;
             ID = id;
-
+            KorisnikId = kor.ID;
         }
 
         

@@ -25,3 +25,5 @@ C:\Users\Džemal\Desktop\LZN\Kino\AdministratorForme\bin\Debug\EntityFramework.x
 C:\Users\Džemal\Desktop\LZN\Kino\AdministratorForme\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Džemal\Desktop\LZN\Kino\AdministratorForme\obj\Debug\UnosKorisnika.baml
 C:\Users\Džemal\Desktop\LZN\Kino\AdministratorForme\obj\Debug\UnosKorisnika.g.cs
+C:\Users\Džemal\Desktop\LZN\Kino\AdministratorForme\obj\Debug\MainWindow.baml
+C:\Users\Džemal\Desktop\LZN\Kino\AdministratorForme\obj\Debug\MainWindow.g.cs
