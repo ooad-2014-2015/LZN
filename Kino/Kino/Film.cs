@@ -12,7 +12,7 @@ namespace Kino
         public string Naziv { get; set; }
         public string Zanr { get; set; }
         public string Reziser { get; set; }
-        public List<string> Glumci;
+        public string Glumci { get; set; }
         public string Sinopsis { get; set; }
         public int GodinaIzdavanja { get; set; }
         public int VrijemeTrajanja { get; set; } 
@@ -25,10 +25,9 @@ namespace Kino
 
         public Film()
         {
-            Glumci = new List<string>();
         }
 
-        public Film(string naziv, string zanr, string reziser, List<string> glumci, string sinospis, int godinaIzdavanja, int vrijeme_Trajanja
+        public Film(string naziv, string zanr, string reziser, string glumci, string sinospis, int godinaIzdavanja, int vrijeme_Trajanja
             , byte[] slika, DateTime datumUnosa, DateTime datumPosljednjeIzmjene, Korisnik kor, Korisnik zadnjaIzmjena, int id)
         {
             Naziv = naziv;

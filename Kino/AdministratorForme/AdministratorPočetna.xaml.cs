@@ -28,7 +28,7 @@ namespace AdministratorForme
         bool zatvaranjaButton;
         ImageSource src;
 
-        public AdministratorPočetna(Korisnik k) //Nije gotovo
+        public AdministratorPočetna(Korisnik k)
         {
             InitializeComponent();
             zatvaranjaButton = false; 
@@ -39,12 +39,11 @@ namespace AdministratorForme
                 var filmovi = db.Filmovi.ToList();
                 var artikli = db.Artiki.ToList();
                 var korisnici = db.Korisnici.ToList();
-                korisnik = db.Korisnici.ToList()[0]; //izbrisati
+                korisnik = db.Korisnici.ToList()[0]; //izmjeniti
                 tabela.ItemsSource = filmovi;
                 tabelaArtikli.ItemsSource = artikli;
                 tabelaKorisnici.ItemsSource = korisnici;
-                pozdrav.Content = "Dobrodošao Džemale"; //izmjeniti
-                prijavljanKorisnik.Content = "Prijavljeni ste kao Džemal Čengić"; //izmjeniti 
+                IspisiPozdrav();
                 PopuniCjenovnik();
                 korisnikSpolPretraga.ItemsSource = new List<string> { "Žensko", "Muško" };
                 korisnikPravaPristupaPretraga.ItemsSource = new List<string> { "Blagajnik", "Finansijski menadžer", "Administrator sistema" };
@@ -546,6 +545,21 @@ namespace AdministratorForme
         }
         #endregion
         #region Pomoćne metode
+        private void IspisiPozdrav()
+        {
+            prijavljanKorisnik.Content = "Prijavljeni ste kao " + korisnik.Ime + " " + korisnik.Prezime;
+            if (korisnik.Spol == "Muško")
+                pozdrav.Content = "Dobrodošao ";
+            else
+                pozdrav.Content = "Dobrodošla ";
+
+            pozdrav.Content += korisnik.Ime;
+            if(Convert.ToString(korisnik.Ime[korisnik.Ime.Length - 1]) != "a" && korisnik.Spol == "Muško")
+            {
+                pozdrav.Content += "e";
+            }
+
+        }
         private void PozivFormeZaKreiranjeRasporeda(object sender, RoutedEventArgs e)
         {
             var prozor = new KreiranjeSedmicnogRasporeda(korisnik);

@@ -29,9 +29,10 @@ namespace AdministratorForme
 
             using (Baza db = new Baza())
             {
-                Korisnik korisnik = new Korisnik();
+                //Ovo odkomentarisati nakon testiranja
+                /*Korisnik korisnik = new Korisnik();
                 bool ima = false;
-                /*foreach(var item in db.Korisnici.ToList())
+                foreach(var item in db.Korisnici.ToList())
                 {
                     if (item.Username == username.Text && password.Password.GetHashCode() == Int32.Parse(item.Password))
                     {
@@ -46,25 +47,43 @@ namespace AdministratorForme
                     status.ItemsSource = ("Pogrešan username ili password").ToList();
                     status.Foreground = Brushes.Red;
                     return;
-                }*/
-                this.Hide();
-                if (username.Text == "blagajnik")
-                {
-                  /*  var prozor = new BlagajnikPočetna();
-                    prozor.ShowDialog();
-                    //exit();*/
                 }
-                else if (username.Text == "finansije")
-                {
-                   /* var prozor = new FinansijskiMenadžerPočetna(); //Proslijedit logovanog korisnika
-                    prozor.ShowDialog();*/
+                this.Hide();
 
+                if(korisnik.TipKorisnika == "Blagajnik")
+                {
+                    //var prozor = new BlagajnikPočetna();
+                    //prozor.ShowDialog();
+                }
+                else if (korisnik.TipKorisnika == "Finansijski menadžer")
+                {
+                    // var prozor = new FinansijskiMenadžerPočetna(); 
+                    //prozor.ShowDialog();
                 }
                 else
                 {
                     var prozor = new AdministratorPočetna(korisnik);
                     prozor.ShowDialog();
+                }*/
+
+
+                this.Hide(); //ovo izbrisati nakon testiranja
+                if (username.Text == "blagajnik")
+                {
+                    //var prozor = new BlagajnikPočetna();
+                    //prozor.ShowDialog();
                 }
+                else if (username.Text == "finansije")
+                {
+                   // var prozor = new FinansijskiMenadžerPočetna(); 
+                   //prozor.ShowDialog();
+                }
+                else if(username.Text == "admin")
+                {
+                    var prozor = new AdministratorPočetna(new Korisnik());
+                    prozor.ShowDialog();
+                }
+
                 this.ShowDialog();
                 password.Clear();
                 username.Clear();

@@ -58,6 +58,10 @@
     <Compile Include="Migrations\201505261938292_migracija.Designer.cs">
       <DependentUpon>201505261938292_migracija.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201505281614148_m.cs" />
+    <Compile Include="Migrations\201505281614148_m.Designer.cs">
+      <DependentUpon>201505281614148_m.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Osoba.cs" />
     <Compile Include="Projekcija.cs" />
@@ -75,6 +79,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201505261938292_migracija.resx">
       <DependentUpon>201505261938292_migracija.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201505281614148_m.resx">
+      <DependentUpon>201505281614148_m.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

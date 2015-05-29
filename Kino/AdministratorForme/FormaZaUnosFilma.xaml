@@ -1,7 +1,7 @@
 ﻿<Window x:Class="AdministratorForme.FormaZaUnosFilma"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Unos novog filma" Height="642" Width="860" Background="#FF91C552" Name="window" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="Unos filma" Height="642" Width="860" Background="#FF91C552" Name="window" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="Slike/film.ico">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="144*"/>

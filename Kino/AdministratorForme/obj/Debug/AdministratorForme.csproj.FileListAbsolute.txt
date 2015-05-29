@@ -27,3 +27,7 @@ C:\Users\Džemal\Desktop\LZN\Kino\AdministratorForme\obj\Debug\UnosKorisnika.bam
 C:\Users\Džemal\Desktop\LZN\Kino\AdministratorForme\obj\Debug\UnosKorisnika.g.cs
 C:\Users\Džemal\Desktop\LZN\Kino\AdministratorForme\obj\Debug\MainWindow.baml
 C:\Users\Džemal\Desktop\LZN\Kino\AdministratorForme\obj\Debug\MainWindow.g.cs
+C:\Users\Džemal\Desktop\LZN\Kino\AdministratorForme\bin\Debug\AdministratorForme.exe.manifest
+C:\Users\Džemal\Desktop\LZN\Kino\AdministratorForme\bin\Debug\AdministratorForme.application
+C:\Users\Džemal\Desktop\LZN\Kino\AdministratorForme\obj\Debug\AdministratorForme.exe.manifest
+C:\Users\Džemal\Desktop\LZN\Kino\AdministratorForme\obj\Debug\AdministratorForme.application

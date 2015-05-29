@@ -44,7 +44,8 @@ namespace AdministratorForme
             PopuniTipProjekcije();
             PopuniSale();
         }
-        #region metodeZaPunjenjeKontrolaPodacima
+
+        #region Metode za punjenje kotrola podacima
 
         private void PopuniCjenovnik() 
         {
@@ -68,6 +69,7 @@ namespace AdministratorForme
             {
                 a.Items.Add(item.NazivSale + " (" + Convert.ToString(item.UkupanBrojMijesta) + " mijesta)");
             }
+            a.SelectedIndex = 0;
         }        
         private void PopuniSale()
         {
@@ -169,7 +171,7 @@ namespace AdministratorForme
             nedjeljaTabela3.ItemsSource = filmoviii;
         }
         #endregion
-        #region Medote za kreiranje i validaciju rasporeda
+        #region Metode za kreiranje i validaciju rasporeda
 
         private bool UzmiVrijednostCjenovnik()
         {

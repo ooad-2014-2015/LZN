@@ -12,20 +12,12 @@ namespace Kino.Migrations
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(Baza context)
+        protected override void Seed(Baza db)
         {
-            //  This method will be called after migrating to the latest version.
-
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
+            db.Korisnici.AddOrUpdate(new Korisnik("Administrator", "administrator", 1, "admin", "Administrator sistema", Convert.ToString(("admin").GetHashCode()), "Muško"));
+            db.SaveChanges();
+            db.Cjenovnici.AddOrUpdate(new Cjenovnik(5, 1, 1, 3, 2, 1, 5, 5, 1, 1, DateTime.Now, db.Korisnici.ToList()[0], 1));
+            db.Sale.AddOrUpdate(new Sala("A", 80, 15, 5, 1));
         }
     }
 }

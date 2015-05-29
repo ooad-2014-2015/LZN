@@ -10,3 +10,4 @@ C:\Users\Džemal\Desktop\LZN\Kino\Kino\bin\Debug\EntityFramework.xml
 C:\Users\Džemal\Desktop\LZN\Kino\Kino\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Džemal\Desktop\LZN\Kino\Kino\obj\Debug\Kino.Migrations.migracija.resources
 C:\Users\Džemal\Desktop\LZN\Kino\Kino\obj\Debug\Kino.csproj.GenerateResource.Cache
+C:\Users\Džemal\Desktop\LZN\Kino\Kino\obj\Debug\Kino.Migrations.m.resources

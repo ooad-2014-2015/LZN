@@ -150,10 +150,10 @@ namespace AdministratorForme
             catch (Exception) { }
             film.VrijemeTrajanja = Int32.Parse(trajanjeFilma.Text);
             film.Zanr = zanr.Text;
-            film.Glumci.Clear();
+            film.Glumci = "";
             foreach (string item in glumci.Items)
             {
-                film.Glumci.Add(item);
+                film.Glumci += item + ", ";
             }
             using(Baza db = new Baza())
             {

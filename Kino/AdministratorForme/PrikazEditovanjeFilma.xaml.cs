@@ -54,9 +54,15 @@ namespace AdministratorForme
             korisnikUnio.Text = film.KorisnikKojiJeKreiraoFIlm.Ime + " " + film.KorisnikKojiJeKreiraoFIlm.Prezime;
             korisnikIzmjenio.Text = korisnik.Ime + " " + korisnik.Prezime;
 
-            foreach(string item in film.Glumci)
+            int p = 0;
+            for (int i = 0; i < film.Glumci.Length; i++)
             {
-                glumci.Items.Add(item);
+                if (Convert.ToString(film.Glumci[i]) == ",")
+                {
+                    glumci.Items.Add(film.Glumci.Substring(p, i - p));
+                    p = i + 2;
+                    i = p;
+                }
             }
             sinopsis.Text = film.Sinopsis;
             if(film.Slika == null)
@@ -161,7 +167,7 @@ namespace AdministratorForme
                 glumci.Items.RemoveAt(glumci.SelectedIndex);
             }
         }
-        private void Button_Click_3(object sender, RoutedEventArgs e) //Ovdje mozda db ne radi;
+        private void Button_Click_3(object sender, RoutedEventArgs e) 
         {
             if (pregled)
                 return;
@@ -186,22 +192,34 @@ namespace AdministratorForme
             film.KorisnikKojiJeNapravioPosljednjeIzmjene = korisnik;
             film.VrijemeTrajanja = Int32.Parse(trajanjeFilma.Text);
             film.Zanr = zanr.Text;
-            film.Glumci.Clear();
-            foreach(string item in glumci.Items)
+            film.Glumci = "";
+            foreach(var item in glumci.Items)
             {
-                film.Glumci.Add(item);
+                film.Glumci += item + ", ";
             }
            
             using(Baza db = new Baza())
             {
-                Film temp = db.Filmovi.Select(m => m.ID == film.ID) as Film;
-                temp = film;
+                Film temp = db.Filmovi.Where(m => m.ID == film.ID).First();
+                temp.DatumPosljednjeIzmjene = film.DatumPosljednjeIzmjene;
+                temp.DatumUnosa = film.DatumUnosa;
+                temp.Glumci = film.Glumci;
+                temp.GodinaIzdavanja = film.GodinaIzdavanja;
+                temp.KorisnikId = film.KorisnikId;
+                temp.KorisnikKojiJeKreiraoFIlm = film.KorisnikKojiJeKreiraoFIlm;
+                temp.KorisnikKojiJeNapravioPosljednjeIzmjene = film.KorisnikKojiJeNapravioPosljednjeIzmjene;
+                temp.Naziv = film.Naziv;
+                temp.Reziser = film.Reziser;
+                temp.Sinopsis = film.Sinopsis;
+                temp.Slika = film.Slika;
+                temp.VrijemeTrajanja = film.VrijemeTrajanja;
+                temp.Zanr = film.Zanr;
                 db.SaveChanges();
             }
             MessageBox.Show("Izmjene su spašene", "", MessageBoxButton.OK, MessageBoxImage.Information);
             this.Close();
         }
-        private void potvrdiBrisanje_Click(object sender, RoutedEventArgs e) //i ovdje mozda
+        private void potvrdiBrisanje_Click(object sender, RoutedEventArgs e)
         {
             if (MessageBox.Show("Da li ste sigurni da želite izbrisati film iz baze podataka?", "Brisanje", MessageBoxButton.YesNo, MessageBoxImage.Question)
                 == MessageBoxResult.No)

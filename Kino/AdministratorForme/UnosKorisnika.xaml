@@ -1,7 +1,7 @@
 ﻿<Window x:Class="AdministratorForme.UnosKorisnika"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Registracija novog korisnika" Height="329" Width="657" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="Registracija novog korisnika" Height="329" Width="657" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="Slike/user.ico">
 
     <Grid Margin="0,0,2,1">
         <Grid.ColumnDefinitions>
