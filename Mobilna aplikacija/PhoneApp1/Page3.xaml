@@ -1,0 +1,65 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="PhoneApp1.Page3"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel Grid.Row="0" Margin="12,17,0,28"/>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="10,10,14,-10">
+            <ScrollViewer HorizontalAlignment="Left" Height="667" Margin="10,10,0,0" VerticalAlignment="Top" Width="413"/>
+            <ListBox x:Name="list1" Margin="10,10,0,30" >
+                <ListBoxItem Background="#FFCF6F6F" Content="Ponedeljak:" FontSize="30"/>
+                <ListBoxItem x:Name="p1" Content="prvi_datum"/>
+                <ListBoxItem x:Name="p2" Content="drugi_datum"/>
+                <ListBoxItem x:Name="p3" Content="treci_datum"/>
+                <ListBoxItem Background="#FFCF6F6F" Content="Utorak:" FontSize="30"/>
+                <ListBoxItem x:Name="u1" Content="prvi_datum"/>
+                <ListBoxItem x:Name="u2" Content="drugi_datum"/>
+                <ListBoxItem x:Name="u3" Content="treci_datum"/>
+                <ListBoxItem Background="#FFCF6F6F" Content="Srijeda:" FontSize="30"/>
+                <ListBoxItem x:Name="s1" Content="prvi_datum"/>
+                <ListBoxItem x:Name="s2" Content="drugi_datum"/>
+                <ListBoxItem x:Name="s3" Content="treci_datum"/>
+                <ListBoxItem Background="#FFCF6F6F" Content="Cetvrtak:" FontSize="30"/>
+                <ListBoxItem x:Name="c1" Content="prvi_datum"/>
+                <ListBoxItem x:Name="c2" Content="drugi_datum"/>
+                <ListBoxItem x:Name="c3" Content="treci_datum"/>
+                <ListBoxItem Background="#FFCF6F6F" Content="Petak:" FontSize="30"/>
+                <ListBoxItem x:Name="pe1" Content="prvi_datum"/>
+                <ListBoxItem x:Name="pe2" Content="drugi_datum"/>
+                <ListBoxItem x:Name="pe3" Content="treci_datum"/>
+                <ListBoxItem Background="#FFCF6F6F" Content="Subota:" FontSize="30"/>
+                <ListBoxItem x:Name="su1" Content="prvi_datum"/>
+                <ListBoxItem x:Name="su2" Content="drugi_datum"/>
+                <ListBoxItem x:Name="su3" Content="treci_datum"/>
+                <ListBoxItem Background="#FFCF6F6F" Content="Nedelja:" FontSize="30"/>
+                <ListBoxItem x:Name="n1" Content="prvi_datum"/>
+                <ListBoxItem x:Name="n2" Content="drugi_datum"/>
+                <ListBoxItem x:Name="n3" Content="treci_datum"/>
+
+            </ListBox>
+
+        </Grid>
+
+    </Grid>
+
+</phone:PhoneApplicationPage>
