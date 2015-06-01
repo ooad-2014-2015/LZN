@@ -46,12 +46,15 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Skripte\BrojBodova.cs" />
      <Compile Include="Assets\Skripte\Kokica.cs" />
+     <Compile Include="Assets\Skripte\LevelLogic.cs" />
      <Compile Include="Assets\Skripte\Meta.cs" />
      <Compile Include="Assets\Skripte\MetaGlava.cs" />
      <Compile Include="Assets\Skripte\MetaKreiranje.cs" />
      <Compile Include="Assets\Skripte\NovaIgra.cs" />
      <Compile Include="Assets\Skripte\Pucanje.cs" />
+     <Compile Include="Assets\Skripte\Timer.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>E:/Program Files/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

@@ -5,10 +5,12 @@ public class Kokica : MonoBehaviour {
 	public int boja;
 	// Use this for initialization
 	public int brojac;
-	public GUIText ovo;
+	public GameObject mainPanel;
+	public GUIText scoreText;
 	void Start () {
 		brojac = 0;
-	//	ovo = GetComponent<GUIText> ();
+		//ovo = new GUIText ();
+
 	}
 
 	
@@ -26,12 +28,16 @@ public class Kokica : MonoBehaviour {
 			Destroy(gameObject);
 		}
 	}*/
+	public void displayMenu(){
+		mainPanel.GetComponent<CanvasGroup>().interactable = true;
+		mainPanel.GetComponent<CanvasGroup>().alpha = 1;
+		scoreText.text= "Score: "+ brojac;
+	}
 
 	void OnCollisionEnter(Collision collision)
 	{
-		brojac+=2;
-	//	ovo.text="Score" + brojac;
-
+		//ovo.text = "Score" + brojac.ToString ();
+		//GameObject.Find("GameLogic").GetComponent<LevelLogic>().dodajScore();
 		Destroy(collision.collider.gameObject);
 		Destroy(gameObject);
 	

@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class MetaKreiranje : MonoBehaviour {
@@ -27,10 +27,5 @@ public class MetaKreiranje : MonoBehaviour {
 			GameObject metaObjekat = (GameObject) Instantiate(meta, createPosition, transform.rotation);
 		
 		Destroy (metaObjekat, 3);
-
-		//metaObjekat.GetComponent<Meta>().refParticle = refParticle;//referenca na objekat za particle
-		//int boja = (int)Random.Range(0,3);
-		//metaObjekat.GetComponent<Meta>().boja = boja;
-		//metaObjekat.GetComponent<Renderer>().material = materials[boja];
 	}
 }
