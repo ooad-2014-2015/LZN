@@ -1,0 +1,52 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="PhoneApp1.Page1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="127*"/>
+            <ColumnDefinition Width="113*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel Grid.Row="0" Margin="12,17,0,28" Grid.ColumnSpan="2">
+            <TextBlock Text="Sedmični raspored:" Style="{StaticResource PhoneTextNormalStyle}" Margin="92,0,93,0" Height="78" FontSize="30"/>
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="221*"/>
+                <ColumnDefinition Width="235*"/>
+            </Grid.ColumnDefinitions>
+            <ScrollViewer Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="623" Margin="10,0,0,0" VerticalAlignment="Top" Width="417" />
+            <ListBox x:Name="list1" Margin="10,10,0,-10" Grid.ColumnSpan="2" >
+                <RadioButton x:Name="prvi" Background="#FFCF6F6F" Content="{Binding Naziv}" FontSize="25" Checked="prvi_Checked"/>
+                <RadioButton x:Name="drugi" Background="#FFCF6F6F" Content="{Binding Naziv}" FontSize="25" Checked="drugi_Checked"/>
+                <RadioButton x:Name="treci" Background="#FFCF6F6F" Content="{Binding Naziv}" FontSize="25" Checked="treci_Checked"/>
+                <RadioButton x:Name="cetvrti" Background="#FFCF6F6F" Content="{Binding Naziv}" FontSize="25" Checked="cetvrti_Checked"/>
+                <RadioButton x:Name="peti" Background="#FFCF6F6F" Content="{Binding Naziv}" FontSize="25" Checked="peti_Checked"/>
+                <RadioButton x:Name="sesti" Background="#FFCF6F6F" Content="{Binding Naziv}" FontSize="25" Checked="sesti_Checked"/>
+                <RadioButton x:Name="sedmi" Background="#FFCF6F6F" Content="{Binding Naziv}" FontSize="25" Checked="sedmi_Checked"/>
+               
+            </ListBox>
+        </Grid>
+    </Grid>
+
+</phone:PhoneApplicationPage>

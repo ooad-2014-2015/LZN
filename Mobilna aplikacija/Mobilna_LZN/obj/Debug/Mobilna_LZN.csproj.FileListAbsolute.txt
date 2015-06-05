@@ -1,0 +1,45 @@
+c:\users\student\documents\visual studio 2012\Projects\Mobilna_LZN\Mobilna_LZN\Bin\Debug\Assets\ApplicationIcon.png
+c:\users\student\documents\visual studio 2012\Projects\Mobilna_LZN\Mobilna_LZN\Bin\Debug\Assets\Tiles\FlipCycleTileLarge.png
+c:\users\student\documents\visual studio 2012\Projects\Mobilna_LZN\Mobilna_LZN\Bin\Debug\Assets\Tiles\FlipCycleTileMedium.png
+c:\users\student\documents\visual studio 2012\Projects\Mobilna_LZN\Mobilna_LZN\Bin\Debug\Assets\Tiles\FlipCycleTileSmall.png
+c:\users\student\documents\visual studio 2012\Projects\Mobilna_LZN\Mobilna_LZN\Bin\Debug\Assets\Tiles\IconicTileMediumLarge.png
+c:\users\student\documents\visual studio 2012\Projects\Mobilna_LZN\Mobilna_LZN\Bin\Debug\Assets\Tiles\IconicTileSmall.png
+c:\users\student\documents\visual studio 2012\Projects\Mobilna_LZN\Mobilna_LZN\Bin\Debug\Mobilna_LZN.dll
+c:\users\student\documents\visual studio 2012\Projects\Mobilna_LZN\Mobilna_LZN\Bin\Debug\Mobilna_LZN.pdb
+c:\users\student\documents\visual studio 2012\Projects\Mobilna_LZN\Mobilna_LZN\Bin\Debug\AppManifest.xaml
+c:\users\student\documents\visual studio 2012\Projects\Mobilna_LZN\Mobilna_LZN\Bin\Debug\Properties\WMAppManifest.xml
+c:\users\student\documents\visual studio 2012\Projects\Mobilna_LZN\Mobilna_LZN\Bin\Debug\Mobilna_LZN_Debug_AnyCPU.xap
+c:\users\student\documents\visual studio 2012\Projects\Mobilna_LZN\Mobilna_LZN\obj\Debug\App.g.cs
+c:\users\student\documents\visual studio 2012\Projects\Mobilna_LZN\Mobilna_LZN\obj\Debug\MainPage.g.cs
+c:\users\student\documents\visual studio 2012\Projects\Mobilna_LZN\Mobilna_LZN\obj\Debug\Mobilna_LZN.g.resources
+c:\users\student\documents\visual studio 2012\Projects\Mobilna_LZN\Mobilna_LZN\obj\Debug\Mobilna_LZN.Resources.AppResources.resources
+c:\users\student\documents\visual studio 2012\Projects\Mobilna_LZN\Mobilna_LZN\obj\Debug\Mobilna_LZN.csproj.GenerateResource.Cache
+c:\users\student\documents\visual studio 2012\Projects\Mobilna_LZN\Mobilna_LZN\obj\Debug\Mobilna_LZN.dll
+c:\users\student\documents\visual studio 2012\Projects\Mobilna_LZN\Mobilna_LZN\obj\Debug\Mobilna_LZN.pdb
+c:\users\student\documents\visual studio 2012\Projects\Mobilna_LZN\Mobilna_LZN\obj\Debug\XapCacheFile.xml
+c:\users\student\documents\visual studio 2012\Projects\Mobilna_LZN\Mobilna_LZN\obj\Debug\Page1.g.cs
+c:\users\student\documents\visual studio 2012\Projects\Mobilna_LZN\Mobilna_LZN\obj\Debug\Page2.g.cs
+c:\users\student\documents\visual studio 2012\Projects\Mobilna_LZN\Mobilna_LZN\obj\Debug\Page3.g.cs
+C:\Users\Student\Desktop\Mobilna_LZN\Mobilna_LZN\obj\Debug\App.g.cs
+C:\Users\Student\Desktop\Mobilna_LZN\Mobilna_LZN\obj\Debug\MainPage.g.cs
+C:\Users\Student\Desktop\Mobilna_LZN\Mobilna_LZN\obj\Debug\Page1.g.cs
+C:\Users\Student\Desktop\Mobilna_LZN\Mobilna_LZN\obj\Debug\Page2.g.cs
+C:\Users\Student\Desktop\Mobilna_LZN\Mobilna_LZN\obj\Debug\Page3.g.cs
+C:\Users\Student\Desktop\Mobilna_LZN\Mobilna_LZN\obj\Debug\Mobilna_LZN.g.resources
+C:\Users\Student\Desktop\Mobilna_LZN\Mobilna_LZN\obj\Debug\Mobilna_LZN.Resources.AppResources.resources
+C:\Users\Student\Desktop\Mobilna_LZN\Mobilna_LZN\obj\Debug\Mobilna_LZN.csproj.GenerateResource.Cache
+C:\Users\Student\Desktop\Mobilna_LZN\Mobilna_LZN\obj\Debug\Mobilna_LZN.dll
+C:\Users\Student\Desktop\Mobilna_LZN\Mobilna_LZN\Bin\Debug\Assets\ApplicationIcon.png
+C:\Users\Student\Desktop\Mobilna_LZN\Mobilna_LZN\Bin\Debug\Assets\Tiles\FlipCycleTileLarge.png
+C:\Users\Student\Desktop\Mobilna_LZN\Mobilna_LZN\Bin\Debug\Assets\Tiles\FlipCycleTileMedium.png
+C:\Users\Student\Desktop\Mobilna_LZN\Mobilna_LZN\Bin\Debug\Assets\Tiles\FlipCycleTileSmall.png
+C:\Users\Student\Desktop\Mobilna_LZN\Mobilna_LZN\Bin\Debug\Assets\Tiles\IconicTileMediumLarge.png
+C:\Users\Student\Desktop\Mobilna_LZN\Mobilna_LZN\Bin\Debug\Assets\Tiles\IconicTileSmall.png
+C:\Users\Student\Desktop\Mobilna_LZN\Mobilna_LZN\Bin\Debug\eKinoLokalBaza.sdf
+C:\Users\Student\Desktop\Mobilna_LZN\Mobilna_LZN\Bin\Debug\Mobilna_LZN.dll
+C:\Users\Student\Desktop\Mobilna_LZN\Mobilna_LZN\Bin\Debug\Mobilna_LZN.pdb
+C:\Users\Student\Desktop\Mobilna_LZN\Mobilna_LZN\Bin\Debug\AppManifest.xaml
+C:\Users\Student\Desktop\Mobilna_LZN\Mobilna_LZN\Bin\Debug\Properties\WMAppManifest.xml
+C:\Users\Student\Desktop\Mobilna_LZN\Mobilna_LZN\Bin\Debug\Mobilna_LZN_Debug_AnyCPU.xap
+C:\Users\Student\Desktop\Mobilna_LZN\Mobilna_LZN\obj\Debug\Mobilna_LZN.pdb
+C:\Users\Student\Desktop\Mobilna_LZN\Mobilna_LZN\obj\Debug\XapCacheFile.xml

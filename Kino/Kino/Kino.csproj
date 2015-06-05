@@ -29,13 +29,10 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -54,15 +51,6 @@
     <Compile Include="Kino.cs" />
     <Compile Include="Klijent.cs" />
     <Compile Include="Korisnik.cs" />
-    <Compile Include="Migrations\201505261938292_migracija.cs" />
-    <Compile Include="Migrations\201505261938292_migracija.Designer.cs">
-      <DependentUpon>201505261938292_migracija.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201505281614148_m.cs" />
-    <Compile Include="Migrations\201505281614148_m.Designer.cs">
-      <DependentUpon>201505281614148_m.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Osoba.cs" />
     <Compile Include="Projekcija.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -73,16 +61,10 @@
     <Compile Include="StavkeNarudzbe.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201505261938292_migracija.resx">
-      <DependentUpon>201505261938292_migracija.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201505281614148_m.resx">
-      <DependentUpon>201505281614148_m.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
