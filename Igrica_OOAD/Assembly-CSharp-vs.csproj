@@ -46,6 +46,8 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Kraj.cs" />
+     <Compile Include="Assets\Score.cs" />
      <Compile Include="Assets\Skripte\BrojBodova.cs" />
      <Compile Include="Assets\Skripte\Kokica.cs" />
      <Compile Include="Assets\Skripte\LevelLogic.cs" />

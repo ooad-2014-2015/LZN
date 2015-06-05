@@ -24,7 +24,7 @@ public class Timer : MonoBehaviour {
 			TimeInSec--;
 			UpdateText(TimeInSec);
 		}
-		//GameObject.Find("GameLogic").GetComponent<Kokica>().displayMenu();
+		Application.LoadLevel("Kraj");
 
 	}
 
