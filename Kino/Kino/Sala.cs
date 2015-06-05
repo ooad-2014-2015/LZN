@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Kino
 {
-    public class Sala
+    public class Sale
     {
         public string NazivSale { get; set; }
         public int BrojObicnihSjedista { get; set; }
@@ -15,7 +15,7 @@ namespace Kino
         public int ID { get; set; }
         public int UkupanBrojMijesta { get; set; }
 
-        public Sala(string nazivSale, int brojObicnihSjedista, int brojLjubavnihSjedista, int brojVipSjedista, int id)
+        public Sale(string nazivSale, int brojObicnihSjedista, int brojLjubavnihSjedista, int brojVipSjedista, int id)
         {
             NazivSale = nazivSale;
             BrojObicnihSjedista = brojObicnihSjedista;
@@ -25,7 +25,7 @@ namespace Kino
             UkupanBrojMijesta = brojLjubavnihSjedista + BrojObicnihSjedista + BrojVipSjedista;
         }
 
-        public Sala()
+        public Sale()
         {
             // TODO: Complete member initialization
         }

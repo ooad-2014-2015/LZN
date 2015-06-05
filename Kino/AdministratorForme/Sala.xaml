@@ -1,0 +1,78 @@
+﻿<Window x:Class="AdministratorForme.Sala"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Sala" Height="600" Width="600">
+    <Grid Margin="10,0,13,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="263*"/>
+            <RowDefinition Height="6*"/>
+        </Grid.RowDefinitions>
+        <Button Name="_1" Content="1" HorizontalAlignment="Left" Margin="21,27,0,0" VerticalAlignment="Top" Width="38" Height="30" Background="#FF6DFB0B" Click="Button_Click_1"/>
+        <Button x:Name="_2"  Content="2" HorizontalAlignment="Left" Margin="84,27,0,0" VerticalAlignment="Top" Width="38" Height="30" Background="#FF6DFB0B" Click="_2_Click"/>
+        <Button x:Name="_3"  Content="3" HorizontalAlignment="Left" Margin="148,27,0,0" VerticalAlignment="Top" Width="38" Height="30" RenderTransformOrigin="3.631,0.865" Background="#FF6DFB0B" Click="_3_Click"/>
+        <Button x:Name="_4"  Content="4" HorizontalAlignment="Left" Margin="216,27,0,0" VerticalAlignment="Top" Width="38" Height="30" Background="#FF6DFB0B" Click="_4_Click"/>
+        <Button x:Name="_5" Content="5" HorizontalAlignment="Left" Margin="280,27,0,0" VerticalAlignment="Top" Width="38" Height="30" Background="#FF6DFB0B" Click="_5_Click"/>
+        <Button x:Name="_6"  Content="6" HorizontalAlignment="Left" Margin="349,27,0,0" VerticalAlignment="Top" Width="38" Height="30" Background="#FF6DFB0B" Click="_6_Click"/>
+        <Button  x:Name="_7" Content="7 i 8" HorizontalAlignment="Left" Margin="466,26,0,0" VerticalAlignment="Top" Width="93" Height="30" RenderTransformOrigin="0.494,0.66" Background="#FF6DFB0B" Click="_7_Click" />
+        <Button Click="_8_Click" x:Name="_8"  Content="9" HorizontalAlignment="Left" Margin="21,75,0,0" VerticalAlignment="Top" Width="38" Height="30" Background="#FF6DFB0B"/>
+        <Button Click="_9_Click" x:Name="_9"  Content="10" HorizontalAlignment="Left" Margin="84,75,0,0" VerticalAlignment="Top" Width="38" Height="30" Background="#FF6DFB0B"/>
+        <Button Click="_10_Click" x:Name="_10"  Content="11" HorizontalAlignment="Left" Margin="148,75,0,0" VerticalAlignment="Top" Width="38" Height="30" RenderTransformOrigin="3.631,0.865" Background="#FF6DFB0B"/>
+        <Button Click="_11_Click" x:Name="_11"  Content="12" HorizontalAlignment="Left" Margin="216,75,0,0" VerticalAlignment="Top" Width="38" Height="30" Background="#FF6DFB0B"/>
+        <Button Click="_12_Click" x:Name="_12" Content="13" HorizontalAlignment="Left" Margin="280,75,0,0" VerticalAlignment="Top" Width="38" Height="30" Background="#FF6DFB0B"/>
+        <Button Click="_13_Click" x:Name="_13"   Content="14" HorizontalAlignment="Left" Margin="349,75,0,0" VerticalAlignment="Top" Width="38" Height="30" Background="#FF6DFB0B"/>
+        <Button Click="_14_Click" x:Name="_14" Content="15 i 16" HorizontalAlignment="Left" Margin="466,74,0,0" VerticalAlignment="Top" Width="93" Height="30" RenderTransformOrigin="0.494,0.66" Background="#FF6DFB0B" />
+        <Button Click="_15_Click" x:Name="_15"  Content="17" HorizontalAlignment="Left" Margin="21,128,0,0" VerticalAlignment="Top" Width="38" Height="30" Background="#FF6DFB0B"/>
+        <Button Click="_16_Click" x:Name="_16"  Content="18" HorizontalAlignment="Left" Margin="84,128,0,0" VerticalAlignment="Top" Width="38" Height="30" Background="#FF6DFB0B"/>
+        <Button Click="_17_Click" x:Name="_17"  Content="19" HorizontalAlignment="Left" Margin="148,128,0,0" VerticalAlignment="Top" Width="38" Height="30" RenderTransformOrigin="3.631,0.865" Background="#FF6DFB0B"/>
+        <Button Click="_18_Click" x:Name="_18"  Content="20" HorizontalAlignment="Left" Margin="216,128,0,0" VerticalAlignment="Top" Width="38" Height="30" Background="#FF6DFB0B"/>
+        <Button Click="_19_Click" x:Name="_19"  Content="21" HorizontalAlignment="Left" Margin="280,128,0,0" VerticalAlignment="Top" Width="38" Height="30" Background="#FF6DFB0B"/>
+        <Button Click="_20_Click" x:Name="_20"  Content="22" HorizontalAlignment="Left" Margin="349,128,0,0" VerticalAlignment="Top" Width="38" Height="30" Background="#FF6DFB0B"/>
+        <Button Click="_21_Click" x:Name="_21" Content="23 i 24" HorizontalAlignment="Left" Margin="466,127,0,0" VerticalAlignment="Top" Width="93" Height="30" RenderTransformOrigin="0.494,0.66" Background="#FF6DFB0B" />
+        <Button Click="_22_Click" x:Name="_22"  Content="25" HorizontalAlignment="Left" Margin="21,176,0,0" VerticalAlignment="Top" Width="38" Height="30" Background="#FF6DFB0B"/>
+        <Button Click="_23_Click" x:Name="_23"  Content="26" HorizontalAlignment="Left" Margin="84,176,0,0" VerticalAlignment="Top" Width="38" Height="30" Background="#FF6DFB0B"/>
+        <Button Click="_24_Click" x:Name="_24"  Content="27" HorizontalAlignment="Left" Margin="148,176,0,0" VerticalAlignment="Top" Width="38" Height="30" RenderTransformOrigin="3.631,0.865" Background="#FF6DFB0B"/>
+        <Button Click="_25_Click" x:Name="_25"  Content="28" HorizontalAlignment="Left" Margin="216,175,0,0" VerticalAlignment="Top" Width="38" Height="30" Background="#FF6DFB0B"/>
+        <Button Click="_26_Click" x:Name="_26"  Content="29" HorizontalAlignment="Left" Margin="280,175,0,0" VerticalAlignment="Top" Width="38" Height="30" Background="#FF6DFB0B"/>
+        <Button Click="_27_Click" x:Name="_27"   Content="20" HorizontalAlignment="Left" Margin="349,176,0,0" VerticalAlignment="Top" Width="38" Height="30" Background="#FF6DFB0B"/>
+        <Button Click="_28_Click" x:Name="_28" Content="31 i 32" HorizontalAlignment="Left" Margin="466,175,0,0" VerticalAlignment="Top" Width="93" Height="30" RenderTransformOrigin="0.494,0.66" Background="#FF6DFB0B" />
+        <Button Click="_29_Click" x:Name="_29"  Content="33" HorizontalAlignment="Left" Margin="21,226,0,0" VerticalAlignment="Top" Width="38" Height="30" Background="#FF6DFB0B"/>
+        <Button Click="_30_Click" x:Name="_30"  Content="34" HorizontalAlignment="Left" Margin="84,226,0,0" VerticalAlignment="Top" Width="38" Height="30" Background="#FF6DFB0B"/>
+        <Button Click="_31_Click" x:Name="_31"  Content="35" HorizontalAlignment="Left" Margin="148,226,0,0" VerticalAlignment="Top" Width="38" Height="30" RenderTransformOrigin="3.631,0.865" Background="#FF6DFB0B"/>
+        <Button Click="_32_Click" x:Name="_32"  Content="36" HorizontalAlignment="Left" Margin="216,226,0,0" VerticalAlignment="Top" Width="38" Height="30" Background="#FF6DFB0B"/>
+        <Button Click="_33_Click" x:Name="_33"  Content="37" HorizontalAlignment="Left" Margin="280,226,0,0" VerticalAlignment="Top" Width="38" Height="30" Background="#FF6DFB0B"/>
+        <Button Click="_34_Click" x:Name="_34"  Content="37" HorizontalAlignment="Left" Margin="349,226,0,0" VerticalAlignment="Top" Width="38" Height="30" Background="#FF6DFB0B"/>
+        <Button Click="_35_Click" x:Name="_35" Content="39 i 40" HorizontalAlignment="Left" Margin="466,225,0,0" VerticalAlignment="Top" Width="93" Height="30" RenderTransformOrigin="0.494,0.66" Background="#FF6DFB0B" />
+        <Button Click="_36_Click" x:Name="_36"  Content="41" HorizontalAlignment="Left" Margin="21,274,0,0" VerticalAlignment="Top" Width="38" Height="30" Background="#FF6DFB0B"/>
+        <Button Click="_37_Click" x:Name="_37"  Content="42" HorizontalAlignment="Left" Margin="84,274,0,0" VerticalAlignment="Top" Width="38" Height="30" Background="#FF6DFB0B"/>
+        <Button Click="_38_Click" x:Name="_38"  Content="43" HorizontalAlignment="Left" Margin="148,274,0,0" VerticalAlignment="Top" Width="38" Height="30" RenderTransformOrigin="3.631,0.865" Background="#FF6DFB0B"/>
+        <Button Click="_39_Click" x:Name="_39"  Content="44" HorizontalAlignment="Left" Margin="216,274,0,0" VerticalAlignment="Top" Width="38" Height="30" Background="#FF6DFB0B"/>
+        <Button Click="_40_Click" x:Name="_40"  Content="45" HorizontalAlignment="Left" Margin="280,274,0,0" VerticalAlignment="Top" Width="38" Height="30" Background="#FF6DFB0B"/>
+        <Button Click="_41_Click" x:Name="_41"  Content="46" HorizontalAlignment="Left" Margin="349,274,0,0" VerticalAlignment="Top" Width="38" Height="30" Background="#FF6DFB0B"/>
+        <Button Click="_42_Click" x:Name="_42" Content="47 i 48" HorizontalAlignment="Left" Margin="466,273,0,0" VerticalAlignment="Top" Width="93" Height="30" RenderTransformOrigin="0.494,0.66" Background="#FF6DFB0B" />
+        <Button Click="_43_Click" x:Name="_43"  Content="49" HorizontalAlignment="Left" Margin="21,327,0,0" VerticalAlignment="Top" Width="38" Height="30" Background="#FF6DFB0B"/>
+        <Button Click="_44_Click" x:Name="_44"  Content="50" HorizontalAlignment="Left" Margin="84,327,0,0" VerticalAlignment="Top" Width="38" Height="30" Background="#FF6DFB0B"/>
+        <Button Click="_45_Click" x:Name="_45"  Content="51" HorizontalAlignment="Left" Margin="148,327,0,0" VerticalAlignment="Top" Width="38" Height="30" RenderTransformOrigin="3.631,0.865" Background="#FF6DFB0B"/>
+        <Button Click="_46_Click" x:Name="_46"  Content="52" HorizontalAlignment="Left" Margin="216,327,0,0" VerticalAlignment="Top" Width="38" Height="30" Background="#FF6DFB0B"/>
+        <Button Click="_47_Click" x:Name="_47"  Content="53" HorizontalAlignment="Left" Margin="280,327,0,0" VerticalAlignment="Top" Width="38" Height="30" Background="#FF6DFB0B"/>
+        <Button Click="_48_Click" x:Name="_48"  Content="53" HorizontalAlignment="Left" Margin="349,327,0,0" VerticalAlignment="Top" Width="38" Height="30" Background="#FF6DFB0B"/>
+        <Button Click="_49_Click" x:Name="_49" Content="55 i 56" HorizontalAlignment="Left" Margin="466,326,0,0" VerticalAlignment="Top" Width="93" Height="30" RenderTransformOrigin="0.494,0.66" Background="#FF6DFB0B" />
+        <Button Click="_50_Click" x:Name="_50" Content="57" HorizontalAlignment="Left" Margin="21,375,0,0" VerticalAlignment="Top" Width="38" Height="30" Background="#FF6DFB0B"/>
+        <Button Click="_51_Click" x:Name="_51"  Content="58" HorizontalAlignment="Left" Margin="84,375,0,0" VerticalAlignment="Top" Width="38" Height="30" Background="#FF6DFB0B"/>
+        <Button Click="_52_Click" x:Name="_52"  Content="59" HorizontalAlignment="Left" Margin="148,375,0,0" VerticalAlignment="Top" Width="38" Height="30" RenderTransformOrigin="3.631,0.865" Background="#FF6DFB0B"/>
+        <Button Click="_53_Click" x:Name="_53"  Content="60" HorizontalAlignment="Left" Margin="216,375,0,0" VerticalAlignment="Top" Width="38" Height="30" Background="#FF6DFB0B"/>
+        <Button Click="_54_Click" x:Name="_54"  Content="61" HorizontalAlignment="Left" Margin="280,375,0,0" VerticalAlignment="Top" Width="38" Height="30" Background="#FF6DFB0B"/>
+        <Button Click="_55_Click" x:Name="_55"  Content="62" HorizontalAlignment="Left" Margin="349,375,0,0" VerticalAlignment="Top" Width="38" Height="30" Background="#FF6DFB0B"/>
+        <Button Click="_56_Click" x:Name="_56" Content="63 i 64" HorizontalAlignment="Left" Margin="466,374,0,0" VerticalAlignment="Top" Width="93" Height="30" RenderTransformOrigin="0.494,0.66" Background="#FF6DFB0B" />
+        <Button Content="Button" HorizontalAlignment="Left" Margin="55,0,0,0" VerticalAlignment="Top" Width="474" Height="11" Background="#FF0C0101"/>
+        <Button  Click="_57_Click" x:Name="_57" Content="65 i 66" HorizontalAlignment="Left" Margin="21,431,0,0" VerticalAlignment="Top" Width="101" Height="30" RenderTransformOrigin="0.494,0.66" Background="#FF6DFB0B" />
+        <Button Click="_58_Click" x:Name="_58" Content="67 i 68" HorizontalAlignment="Left" Margin="148,431,0,0" VerticalAlignment="Top" Width="106" Height="30" RenderTransformOrigin="0.494,0.66" Background="#FF6DFB0B" />
+        <Button Click="_61_Click" x:Name="_61" Content="69 i 70" HorizontalAlignment="Left" Margin="21,480,0,0" VerticalAlignment="Top" Width="101" Height="30" RenderTransformOrigin="0.494,0.66" Background="#FF6DFB0B" />
+        <Button Click="_62_Click" x:Name="_62" Content="71 i 72" HorizontalAlignment="Left" Margin="148,480,0,0" VerticalAlignment="Top" Width="106" Height="30" RenderTransformOrigin="0.494,0.66" Background="#FF6DFB0B" />
+        <Button Click="_59_Click" x:Name="_59"  Content="73 i 74" HorizontalAlignment="Left" Margin="281,431,0,0" VerticalAlignment="Top" Width="106" Height="30" RenderTransformOrigin="0.5,0.5" Background="#FF6DFB0B" />
+        <Button Click="_63_Click" x:Name="_63" Content="75 i 76" HorizontalAlignment="Left" Margin="281,480,0,0" VerticalAlignment="Top" Width="106" Height="30" RenderTransformOrigin="0.494,0.66" Background="#FF6DFB0B" />
+        <Button Click="_60_Click" x:Name="_60" Content="77 i 78" HorizontalAlignment="Left" Margin="466,432,0,0" VerticalAlignment="Top" Width="93" Height="30" RenderTransformOrigin="0.494,0.66" Background="#FF6DFB0B" />
+        <Button Click="_64_Click" x:Name="_64" Content="79 i 80" HorizontalAlignment="Left" Margin="466,480,0,0" VerticalAlignment="Top" Width="93" Height="30" RenderTransformOrigin="0.494,0.66" Background="#FF6DFB0B" />
+        <Button Content="Potvrdi&#xD;&#xA;" HorizontalAlignment="Left" Margin="408,526,0,0" VerticalAlignment="Top" Width="151" Height="33" Grid.RowSpan="2" Click="Button_Click"/>
+
+    </Grid>
+</Window>

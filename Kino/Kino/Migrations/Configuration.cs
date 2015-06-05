@@ -17,7 +17,7 @@ namespace Kino.Migrations
             db.Korisnici.AddOrUpdate(new Korisnik("Administrator", "administrator", 1, "admin", "Administrator sistema", Convert.ToString(("admin").GetHashCode()), "Muško"));
             db.SaveChanges();
             db.Cjenovnici.AddOrUpdate(new Cjenovnik(5, 1, 1, 3, 2, 1, 5, 5, 1, 1, DateTime.Now, db.Korisnici.ToList()[0], 1));
-            db.Sale.AddOrUpdate(new Sala("A", 80, 15, 5, 1));
+            db.Sale.AddOrUpdate(new Sale("A", 80, 15, 5, 1));
         }
     }
 }

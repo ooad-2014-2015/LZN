@@ -9,7 +9,7 @@ namespace Kino
     public class Racun
     {
         public int ID { get; set; }
-        public string VrijemeNarudzbe { get; set; }
+        public DateTime VrijemeNarudzbe { get; set; }
         public Korisnik Radnik { get; set; }
         public List<StavkeNarudzbe> _stavkeNarudzbe;
 
@@ -18,7 +18,7 @@ namespace Kino
             _stavkeNarudzbe = new List<StavkeNarudzbe>();
         }
 
-        public Racun(int serijskiBroj, string vrijemeNarudzbe, Korisnik imeRadnika, List<StavkeNarudzbe> stavkeNarudzbe)
+        public Racun(int serijskiBroj, DateTime vrijemeNarudzbe, Korisnik imeRadnika, List<StavkeNarudzbe> stavkeNarudzbe)
         {
             ID = serijskiBroj;
             VrijemeNarudzbe = vrijemeNarudzbe;

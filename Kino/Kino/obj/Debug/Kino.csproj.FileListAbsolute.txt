@@ -11,12 +11,6 @@ C:\Users\Džemal\Desktop\LZN\Kino\Kino\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Džemal\Desktop\LZN\Kino\Kino\obj\Debug\Kino.Migrations.migracija.resources
 C:\Users\Džemal\Desktop\LZN\Kino\Kino\obj\Debug\Kino.csproj.GenerateResource.Cache
 C:\Users\Džemal\Desktop\LZN\Kino\Kino\obj\Debug\Kino.Migrations.m.resources
-E:\OOAD\LZN\Kino\Kino\bin\Debug\Kino.dll.config
-E:\OOAD\LZN\Kino\Kino\bin\Debug\Kino.dll
-E:\OOAD\LZN\Kino\Kino\bin\Debug\Kino.pdb
-E:\OOAD\LZN\Kino\Kino\bin\Debug\EntityFramework.dll
-E:\OOAD\LZN\Kino\Kino\bin\Debug\EntityFramework.SqlServer.dll
-E:\OOAD\LZN\Kino\Kino\bin\Debug\EntityFramework.xml
-E:\OOAD\LZN\Kino\Kino\bin\Debug\EntityFramework.SqlServer.xml
-E:\OOAD\LZN\Kino\Kino\obj\Debug\Kino.dll
-E:\OOAD\LZN\Kino\Kino\obj\Debug\Kino.pdb
+C:\Users\Džemal\Desktop\LZN\Kino\Kino\obj\Debug\Kino.Migrations.m1.resources
+C:\Users\Džemal\Desktop\LZN\Kino\Kino\obj\Debug\Kino.Migrations.mi.resources
+C:\Users\Džemal\Desktop\LZN\Kino\Kino\obj\Debug\Kino.Migrations.migr.resources

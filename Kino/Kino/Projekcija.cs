@@ -8,7 +8,7 @@ namespace Kino
 {
     public class Projekcija
     {
-        public Sala SalaFK { get; set; }
+        public Sale SalaFK { get; set; }
         public List<bool> Zauzeto;
         public DateTime VrijemeProjekcije { get; set; }
         public string Dimenzionalnost { get; set; }
@@ -32,7 +32,7 @@ namespace Kino
             }
             return -1;
         }
-        public Projekcija(Sala salaFK, DateTime vrijemeProjekcije, string dimenzionalnost, Film filmFK, 
+        public Projekcija(Sale salaFK, DateTime vrijemeProjekcije, string dimenzionalnost, Film filmFK, 
             string tipProjekcije, int id, Cjenovnik cjenovnikFK)
         {
             SalaFK = salaFK;

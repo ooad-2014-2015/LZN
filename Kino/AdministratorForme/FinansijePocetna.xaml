@@ -1,0 +1,28 @@
+﻿<Window x:Class="AdministratorForme.FinansijePocetna"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Finansije" Height="340" Width="627" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="338*"/>
+            <ColumnDefinition Width="283*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="162*"/>
+            <RowDefinition Height="13*"/>
+            <RowDefinition Height="24*"/>
+            <RowDefinition Height="61*"/>
+            <RowDefinition Height="32*"/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+        <DataGrid Name="tabela" IsReadOnly="True" ItemsSource="{Binding Source=racuni}" AutoGenerateColumns="True" Grid.Row="1" Grid.ColumnSpan="2" Margin="21,0,10,0">
+            <DataGrid.Columns>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DatePicker Name="datum" Grid.Row="3" Margin="135,0,171,0"/>
+        <Button Grid.Row="3" Margin="87,0,10,0" Grid.Column="1" Click="PretragaClick">Pretraži</Button>
+        <Button Content="Printaj izvjestaj" Grid.Column="1" HorizontalAlignment="Left" Margin="87,0,0,0" Grid.Row="5" VerticalAlignment="Top" Width="186" Height="27" Click="PrintanjeIzvjestaja"/>
+        <Label Content="Izvještaj za datum" HorizontalAlignment="Left" Margin="21,0,0,0" Grid.Row="3" VerticalAlignment="Top" Height="24" Width="104"/>
+    </Grid>
+</Window>

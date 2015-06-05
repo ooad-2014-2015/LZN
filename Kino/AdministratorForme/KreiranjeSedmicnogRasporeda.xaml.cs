@@ -63,9 +63,9 @@ namespace AdministratorForme
             cjenovnikPretpremijera.Text = Convert.ToString(cjenovnik.DodatakZaPretpremijere);
             cjenovnikVIP.Text = Convert.ToString(cjenovnik.DodatakZaVip);
         }
-        private void PopuniSalePomocna(List<Sala> sale, ComboBox a)
+        private void PopuniSalePomocna(List<Sale> sale, ComboBox a)
         {
-            foreach(Sala item in sale)
+            foreach(Sale item in sale)
             {
                 a.Items.Add(item.NazivSale + " (" + Convert.ToString(item.UkupanBrojMijesta) + " mijesta)");
             }
@@ -301,7 +301,7 @@ namespace AdministratorForme
             projekcijaPoRedu++;
             string  projekcija = String.Empty, dimenzionalnost = String.Empty;
             int brojGresaka = 0;
-            Sala SalaFk = new Sala();
+            Sale SalaFk = new Sale();
             Film filmFK = new Film();
 
             ArrayList crvene = new ArrayList();

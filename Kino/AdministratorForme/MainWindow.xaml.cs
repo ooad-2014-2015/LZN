@@ -70,13 +70,13 @@ namespace AdministratorForme
                 this.Hide(); //ovo izbrisati nakon testiranja
                 if (username.Text == "blagajnik")
                 {
-                    //var prozor = new BlagajnikPočetna();
-                    //prozor.ShowDialog();
+                    var prozor = new BlagajnikPocetna();
+                    prozor.ShowDialog();
                 }
                 else if (username.Text == "finansije")
                 {
-                   // var prozor = new FinansijskiMenadžerPočetna(); 
-                   //prozor.ShowDialog();
+                    var prozor = new FinansijePocetna(); 
+                    prozor.ShowDialog();
                 }
                 else if(username.Text == "admin")
                 {
@@ -88,6 +88,12 @@ namespace AdministratorForme
                 password.Clear();
                 username.Clear();
             }
+        }
+
+        private void PrikazPomoci(object sender, RoutedEventArgs e)
+        {
+            var help = new Help();
+            help.ShowDialog();
         }
     }
 }

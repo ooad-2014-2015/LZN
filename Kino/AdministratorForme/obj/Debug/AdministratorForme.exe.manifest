@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AdministratorForme.exe" size="1719232">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AdministratorForme.exe" size="1761728">
       <assemblyIdentity name="AdministratorForme" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Av+QXyDn9TWzT374YlAWLm4J6P/SVviUZxATumFKrSc=</dsig:DigestValue>
+        <dsig:DigestValue>qDzHsspGx1hJappXZKejxeu12OTJNG6XKmAD/JU2V3Y=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -79,14 +79,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Kino.dll" size="40448">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Kino.dll" size="58880">
       <assemblyIdentity name="Kino" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ifSUl+3sD75gAscKvK0u1sre84CtMFXCMxMrcG1J2Fw=</dsig:DigestValue>
+        <dsig:DigestValue>Bqp6AXx8JZYvr5aOoG92qzj8gdalGrqlEcWYlVQaYcc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

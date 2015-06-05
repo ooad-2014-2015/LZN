@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-E:\OOAD\LZN\Kino\AdministratorForme\obj\Debug\
+C:\Users\Džemal\Desktop\LZN\Kino\AdministratorForme\obj\Debug\
 AdministratorForme
 none
 false
 DEBUG;TRACE
-E:\OOAD\LZN\Kino\AdministratorForme\App.xaml
-6-35588940
+C:\Users\Džemal\Desktop\LZN\Kino\AdministratorForme\App.xaml
+10-1298182534
 
-14962580484
-171508621260
-AdministratorPočetna.xaml;FormaZaUnosFilma.xaml;KreiranjeSedmicnogRasporeda.xaml;MainWindow.xaml;PrikazEditovanjeFilma.xaml;UnosKorisnika.xaml;
+181189599212
+17274399815
+AdministratorPočetna.xaml;BlagajnikPocetna.xaml;FinansijePocetna.xaml;FormaZaUnosFilma.xaml;Help.xaml;KreiranjeSedmicnogRasporeda.xaml;MainWindow.xaml;PrikazEditovanjeFilma.xaml;Sala.xaml;UnosKorisnika.xaml;
 
 False
 

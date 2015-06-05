@@ -11,10 +11,10 @@ namespace Kino
         public int SerijskiBroj { get; set; }
         public Film Film { get; set; }
         public DateTime DatumProjekcije { get; set; }
-        public Sala Sala { get; set; }
+        public Sale Sala { get; set; }
         public int RedniBrojSjedista { get; set; }
 
-        public Karta(int serijskiBroj, Film nazivFilma, DateTime datumProjekcije, Sala nazivSale, int redniBrojSjedista)
+        public Karta(int serijskiBroj, Film nazivFilma, DateTime datumProjekcije, Sale nazivSale, int redniBrojSjedista)
         {
             SerijskiBroj = serijskiBroj;
             Film = nazivFilma;

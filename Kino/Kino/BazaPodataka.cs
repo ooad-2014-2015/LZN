@@ -23,7 +23,7 @@ namespace Kino
         public DbSet<Korisnik> Korisnici { get; set; }
         public DbSet<Racun> Racuni { get; set; }
         public DbSet<Rezervacija> Rezervacije { get; set; }
-        public DbSet<Sala> Sale { get; set; }
+        public DbSet<Sale> Sale { get; set; }
         public DbSet<SedmicniRaspored> SedmicniRasporedi { get; set; }
         public DbSet<Projekcija> Projekcije { get; set; }
 
